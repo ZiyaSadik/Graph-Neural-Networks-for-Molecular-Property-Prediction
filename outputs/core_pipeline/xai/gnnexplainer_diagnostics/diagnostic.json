@@ -1,0 +1,542 @@
+{
+  "molecule_id": "BACE_118",
+  "true_label": 0,
+  "predicted_label": 1,
+  "distances": [
+    77.78750610351562,
+    63.08400344848633
+  ],
+  "raw_logits": [
+    -77.78750610351562,
+    -63.08400344848633
+  ],
+  "logit_gap": 14.703502655029297,
+  "raw_pred_softmax": 0.9999996423721313,
+  "raw_ce": 3.576278118089249e-07,
+  "note": "GNNExplainer multiclass loss is cross-entropy on raw logits. argmax(-d/T) equals argmax(-d) for T>0.",
+  "edge_mask_sensitivity": {
+    "ones": {
+      "logits": [
+        -77.78750610351562,
+        -63.08400344848633
+      ],
+      "pred": 1,
+      "softmax_orig_class": 0.9999996423721313,
+      "max_abs_logit_delta_vs_ones": 0.0
+    },
+    "zeros": {
+      "logits": [
+        -74.9091567993164,
+        -63.3716926574707
+      ],
+      "pred": 1,
+      "softmax_orig_class": 0.9999902248382568,
+      "max_abs_logit_delta_vs_ones": 2.8783493041992188
+    },
+    "half": {
+      "logits": [
+        -80.15509796142578,
+        -65.55337524414062
+      ],
+      "pred": 1,
+      "softmax_orig_class": 0.9999995231628418,
+      "max_abs_logit_delta_vs_ones": 2.469371795654297
+    }
+  },
+  "feature_mask_sensitivity": {
+    "all_ones": {
+      "pred": 1,
+      "flipped": false,
+      "softmax_orig_class": 0.9999996423721313,
+      "logits": [
+        -77.78750610351562,
+        -63.08400344848633
+      ],
+      "kept_frac": 1.0
+    },
+    "all_zeros": {
+      "pred": 0,
+      "flipped": true,
+      "softmax_orig_class": 0.0433499775826931,
+      "logits": [
+        -66.2249984741211,
+        -69.31912994384766
+      ],
+      "kept_frac": 0.0
+    },
+    "all_0_33": {
+      "pred": 1,
+      "flipped": false,
+      "softmax_orig_class": 0.9990807771682739,
+      "logits": [
+        -64.08240509033203,
+        -57.091270446777344
+      ],
+      "kept_frac": 0.33000001311302185
+    },
+    "random_half_nodes": {
+      "pred": 1,
+      "flipped": false,
+      "softmax_orig_class": 0.9999959468841553,
+      "logits": [
+        -75.69951629638672,
+        -63.279056549072266
+      ],
+      "kept_frac": 0.38235294818878174
+    },
+    "top_quarter_ones": {
+      "pred": 0,
+      "flipped": true,
+      "softmax_orig_class": 0.41162630915641785,
+      "logits": [
+        -65.6669692993164,
+        -66.02421569824219
+      ],
+      "kept_frac": 0.23529411852359772
+    }
+  },
+  "explainer_variants": {
+    "current_T1": {
+      "temperature": 1.0,
+      "argmax_same_as_T1": true,
+      "scaled_logits": [
+        -77.78750610351562,
+        -63.08400344848633
+      ],
+      "scaled_softmax": 0.9999996423721313,
+      "scaled_ce": 3.576278118089249e-07,
+      "node_mask": {
+        "n": 34,
+        "mean": 0.4366852045059204,
+        "std": 0.024839792400598526,
+        "min": 0.3900718688964844,
+        "max": 0.48029908537864685,
+        "frac_ge_0_5": 0.0
+      },
+      "edge_mask": {
+        "n": 76,
+        "mean": 0.4418919086456299,
+        "std": 0.07434555888175964,
+        "min": 0.28753212094306946,
+        "max": 0.6703577637672424,
+        "frac_ge_0_5": 0.09210526198148727
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "ce": 3.3378546504536644e-06,
+          "node_reg": 0.5654494166374207,
+          "edge_reg": 0.8759796023368835,
+          "loss": 1.4414323568344116,
+          "node_mask_mean": 0.4937616288661957,
+          "node_mask_std": 0.02427382580935955,
+          "edge_mask_mean": 0.49485573172569275,
+          "pred_softmax": 0.9999966621398926,
+          "node_grad_abs_mean": 0.007344638928771019,
+          "ce_to_node_grad_abs_mean": 2.929954007413471e-06
+        },
+        {
+          "epoch": 5,
+          "ce": 9.179073458653875e-06,
+          "node_reg": 0.5529340505599976,
+          "edge_reg": 0.8707762360572815,
+          "loss": 1.4237194061279297,
+          "node_mask_mean": 0.48129820823669434,
+          "node_mask_std": 0.024241508916020393,
+          "edge_mask_mean": 0.4840461313724518,
+          "pred_softmax": 0.9999908208847046,
+          "node_grad_abs_mean": 0.0073679713532328606,
+          "ce_to_node_grad_abs_mean": 1.002691533358302e-05
+        },
+        {
+          "epoch": 10,
+          "ce": 5.1377883210079744e-05,
+          "node_reg": 0.5403752326965332,
+          "edge_reg": 0.8649230599403381,
+          "loss": 1.4053497314453125,
+          "node_mask_mean": 0.46885740756988525,
+          "node_mask_std": 0.02417594939470291,
+          "edge_mask_mean": 0.4731442332267761,
+          "pred_softmax": 0.9999486207962036,
+          "node_grad_abs_mean": 0.007340609561651945,
+          "ce_to_node_grad_abs_mean": 6.518320151371881e-05
+        },
+        {
+          "epoch": 15,
+          "ce": 0.0005913416389375925,
+          "node_reg": 0.5278274416923523,
+          "edge_reg": 0.8583692312240601,
+          "loss": 1.386788010597229,
+          "node_mask_mean": 0.4565320312976837,
+          "node_mask_std": 0.024095529690384865,
+          "edge_mask_mean": 0.46210765838623047,
+          "pred_softmax": 0.9994088411331177,
+          "node_grad_abs_mean": 0.006495516747236252,
+          "ce_to_node_grad_abs_mean": 0.0010253648506477475
+        },
+        {
+          "epoch": 20,
+          "ce": 0.00257303798571229,
+          "node_reg": 0.5158369541168213,
+          "edge_reg": 0.8510830998420715,
+          "loss": 1.369493007659912,
+          "node_mask_mean": 0.44498077034950256,
+          "node_mask_std": 0.02420561946928501,
+          "edge_mask_mean": 0.45094922184944153,
+          "pred_softmax": 0.9974302649497986,
+          "node_grad_abs_mean": 0.0064395153895020485,
+          "ce_to_node_grad_abs_mean": 0.002032611519098282
+        },
+        {
+          "epoch": 24,
+          "ce": 0.00373582704924047,
+          "node_reg": 0.5070875287055969,
+          "edge_reg": 0.8446868658065796,
+          "loss": 1.3555102348327637,
+          "node_mask_mean": 0.4366852045059204,
+          "node_mask_std": 0.024839792400598526,
+          "edge_mask_mean": 0.4418919086456299,
+          "pred_softmax": 0.9962711334228516,
+          "node_grad_abs_mean": 0.006784031167626381,
+          "ce_to_node_grad_abs_mean": 0.004003489390015602
+        }
+      ]
+    },
+    "T_logit_gap": {
+      "temperature": 14.703502655029297,
+      "argmax_same_as_T1": true,
+      "scaled_logits": [
+        -5.290406703948975,
+        -4.290406703948975
+      ],
+      "scaled_softmax": 0.7310585975646973,
+      "scaled_ce": 0.31326165795326233,
+      "node_mask": {
+        "n": 34,
+        "mean": 0.4665246903896332,
+        "std": 0.048188500106334686,
+        "min": 0.3899865448474884,
+        "max": 0.5591640472412109,
+        "frac_ge_0_5": 0.29411765933036804
+      },
+      "edge_mask": {
+        "n": 76,
+        "mean": 0.4708155691623688,
+        "std": 0.08550009876489639,
+        "min": 0.28975051641464233,
+        "max": 0.6699683666229248,
+        "frac_ge_0_5": 0.31578946113586426
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "ce": 0.353753000497818,
+          "node_reg": 0.5654494166374207,
+          "edge_reg": 0.8759796023368835,
+          "loss": 1.7951819896697998,
+          "node_mask_mean": 0.4949353039264679,
+          "node_mask_std": 0.024152129888534546,
+          "edge_mask_mean": 0.49583640694618225,
+          "pred_softmax": 0.7020483613014221,
+          "node_grad_abs_mean": 0.020299676805734634,
+          "ce_to_node_grad_abs_mean": 0.017551958560943604
+        },
+        {
+          "epoch": 5,
+          "ce": 0.31887438893318176,
+          "node_reg": 0.5592226982116699,
+          "edge_reg": 0.8728309869766235,
+          "loss": 1.7509280443191528,
+          "node_mask_mean": 0.48878204822540283,
+          "node_mask_std": 0.026561858132481575,
+          "edge_mask_mean": 0.49043068289756775,
+          "pred_softmax": 0.7269668579101562,
+          "node_grad_abs_mean": 0.016068102791905403,
+          "ce_to_node_grad_abs_mean": 0.013238071464002132
+        },
+        {
+          "epoch": 10,
+          "ce": 0.30172163248062134,
+          "node_reg": 0.5530116558074951,
+          "edge_reg": 0.8692665696144104,
+          "loss": 1.7239998579025269,
+          "node_mask_mean": 0.4828285872936249,
+          "node_mask_std": 0.03143145143985748,
+          "edge_mask_mean": 0.4852832555770874,
+          "pred_softmax": 0.7395439147949219,
+          "node_grad_abs_mean": 0.012070485390722752,
+          "ce_to_node_grad_abs_mean": 0.0105571448802948
+        },
+        {
+          "epoch": 15,
+          "ce": 0.28887051343917847,
+          "node_reg": 0.5475022792816162,
+          "edge_reg": 0.8652678728103638,
+          "loss": 1.7016406059265137,
+          "node_mask_mean": 0.47744622826576233,
+          "node_mask_std": 0.03773624822497368,
+          "edge_mask_mean": 0.4802720844745636,
+          "pred_softmax": 0.7491092085838318,
+          "node_grad_abs_mean": 0.00842719804495573,
+          "ce_to_node_grad_abs_mean": 0.006413990166038275
+        },
+        {
+          "epoch": 20,
+          "ce": 0.2814607322216034,
+          "node_reg": 0.5415773987770081,
+          "edge_reg": 0.8606921434402466,
+          "loss": 1.6837302446365356,
+          "node_mask_mean": 0.4715560972690582,
+          "node_mask_std": 0.04383526369929314,
+          "edge_mask_mean": 0.47508564591407776,
+          "pred_softmax": 0.7546805739402771,
+          "node_grad_abs_mean": 0.006660166196525097,
+          "ce_to_node_grad_abs_mean": 0.004741469863802195
+        },
+        {
+          "epoch": 24,
+          "ce": 0.27756014466285706,
+          "node_reg": 0.5364525318145752,
+          "edge_reg": 0.8566098213195801,
+          "loss": 1.67062246799469,
+          "node_mask_mean": 0.4665246903896332,
+          "node_mask_std": 0.048188500106334686,
+          "edge_mask_mean": 0.4708155691623688,
+          "pred_softmax": 0.7576299905776978,
+          "node_grad_abs_mean": 0.006726748310029507,
+          "ce_to_node_grad_abs_mean": 0.004779031965881586
+        }
+      ]
+    },
+    "T_mean_distance": {
+      "temperature": 70.43575286865234,
+      "argmax_same_as_T1": true,
+      "scaled_logits": [
+        -1.1043753623962402,
+        -0.8956247568130493
+      ],
+      "scaled_softmax": 0.5519989728927612,
+      "scaled_ce": 0.5942090749740601,
+      "node_mask": {
+        "n": 34,
+        "mean": 0.4587686359882355,
+        "std": 0.04584499076008797,
+        "min": 0.3905635476112366,
+        "max": 0.5527083873748779,
+        "frac_ge_0_5": 0.23529411852359772
+      },
+      "edge_mask": {
+        "n": 76,
+        "mean": 0.45783665776252747,
+        "std": 0.08133399486541748,
+        "min": 0.2887219488620758,
+        "max": 0.6701856255531311,
+        "frac_ge_0_5": 0.21052631735801697
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "ce": 0.6076861619949341,
+          "node_reg": 0.5654494166374207,
+          "edge_reg": 0.8759796023368835,
+          "loss": 2.0491151809692383,
+          "node_mask_mean": 0.49449577927589417,
+          "node_mask_std": 0.02425406500697136,
+          "edge_mask_mean": 0.49537739157676697,
+          "pred_softmax": 0.544609546661377,
+          "node_grad_abs_mean": 0.009577021934092045,
+          "ce_to_node_grad_abs_mean": 0.00560004310682416
+        },
+        {
+          "epoch": 5,
+          "ce": 0.5984309315681458,
+          "node_reg": 0.5570462942123413,
+          "edge_reg": 0.8718081712722778,
+          "loss": 2.027285575866699,
+          "node_mask_mean": 0.48636525869369507,
+          "node_mask_std": 0.026184670627117157,
+          "edge_mask_mean": 0.48724856972694397,
+          "pred_softmax": 0.5496734380722046,
+          "node_grad_abs_mean": 0.008103159256279469,
+          "ce_to_node_grad_abs_mean": 0.005104723386466503
+        },
+        {
+          "epoch": 10,
+          "ce": 0.5935128331184387,
+          "node_reg": 0.5496013760566711,
+          "edge_reg": 0.8671828508377075,
+          "loss": 2.0102970600128174,
+          "node_mask_mean": 0.4791778028011322,
+          "node_mask_std": 0.03057282790541649,
+          "edge_mask_mean": 0.47948646545410156,
+          "pred_softmax": 0.5523834228515625,
+          "node_grad_abs_mean": 0.00754121458157897,
+          "ce_to_node_grad_abs_mean": 0.005340736359357834
+        },
+        {
+          "epoch": 15,
+          "ce": 0.5893115401268005,
+          "node_reg": 0.5426995158195496,
+          "edge_reg": 0.8621202707290649,
+          "loss": 1.994131326675415,
+          "node_mask_mean": 0.4723632335662842,
+          "node_mask_std": 0.036119453608989716,
+          "edge_mask_mean": 0.4718846380710602,
+          "pred_softmax": 0.5547090172767639,
+          "node_grad_abs_mean": 0.00610677246004343,
+          "ce_to_node_grad_abs_mean": 0.0034935493022203445
+        },
+        {
+          "epoch": 20,
+          "ce": 0.5873183012008667,
+          "node_reg": 0.5350920557975769,
+          "edge_reg": 0.8564285635948181,
+          "loss": 1.9788389205932617,
+          "node_mask_mean": 0.46477216482162476,
+          "node_mask_std": 0.041545867919921875,
+          "edge_mask_mean": 0.4640645384788513,
+          "pred_softmax": 0.5558158159255981,
+          "node_grad_abs_mean": 0.005256135016679764,
+          "ce_to_node_grad_abs_mean": 0.0030294964089989662
+        },
+        {
+          "epoch": 24,
+          "ce": 0.5870306491851807,
+          "node_reg": 0.5288132429122925,
+          "edge_reg": 0.8514298796653748,
+          "loss": 1.9672737121582031,
+          "node_mask_mean": 0.4587686359882355,
+          "node_mask_std": 0.04584499076008797,
+          "edge_mask_mean": 0.45783665776252747,
+          "pred_softmax": 0.5559757351875305,
+          "node_grad_abs_mean": 0.0051893871277570724,
+          "ce_to_node_grad_abs_mean": 0.004061832092702389
+        }
+      ]
+    },
+    "T_10": {
+      "temperature": 10.0,
+      "argmax_same_as_T1": true,
+      "scaled_logits": [
+        -7.778750419616699,
+        -6.3084001541137695
+      ],
+      "scaled_softmax": 0.8131106495857239,
+      "scaled_ce": 0.2068880796432495,
+      "node_mask": {
+        "n": 34,
+        "mean": 0.466849148273468,
+        "std": 0.048361409455537796,
+        "min": 0.39005157351493835,
+        "max": 0.558010458946228,
+        "frac_ge_0_5": 0.29411765933036804
+      },
+      "edge_mask": {
+        "n": 76,
+        "mean": 0.4713028371334076,
+        "std": 0.08458486944437027,
+        "min": 0.2901286482810974,
+        "max": 0.6699642539024353,
+        "frac_ge_0_5": 0.31578946113586426
+      },
+      "history": [
+        {
+          "epoch": 0,
+          "ce": 0.2496676743030548,
+          "node_reg": 0.5654494166374207,
+          "edge_reg": 0.8759796023368835,
+          "loss": 1.6910967826843262,
+          "node_mask_mean": 0.49508172273635864,
+          "node_mask_std": 0.024375343695282936,
+          "edge_mask_mean": 0.4960270822048187,
+          "pred_softmax": 0.779059648513794,
+          "node_grad_abs_mean": 0.02179073356091976,
+          "ce_to_node_grad_abs_mean": 0.01913708634674549
+        },
+        {
+          "epoch": 5,
+          "ce": 0.21252042055130005,
+          "node_reg": 0.5592285990715027,
+          "edge_reg": 0.8731270432472229,
+          "loss": 1.6448760032653809,
+          "node_mask_mean": 0.48878613114356995,
+          "node_mask_std": 0.026482878252863884,
+          "edge_mask_mean": 0.4908990263938904,
+          "pred_softmax": 0.8085438013076782,
+          "node_grad_abs_mean": 0.016289273276925087,
+          "ce_to_node_grad_abs_mean": 0.013624407351016998
+        },
+        {
+          "epoch": 10,
+          "ce": 0.19527839124202728,
+          "node_reg": 0.5529558062553406,
+          "edge_reg": 0.8696444034576416,
+          "loss": 1.6178786754608154,
+          "node_mask_mean": 0.4827713668346405,
+          "node_mask_std": 0.031180109828710556,
+          "edge_mask_mean": 0.4858516752719879,
+          "pred_softmax": 0.8226056098937988,
+          "node_grad_abs_mean": 0.012163779698312283,
+          "ce_to_node_grad_abs_mean": 0.010731393471360207
+        },
+        {
+          "epoch": 15,
+          "ce": 0.1826050728559494,
+          "node_reg": 0.5475386381149292,
+          "edge_reg": 0.8657035231590271,
+          "loss": 1.595847249031067,
+          "node_mask_mean": 0.477518767118454,
+          "node_mask_std": 0.03761892020702362,
+          "edge_mask_mean": 0.4808588922023773,
+          "pred_softmax": 0.8330971002578735,
+          "node_grad_abs_mean": 0.009277216158807278,
+          "ce_to_node_grad_abs_mean": 0.007329800631850958
+        },
+        {
+          "epoch": 20,
+          "ce": 0.17513693869113922,
+          "node_reg": 0.5417993664741516,
+          "edge_reg": 0.8611974716186523,
+          "loss": 1.5781338214874268,
+          "node_mask_mean": 0.4718114137649536,
+          "node_mask_std": 0.043901316821575165,
+          "edge_mask_mean": 0.47567060589790344,
+          "pred_softmax": 0.8393420577049255,
+          "node_grad_abs_mean": 0.006680552382022142,
+          "ce_to_node_grad_abs_mean": 0.004511717706918716
+        },
+        {
+          "epoch": 24,
+          "ce": 0.1713886708021164,
+          "node_reg": 0.5367655754089355,
+          "edge_reg": 0.8571630716323853,
+          "loss": 1.5653173923492432,
+          "node_mask_mean": 0.466849148273468,
+          "node_mask_std": 0.048361409455537796,
+          "edge_mask_mean": 0.4713028371334076,
+          "pred_softmax": 0.8424940705299377,
+          "node_grad_abs_mean": 0.006494675762951374,
+          "ce_to_node_grad_abs_mean": 0.004498202819377184
+        }
+      ]
+    }
+  },
+  "hard_threshold_0_5": {
+    "current_frac_nodes_ge_0_5": 0.0,
+    "interpretation": "If learned masks concentrate below 0.5, hard GraphFramEx uses an empty subgraph. That is a threshold issue on top of a possibly already-diffuse mask."
+  },
+  "likely_causes": [
+    "Primary: raw -distance logits saturate softmax (CE ~ 0), so GNNExplainer optimization is dominated by size/entropy regularization and drives masks uniformly down.",
+    "Edge masks do change GIN logits; missing edge_weight in GINConv is not the main failure.",
+    "Uniform soft feature scaling (~0.33) does not flip the class, matching zero soft fidelity; empty features do flip, matching hard fid-=1."
+  ],
+  "smallest_fix": {
+    "keep_classifier": "PrototypeDistanceLogits / argmax of -Euclidean distances, frozen encoder, fixed support prototypes.",
+    "change_only_explainer_objective": "Feed GNNExplainer temperature-scaled logits logit_c = -d_c / T with T large enough that CE is not saturated. Argmax is identical to the paper classifier.",
+    "T1_node_std": 0.024839792400598526,
+    "T10_node_std": 0.048361409455537796,
+    "T10_frac_ge_0_5": 0.29411765933036804,
+    "worked": true
+  },
+  "paper_recommendation": "Do not treat the current 5-molecule GNNExplainer maps as evidence of chemically sparse explanations. Keep them only as a negative diagnostic of unscaled -distance CE, or replace after a temperature-scaled rerun. Do not generalize from them."
+}

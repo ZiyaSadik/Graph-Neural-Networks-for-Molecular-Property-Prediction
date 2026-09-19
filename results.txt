@@ -1,0 +1,4 @@
+Mean Accuracy: 0.5533
+Std: 0.1310
+Episodes: 15
+Improvement: +10.7%

@@ -1,0 +1,71 @@
+{
+  "checkpoint": "outputs\\core_pipeline\\graphcl_checkpoint.pt",
+  "encoder_config": {
+    "in_dim": 9,
+    "hidden_dim": 128,
+    "num_layers": 5,
+    "dropout": 0.1,
+    "pool_type": "sum"
+  },
+  "seed": 42,
+  "num_episodes": 100,
+  "n_way": 2,
+  "k_shot": 5,
+  "q_query": 5,
+  "n_query_predictions": 1000,
+  "overall_accuracy": 0.596,
+  "mean_distance_gap_correct": 13.84833049454145,
+  "mean_distance_gap_incorrect": 11.15211855539001,
+  "n_correct": 596,
+  "n_incorrect": 404,
+  "point_biserial_gap_vs_correct": 0.12838701275656472,
+  "auroc_gap_as_score_for_correctness": 0.5892833410857865,
+  "quantile_bins": [
+    {
+      "bin": 0,
+      "n": 200,
+      "gap_min": 0.023761749267578125,
+      "gap_max": 3.813060760498047,
+      "gap_mean": 1.8691992664337158,
+      "accuracy": 0.485
+    },
+    {
+      "bin": 1,
+      "n": 200,
+      "gap_min": 3.8186264038085938,
+      "gap_max": 8.19717788696289,
+      "gap_mean": 5.999296836853027,
+      "accuracy": 0.52
+    },
+    {
+      "bin": 2,
+      "n": 200,
+      "gap_min": 8.23813247680664,
+      "gap_max": 13.327802658081055,
+      "gap_mean": 10.481200885772704,
+      "accuracy": 0.645
+    },
+    {
+      "bin": 3,
+      "n": 200,
+      "gap_min": 13.332023620605469,
+      "gap_max": 20.5621337890625,
+      "gap_mean": 16.335373840332032,
+      "accuracy": 0.625
+    },
+    {
+      "bin": 4,
+      "n": 200,
+      "gap_min": 20.573312759399414,
+      "gap_max": 55.8284854888916,
+      "gap_mean": 29.11023352622986,
+      "accuracy": 0.705
+    }
+  ],
+  "quantile_bin_accuracy_monotone_nondecreasing": false,
+  "pearson_bin_mean_gap_vs_bin_accuracy": 0.904811687155214,
+  "distance_gap_is_probability": false,
+  "distance_gap_is_calibrated_confidence": false,
+  "larger_gaps_correspond_to_higher_accuracy": true,
+  "interpretation_note": "Distance-gap is |d0-d1| in embedding space, not a class probability. It is not a calibrated confidence score."
+}

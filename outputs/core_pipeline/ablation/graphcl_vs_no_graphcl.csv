@@ -1,0 +1,3 @@
+condition,mean_accuracy,std_accuracy,min_accuracy,max_accuracy,num_episodes,seed
+graphcl,0.5910000041872263,0.16976159420898532,0.10000000149011612,1.0,100,42
+no_graphcl,0.6590000019967556,0.17268178536105985,0.0,1.0,100,42

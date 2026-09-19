@@ -1,0 +1,48 @@
+{
+  "comparison": "GraphCL pretraining vs no GraphCL (random init)",
+  "fairness_rule": "Conditions differ only in encoder weights: GraphCL MolPCBA pretraining vs random initialization. Downstream ProtoNet protocol, architecture, distance, seed, and episode index sets are identical. No encoder training in the No-GraphCL condition.",
+  "seed": 42,
+  "device": "cpu",
+  "encoder": {
+    "class": "GINEncoder",
+    "hidden_dim": 128,
+    "num_layers": 5,
+    "dropout": 0.1,
+    "pool_type": "sum",
+    "in_dim": 9
+  },
+  "no_graphcl": {
+    "initialization": "torch default, seed 42",
+    "pretraining": null,
+    "fine_tuning": null,
+    "frozen_at_eval": true
+  },
+  "graphcl_condition": {
+    "results_read_from": "outputs\\core_pipeline\\fewshot_summary.json",
+    "checkpoint_not_modified": "outputs\\core_pipeline\\graphcl_checkpoint.pt",
+    "mean_acc": 0.5910000041872263,
+    "std_acc": 0.16976159420898532
+  },
+  "fewshot": {
+    "dataset": "ogbg-molbace",
+    "split": "ogb_scaffold_test_only",
+    "n_way": 2,
+    "k_shot": 5,
+    "q_query": 5,
+    "num_episodes": 100,
+    "distance": "euclidean",
+    "root": "dataset",
+    "protocol": {
+      "dataset_name": "ogbg-molbace",
+      "split_name": "ogb_scaffold",
+      "n_train_reserved": 1210,
+      "n_valid_reserved": 151,
+      "n_fewshot_pool": 152,
+      "rule": "Encoder is pretrained only on ogbg-molpcba graphs (labels unused). BACE train/valid are reserved and never used for pretraining or few-shot support/query. Episodes are sampled from BACE test only; within an episode, support and query index sets are disjoint."
+    },
+    "n_train_reserved": 1210,
+    "n_valid_reserved": 151,
+    "n_fewshot_pool": 152
+  },
+  "replay_episode_count": 100
+}

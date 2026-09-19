@@ -1,0 +1,20 @@
+# DIAGNOSTIC ONLY — do not cite as GraphCL or paper results
+
+The following artifacts are **kept for provenance**. They are **not** the canonical pipeline.
+
+## Invalid / historical numbers
+
+| Artifact | Number | What it actually is |
+|---|---|---|
+| `outputs/final_results.txt` | **0.5180 ± 0.1590** (2026-07-18) | 3-layer GIN, MSE of projections to `randn`, 300 BACE molecules, leaky few-shot. **Not GraphCL.** |
+| `outputs/final_model.pt` | — | Weights from that MSE run. **Incompatible** with canonical 5-layer `GINEncoder`. |
+| Legacy explainer 9/10 episode | 9/10 | Loaded `final_model.pt`. See `archive/README.md`. |
+
+Canonical numbers: `outputs/core_pipeline/` — few-shot **0.5910 ± 0.1698**. See repository `README.md` and `REPRODUCIBILITY.md`.
+
+## Also not paper accuracy
+
+- `outputs/core_pipeline/smoke/` — pipeline check; 1-episode acc 0.70.
+- Unscaled GNNExplainer figures as chemical explanations — see `outputs/core_pipeline/xai/XAI_SUMMARY.md`.
+
+Scripts: `archive/experiment_mse_noise_pretrain.py`. `experiment.py` at repo root is quarantined and exits.

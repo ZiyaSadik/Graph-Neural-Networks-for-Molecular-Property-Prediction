@@ -1,0 +1,41 @@
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.conda/
+.python-version
+
+# Caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# Tools / OS
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+
+# Raw and processed downloaded datasets (OGB / MoleculeNet)
+data/
+dataset/
+
+# Model weights and checkpoints (reproduce via GraphCL or the saved summaries)
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+
+# Jupyter checkpoints already covered; keep notebooks/*.ipynb if added later

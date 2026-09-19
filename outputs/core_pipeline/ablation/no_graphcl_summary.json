@@ -1,0 +1,22 @@
+{
+  "condition": "no_graphcl_random_init",
+  "encoder_training": "none",
+  "initialization": "pytorch_default_with_seed_42",
+  "optimization_steps": 0,
+  "graphcl_weights_used": false,
+  "mse_to_noise_used": false,
+  "bace_labels_used_for_encoder_training": false,
+  "episodes_replayed_from": "outputs\\core_pipeline\\fewshot_results.csv",
+  "seed": 42,
+  "mean_acc": 0.6590000019967556,
+  "std_acc": 0.17268178536105985,
+  "min_acc": 0.0,
+  "max_acc": 1.0,
+  "mean_loss": 3.2532248698733746,
+  "num_episodes": 100,
+  "split": "ogb_scaffold_test_only",
+  "n_way": 2,
+  "k_shot": 5,
+  "q_query": 5,
+  "distance": "euclidean"
+}

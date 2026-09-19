@@ -1,0 +1,12 @@
+GNN + Few-Shot Learning Results
+==================================================
+
+Date: 2026-07-18 14:17:40
+Dataset: BACE (1513 molecules)
+Model: 3-layer GIN (128 hidden, 100,352 params)
+Training: 20 epochs, 300 molecules
+Evaluation: 2-way 5-shot, 100 episodes
+
+Mean Accuracy: 0.5180 ± 0.1590
+Min/Max: 0.0000 / 0.8000
+Improvement over random: +3.6%

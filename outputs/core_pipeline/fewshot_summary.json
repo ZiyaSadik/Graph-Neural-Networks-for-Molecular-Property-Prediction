@@ -1,0 +1,170 @@
+{
+  "smoke": false,
+  "is_paper_result": true,
+  "note": "Few-shot evaluation of GraphCL GINEncoder on BACE test split.",
+  "seed": 42,
+  "mean_acc": 0.5910000041872263,
+  "std_acc": 0.16976159420898532,
+  "mean_loss": 4.513656648136675,
+  "num_episodes": 100,
+  "split": "ogb_scaffold_test_only",
+  "do_not_use_historical_0_5180": true,
+  "do_not_use_historical_9_of_10_episode": true,
+  "first_episode_prototype_explanation": {
+    "n_query": 10,
+    "accuracy": 0.5,
+    "explanations": [
+      {
+        "query_position": 0,
+        "query_index": 141,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          34.13669967651367,
+          50.53542709350586
+        ],
+        "confidence_abs_diff": 16.398727416992188,
+        "nearest_support_position": 4,
+        "nearest_support_index": 156,
+        "nearest_support_cosine": 0.9161341190338135
+      },
+      {
+        "query_position": 1,
+        "query_index": 124,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          54.96318817138672,
+          61.712223052978516
+        ],
+        "confidence_abs_diff": 6.749034881591797,
+        "nearest_support_position": 2,
+        "nearest_support_index": 107,
+        "nearest_support_cosine": 0.9198874235153198
+      },
+      {
+        "query_position": 2,
+        "query_index": 115,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          75.44258880615234,
+          76.04380798339844
+        ],
+        "confidence_abs_diff": 0.6012191772460938,
+        "nearest_support_position": 5,
+        "nearest_support_index": 11,
+        "nearest_support_cosine": 0.7346830368041992
+      },
+      {
+        "query_position": 3,
+        "query_index": 150,
+        "true_label": 0,
+        "pred_label": 1,
+        "correct": false,
+        "distances_to_prototypes": [
+          45.4390983581543,
+          35.285003662109375
+        ],
+        "confidence_abs_diff": 10.154094696044922,
+        "nearest_support_position": 6,
+        "nearest_support_index": 235,
+        "nearest_support_cosine": 0.927609920501709
+      },
+      {
+        "query_position": 4,
+        "query_index": 176,
+        "true_label": 0,
+        "pred_label": 1,
+        "correct": false,
+        "distances_to_prototypes": [
+          41.52021026611328,
+          38.400325775146484
+        ],
+        "confidence_abs_diff": 3.119884490966797,
+        "nearest_support_position": 9,
+        "nearest_support_index": 224,
+        "nearest_support_cosine": 0.658612847328186
+      },
+      {
+        "query_position": 5,
+        "query_index": 239,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          44.34077072143555,
+          36.957637786865234
+        ],
+        "confidence_abs_diff": 7.3831329345703125,
+        "nearest_support_position": 7,
+        "nearest_support_index": 240,
+        "nearest_support_cosine": 0.9570698738098145
+      },
+      {
+        "query_position": 6,
+        "query_index": 230,
+        "true_label": 1,
+        "pred_label": 0,
+        "correct": false,
+        "distances_to_prototypes": [
+          71.09690856933594,
+          73.0007553100586
+        ],
+        "confidence_abs_diff": 1.9038467407226562,
+        "nearest_support_position": 2,
+        "nearest_support_index": 107,
+        "nearest_support_cosine": 0.6038030385971069
+      },
+      {
+        "query_position": 7,
+        "query_index": 29,
+        "true_label": 1,
+        "pred_label": 0,
+        "correct": false,
+        "distances_to_prototypes": [
+          37.922752380371094,
+          43.36404037475586
+        ],
+        "confidence_abs_diff": 5.441287994384766,
+        "nearest_support_position": 5,
+        "nearest_support_index": 11,
+        "nearest_support_cosine": 0.7910088300704956
+      },
+      {
+        "query_position": 8,
+        "query_index": 23,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          74.5025863647461,
+          73.12141418457031
+        ],
+        "confidence_abs_diff": 1.3811721801757812,
+        "nearest_support_position": 5,
+        "nearest_support_index": 11,
+        "nearest_support_cosine": 0.8232357501983643
+      },
+      {
+        "query_position": 9,
+        "query_index": 20,
+        "true_label": 1,
+        "pred_label": 0,
+        "correct": false,
+        "distances_to_prototypes": [
+          32.76736831665039,
+          36.027992248535156
+        ],
+        "confidence_abs_diff": 3.2606239318847656,
+        "nearest_support_position": 8,
+        "nearest_support_index": 83,
+        "nearest_support_cosine": 0.9011003375053406
+      }
+    ]
+  },
+  "checkpoint": "outputs\\core_pipeline\\graphcl_checkpoint.pt"
+}

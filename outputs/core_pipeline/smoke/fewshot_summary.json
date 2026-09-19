@@ -1,0 +1,170 @@
+{
+  "smoke": true,
+  "is_paper_result": false,
+  "note": "Smoke metrics are pipeline checks only.",
+  "seed": 42,
+  "mean_acc": 0.699999988079071,
+  "std_acc": 0.0,
+  "mean_loss": 6.428555965423584,
+  "num_episodes": 1,
+  "split": "ogb_scaffold_test_only",
+  "do_not_use_historical_0_5180": true,
+  "do_not_use_historical_9_of_10_episode": true,
+  "first_episode_prototype_explanation": {
+    "n_query": 10,
+    "accuracy": 0.7,
+    "explanations": [
+      {
+        "query_position": 0,
+        "query_index": 110,
+        "true_label": 0,
+        "pred_label": 1,
+        "correct": false,
+        "distances_to_prototypes": [
+          50.859554290771484,
+          20.093446731567383
+        ],
+        "confidence_abs_diff": 30.7661075592041,
+        "nearest_support_position": 8,
+        "nearest_support_index": 220,
+        "nearest_support_cosine": 0.9930807948112488
+      },
+      {
+        "query_position": 1,
+        "query_index": 124,
+        "true_label": 0,
+        "pred_label": 1,
+        "correct": false,
+        "distances_to_prototypes": [
+          56.946834564208984,
+          33.32982635498047
+        ],
+        "confidence_abs_diff": 23.617008209228516,
+        "nearest_support_position": 1,
+        "nearest_support_index": 147,
+        "nearest_support_cosine": 0.9779422283172607
+      },
+      {
+        "query_position": 2,
+        "query_index": 195,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          17.1362247467041,
+          52.862953186035156
+        ],
+        "confidence_abs_diff": 35.72673034667969,
+        "nearest_support_position": 0,
+        "nearest_support_index": 109,
+        "nearest_support_cosine": 0.9706603288650513
+      },
+      {
+        "query_position": 3,
+        "query_index": 164,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          21.602012634277344,
+          40.61758804321289
+        ],
+        "confidence_abs_diff": 19.015575408935547,
+        "nearest_support_position": 0,
+        "nearest_support_index": 109,
+        "nearest_support_cosine": 0.9836649298667908
+      },
+      {
+        "query_position": 4,
+        "query_index": 202,
+        "true_label": 0,
+        "pred_label": 0,
+        "correct": true,
+        "distances_to_prototypes": [
+          24.89954948425293,
+          63.81173324584961
+        ],
+        "confidence_abs_diff": 38.91218566894531,
+        "nearest_support_position": 8,
+        "nearest_support_index": 220,
+        "nearest_support_cosine": 0.9756995439529419
+      },
+      {
+        "query_position": 5,
+        "query_index": 46,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          106.4650650024414,
+          66.11100769042969
+        ],
+        "confidence_abs_diff": 40.35405731201172,
+        "nearest_support_position": 7,
+        "nearest_support_index": 56,
+        "nearest_support_cosine": 0.9899508357048035
+      },
+      {
+        "query_position": 6,
+        "query_index": 225,
+        "true_label": 1,
+        "pred_label": 0,
+        "correct": false,
+        "distances_to_prototypes": [
+          35.11652755737305,
+          45.0189208984375
+        ],
+        "confidence_abs_diff": 9.902393341064453,
+        "nearest_support_position": 8,
+        "nearest_support_index": 220,
+        "nearest_support_cosine": 0.9427056312561035
+      },
+      {
+        "query_position": 7,
+        "query_index": 44,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          101.59986114501953,
+          59.95500564575195
+        ],
+        "confidence_abs_diff": 41.64485549926758,
+        "nearest_support_position": 7,
+        "nearest_support_index": 56,
+        "nearest_support_cosine": 0.9833096265792847
+      },
+      {
+        "query_position": 8,
+        "query_index": 65,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          96.40406036376953,
+          58.97905731201172
+        ],
+        "confidence_abs_diff": 37.42500305175781,
+        "nearest_support_position": 2,
+        "nearest_support_index": 113,
+        "nearest_support_cosine": 0.9897620677947998
+      },
+      {
+        "query_position": 9,
+        "query_index": 86,
+        "true_label": 1,
+        "pred_label": 1,
+        "correct": true,
+        "distances_to_prototypes": [
+          94.93389892578125,
+          57.101722717285156
+        ],
+        "confidence_abs_diff": 37.832176208496094,
+        "nearest_support_position": 1,
+        "nearest_support_index": 147,
+        "nearest_support_cosine": 0.9787493944168091
+      }
+    ]
+  },
+  "checkpoint": "outputs\\core_pipeline\\smoke\\graphcl_checkpoint.pt"
+}

@@ -1,0 +1,68 @@
+{
+  "pyg_version": "2.7.0",
+  "gnnexplainer_api": "torch_geometric.explain.Explainer + GNNExplainer",
+  "checkpoint": "outputs\\core_pipeline\\graphcl_checkpoint.pt",
+  "succeeded": true,
+  "failure": null,
+  "encoder_config": {
+    "in_dim": 9,
+    "hidden_dim": 128,
+    "num_layers": 5,
+    "dropout": 0.1,
+    "pool_type": "sum"
+  },
+  "checkpoint_loaded": true,
+  "molecule_id": "BACE_118",
+  "dataset_index": 116,
+  "true_label": 0,
+  "predicted_label": 1,
+  "n_nodes_atoms": 34,
+  "n_edges_bonds": 76,
+  "distance_to_class_0_prototype": 77.78750610351562,
+  "distance_to_class_1_prototype": 63.08400344848633,
+  "encoder_forward_ok": true,
+  "prototype_prediction_ok": true,
+  "episode_seed": 7,
+  "query_position": 0,
+  "support_indices": [
+    162,
+    131,
+    173,
+    107,
+    112,
+    46,
+    8,
+    20,
+    93,
+    89
+  ],
+  "explanation_objective": "Prototype-distance logits: logit_c = -||z_query - prototype_c||_2 with prototypes fixed from the episode support set. Matches PrototypicalNetwork (euclidean, temperature=1). Not the projection head. Not a supervised classifier.",
+  "wrapper_matches_protonet": true,
+  "gnnexplainer_succeeded": true,
+  "node_mask_stats": {
+    "n": 34,
+    "mean": 0.41513991355895996,
+    "std": 0.03261922299861908,
+    "min": 0.36168792843818665,
+    "max": 0.49302545189857483,
+    "sum": 14.114757537841797
+  },
+  "edge_mask_stats": {
+    "n": 76,
+    "mean": 0.40703311562538147,
+    "std": 0.0832936018705368,
+    "min": 0.24558091163635254,
+    "max": 0.7065698504447937,
+    "sum": 30.93451690673828
+  },
+  "node_mask_shape": [
+    34,
+    1
+  ],
+  "edge_mask_shape": [
+    76
+  ],
+  "explain_epochs": 40,
+  "figure": "outputs\\core_pipeline\\xai\\gnnexplainer_smoke_test\\masks.png",
+  "graph_visualization": "outputs\\core_pipeline\\xai\\gnnexplainer_smoke_test\\graph.png"
+}

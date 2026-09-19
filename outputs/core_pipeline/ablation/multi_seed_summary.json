@@ -1,0 +1,94 @@
+{
+  "checkpoint": "outputs\\core_pipeline\\graphcl_checkpoint.pt",
+  "checkpoint_modified": false,
+  "graphcl_retrained": false,
+  "pairing_check": {
+    "seed_42_resample_identical": true,
+    "seed_42_vs_43_lists_differ": true,
+    "episodes_compared": 100,
+    "n_episodes_different_42_vs_43": 100
+  },
+  "protocol": {
+    "dataset": "ogbg-molbace",
+    "split": "ogb_scaffold_test_only",
+    "n_way": 2,
+    "k_shot": 5,
+    "q_query": 5,
+    "num_episodes_per_seed": 100,
+    "encoder_frozen": true,
+    "distance": "euclidean"
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "graphcl_mean_accuracy": 0.5970000045746565,
+      "graphcl_std_accuracy": 0.1645934346354272,
+      "no_graphcl_mean_accuracy": 0.6800000018626452,
+      "no_graphcl_std_accuracy": 0.19339079153518118,
+      "difference_graphcl_minus_no_graphcl": -0.08299999728798868,
+      "difference_no_graphcl_minus_graphcl": 0.08299999728798868,
+      "n_episodes_identical_between_conditions": 100
+    },
+    {
+      "seed": 43,
+      "graphcl_mean_accuracy": 0.5910000051558018,
+      "graphcl_std_accuracy": 0.16738876568297484,
+      "no_graphcl_mean_accuracy": 0.6470000021159649,
+      "no_graphcl_std_accuracy": 0.1840950806574022,
+      "difference_graphcl_minus_no_graphcl": -0.05599999696016311,
+      "difference_no_graphcl_minus_graphcl": 0.05599999696016311,
+      "n_episodes_identical_between_conditions": 100
+    },
+    {
+      "seed": 44,
+      "graphcl_mean_accuracy": 0.5760000030696392,
+      "graphcl_std_accuracy": 0.14568458665334832,
+      "no_graphcl_mean_accuracy": 0.6450000040233135,
+      "no_graphcl_std_accuracy": 0.17051392384574332,
+      "difference_graphcl_minus_no_graphcl": -0.06900000095367431,
+      "difference_no_graphcl_minus_graphcl": 0.06900000095367431,
+      "n_episodes_identical_between_conditions": 100
+    },
+    {
+      "seed": 45,
+      "graphcl_mean_accuracy": 0.5910000062733889,
+      "graphcl_std_accuracy": 0.1709356577682433,
+      "no_graphcl_mean_accuracy": 0.6450000037252903,
+      "no_graphcl_std_accuracy": 0.1716828432932291,
+      "difference_graphcl_minus_no_graphcl": -0.05399999745190143,
+      "difference_no_graphcl_minus_graphcl": 0.05399999745190143,
+      "n_episodes_identical_between_conditions": 100
+    },
+    {
+      "seed": 46,
+      "graphcl_mean_accuracy": 0.5870000076293945,
+      "graphcl_std_accuracy": 0.12779279986636735,
+      "no_graphcl_mean_accuracy": 0.6530000028014183,
+      "no_graphcl_std_accuracy": 0.14453718935624635,
+      "difference_graphcl_minus_no_graphcl": -0.06599999517202382,
+      "difference_no_graphcl_minus_graphcl": 0.06599999517202382,
+      "n_episodes_identical_between_conditions": 100
+    }
+  ],
+  "across_seeds": {
+    "n_seeds": 5,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "graphcl_mean_across_seeds": 0.5884000053405762,
+    "graphcl_std_across_seeds": 0.007797436127127611,
+    "no_graphcl_mean_across_seeds": 0.6540000029057265,
+    "no_graphcl_std_across_seeds": 0.014899663772685784,
+    "mean_difference_graphcl_minus_no_graphcl": -0.06559999756515027,
+    "std_difference_graphcl_minus_no_graphcl": 0.011631853095330331,
+    "across_seed_std_is_sample_ddof1": true,
+    "n_seeds_graphcl_higher": 0,
+    "n_seeds_no_graphcl_higher": 5,
+    "n_seeds_tied": 0
+  },
+  "note": "This is a robustness analysis over episode seeds. Do not treat the original single-seed ablation as the only evidence. GraphCL weights are fixed from the completed core checkpoint."
+}
