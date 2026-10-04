@@ -1,0 +1,548 @@
+{
+  "experiment_id": "tox21_phase4f4_baselines",
+  "phase": "4F.4",
+  "created_utc": "2026-10-03T09:58:47+00:00",
+  "description": "Tox21 majority-class baseline and frozen GraphCL GIN + multi-task classification head. Validation metrics only. Missing labels masked. No test metrics.",
+  "software": {
+    "python": "3.13.9",
+    "torch": "2.9.1+cpu",
+    "torch_geometric": "2.7.0",
+    "rdkit": "2025.09.3",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  },
+  "split": {
+    "authoritative": true,
+    "assignments_csv": "data/moleculenet/tox21/tox21_split_assignments_v1.csv",
+    "assignments_csv_sha256": "23bffcdbe629ef1a3b35961288917d8eea57f61904d508f472f5b5654c0629b9",
+    "mapping_fingerprint_sha256": "bffa1dbba4729aadc8bd5e19c052f0982c8b81a64b58e129175fc0d85d463ebd",
+    "source_csv": "data/moleculenet/tox21/tox21.csv",
+    "source_sha256": "7d7e7facd853a63e79ddce4e9c3fcb7a0d83a1c300b603031c0f2c64fbe77761",
+    "n_train": 6264,
+    "n_valid": 783,
+    "n_test": 784,
+    "test_labels_used": false,
+    "split_regenerated": false
+  },
+  "graph_eligibility_policy": {
+    "policy_id": "retain_all_rows_mark_graph_ineligible_v1",
+    "description": "All 7831 source rows remain in the frozen split. Rows with invalid SMILES are graph_ineligible and excluded from embedding/training/scoring, not deleted.",
+    "n_graph_eligible_train": 6259,
+    "n_graph_eligible_valid": 783,
+    "n_graph_ineligible_train": 5,
+    "n_graph_ineligible_valid": 0,
+    "n_graph_ineligible_test_accounted_not_used": 3
+  },
+  "fitting_counts_graph_eligible": {
+    "train": {
+      "NR-AR": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5803,
+        "n_positive": 275,
+        "n_negative": 5528,
+        "n_missing_among_eligible": 456
+      },
+      "NR-AR-LBD": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5421,
+        "n_positive": 203,
+        "n_negative": 5218,
+        "n_missing_among_eligible": 838
+      },
+      "NR-AhR": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5218,
+        "n_positive": 676,
+        "n_negative": 4542,
+        "n_missing_among_eligible": 1041
+      },
+      "NR-Aromatase": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 4639,
+        "n_positive": 253,
+        "n_negative": 4386,
+        "n_missing_among_eligible": 1620
+      },
+      "NR-ER": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 4961,
+        "n_positive": 664,
+        "n_negative": 4297,
+        "n_missing_among_eligible": 1298
+      },
+      "NR-ER-LBD": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5575,
+        "n_positive": 304,
+        "n_negative": 5271,
+        "n_missing_among_eligible": 684
+      },
+      "NR-PPAR-gamma": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5163,
+        "n_positive": 145,
+        "n_negative": 5018,
+        "n_missing_among_eligible": 1096
+      },
+      "SR-ARE": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 4691,
+        "n_positive": 763,
+        "n_negative": 3928,
+        "n_missing_among_eligible": 1568
+      },
+      "SR-ATAD5": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5656,
+        "n_positive": 210,
+        "n_negative": 5446,
+        "n_missing_among_eligible": 603
+      },
+      "SR-HSE": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5201,
+        "n_positive": 292,
+        "n_negative": 4909,
+        "n_missing_among_eligible": 1058
+      },
+      "SR-MMP": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 4668,
+        "n_positive": 792,
+        "n_negative": 3876,
+        "n_missing_among_eligible": 1591
+      },
+      "SR-p53": {
+        "n_graph_eligible": 6259,
+        "n_labeled": 5411,
+        "n_positive": 333,
+        "n_negative": 5078,
+        "n_missing_among_eligible": 848
+      }
+    },
+    "valid": {
+      "NR-AR": {
+        "n_graph_eligible": 783,
+        "n_labeled": 731,
+        "n_positive": 17,
+        "n_negative": 714,
+        "n_missing_among_eligible": 52
+      },
+      "NR-AR-LBD": {
+        "n_graph_eligible": 783,
+        "n_labeled": 674,
+        "n_positive": 23,
+        "n_negative": 651,
+        "n_missing_among_eligible": 109
+      },
+      "NR-AhR": {
+        "n_graph_eligible": 783,
+        "n_labeled": 651,
+        "n_positive": 44,
+        "n_negative": 607,
+        "n_missing_among_eligible": 132
+      },
+      "NR-Aromatase": {
+        "n_graph_eligible": 783,
+        "n_labeled": 580,
+        "n_positive": 26,
+        "n_negative": 554,
+        "n_missing_among_eligible": 203
+      },
+      "NR-ER": {
+        "n_graph_eligible": 783,
+        "n_labeled": 606,
+        "n_positive": 59,
+        "n_negative": 547,
+        "n_missing_among_eligible": 177
+      },
+      "NR-ER-LBD": {
+        "n_graph_eligible": 783,
+        "n_labeled": 677,
+        "n_positive": 19,
+        "n_negative": 658,
+        "n_missing_among_eligible": 106
+      },
+      "NR-PPAR-gamma": {
+        "n_graph_eligible": 783,
+        "n_labeled": 649,
+        "n_positive": 19,
+        "n_negative": 630,
+        "n_missing_among_eligible": 134
+      },
+      "SR-ARE": {
+        "n_graph_eligible": 783,
+        "n_labeled": 579,
+        "n_positive": 90,
+        "n_negative": 489,
+        "n_missing_among_eligible": 204
+      },
+      "SR-ATAD5": {
+        "n_graph_eligible": 783,
+        "n_labeled": 700,
+        "n_positive": 32,
+        "n_negative": 668,
+        "n_missing_among_eligible": 83
+      },
+      "SR-HSE": {
+        "n_graph_eligible": 783,
+        "n_labeled": 637,
+        "n_positive": 44,
+        "n_negative": 593,
+        "n_missing_among_eligible": 146
+      },
+      "SR-MMP": {
+        "n_graph_eligible": 783,
+        "n_labeled": 554,
+        "n_positive": 58,
+        "n_negative": 496,
+        "n_missing_among_eligible": 229
+      },
+      "SR-p53": {
+        "n_graph_eligible": 783,
+        "n_labeled": 672,
+        "n_positive": 45,
+        "n_negative": 627,
+        "n_missing_among_eligible": 111
+      }
+    }
+  },
+  "encoder": {
+    "checkpoint_path": "outputs/core_pipeline/graphcl_checkpoint.pt",
+    "checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "load_api": "apps.mol_cli.checkpoint_smoke.load_encoder_from_research_checkpoint (weights_only=True)",
+    "architecture": {
+      "in_dim": 9,
+      "hidden_dim": 128,
+      "num_layers": 5,
+      "dropout": 0.1,
+      "pool_type": "sum"
+    },
+    "n_parameters": 184197,
+    "embedding_dim": 128,
+    "frozen": true,
+    "fine_tuned": false,
+    "eval_mode_during_embedding": true,
+    "edge_attr_in_pyg_graphs": true,
+    "edge_attr_used_by_gin_forward": false,
+    "embedding_recompute_max_abs_diff": 0.0,
+    "graph_conversion": "apps.mol_cli.ogb_graph.smiles_to_pyg_data",
+    "expected_node_feat_dim": 9,
+    "expected_edge_feat_dim": 3
+  },
+  "majority_class_baseline": {
+    "fit_on": "train_graph_eligible_labeled_per_task",
+    "evaluate_on": "valid_graph_eligible_labeled_per_task",
+    "per_task_majority_class": {
+      "NR-AR": 0,
+      "NR-AR-LBD": 0,
+      "NR-AhR": 0,
+      "NR-Aromatase": 0,
+      "NR-ER": 0,
+      "NR-ER-LBD": 0,
+      "NR-PPAR-gamma": 0,
+      "SR-ARE": 0,
+      "SR-ATAD5": 0,
+      "SR-HSE": 0,
+      "SR-MMP": 0,
+      "SR-p53": 0
+    },
+    "per_task_validation": {
+      "NR-AR": {
+        "n_labeled": 731,
+        "n_positive": 17,
+        "n_negative": 714,
+        "positive_prevalence": 0.023255813953488372,
+        "accuracy": 0.9767441860465116,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-AR-LBD": {
+        "n_labeled": 674,
+        "n_positive": 23,
+        "n_negative": 651,
+        "positive_prevalence": 0.03412462908011869,
+        "accuracy": 0.9658753709198813,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-AhR": {
+        "n_labeled": 651,
+        "n_positive": 44,
+        "n_negative": 607,
+        "positive_prevalence": 0.06758832565284179,
+        "accuracy": 0.9324116743471582,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-Aromatase": {
+        "n_labeled": 580,
+        "n_positive": 26,
+        "n_negative": 554,
+        "positive_prevalence": 0.04482758620689655,
+        "accuracy": 0.9551724137931035,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-ER": {
+        "n_labeled": 606,
+        "n_positive": 59,
+        "n_negative": 547,
+        "positive_prevalence": 0.09735973597359736,
+        "accuracy": 0.9026402640264026,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-ER-LBD": {
+        "n_labeled": 677,
+        "n_positive": 19,
+        "n_negative": 658,
+        "positive_prevalence": 0.028064992614475627,
+        "accuracy": 0.9719350073855244,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "NR-PPAR-gamma": {
+        "n_labeled": 649,
+        "n_positive": 19,
+        "n_negative": 630,
+        "positive_prevalence": 0.029275808936825885,
+        "accuracy": 0.9707241910631741,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "SR-ARE": {
+        "n_labeled": 579,
+        "n_positive": 90,
+        "n_negative": 489,
+        "positive_prevalence": 0.15544041450777202,
+        "accuracy": 0.844559585492228,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "SR-ATAD5": {
+        "n_labeled": 700,
+        "n_positive": 32,
+        "n_negative": 668,
+        "positive_prevalence": 0.045714285714285714,
+        "accuracy": 0.9542857142857143,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "SR-HSE": {
+        "n_labeled": 637,
+        "n_positive": 44,
+        "n_negative": 593,
+        "positive_prevalence": 0.06907378335949764,
+        "accuracy": 0.9309262166405023,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "SR-MMP": {
+        "n_labeled": 554,
+        "n_positive": 58,
+        "n_negative": 496,
+        "positive_prevalence": 0.10469314079422383,
+        "accuracy": 0.8953068592057761,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      },
+      "SR-p53": {
+        "n_labeled": 672,
+        "n_positive": 45,
+        "n_negative": 627,
+        "positive_prevalence": 0.06696428571428571,
+        "accuracy": 0.9330357142857143,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority",
+        "note": "Constant-score ROC-AUC is undefined; AP not used as a majority ranking score (prevalence reported)."
+      }
+    },
+    "macro_accuracy": 0.9361347664576408,
+    "note": "ROC-AUC for constant/hard majority predictor is null (undefined)."
+  },
+  "frozen_gin_multitask": {
+    "head_architecture": "Linear(128,64) -> ReLU -> Dropout(0.1) -> Linear(64,12)",
+    "checkpoint_path": "outputs/tox21/phase4f4_baselines/classification_head.pt",
+    "training": {
+      "seed": 42,
+      "device": "cpu",
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "max_epochs": 100,
+      "loss": "masked BCEWithLogitsLoss (missing excluded)",
+      "pos_weight": null,
+      "early_stopping": {
+        "metric": "validation macro ROC-AUC over defined tasks",
+        "mode": "max",
+        "patience": 15,
+        "predeclared": true
+      },
+      "best_epoch": 74,
+      "epochs_ran": 89,
+      "stopped_early": true
+    },
+    "evaluation": {
+      "partition": "valid",
+      "graph_eligible_only": true,
+      "missing_labels_masked": true,
+      "test_metrics_reported": false,
+      "per_task": {
+        "NR-AR": {
+          "n_labeled": 731,
+          "n_positive": 17,
+          "n_negative": 714,
+          "roc_auc": 0.6245674740484429,
+          "average_precision": 0.1816196871041426,
+          "accuracy_at_0": 0.9740082079343365,
+          "undefined_reason": null
+        },
+        "NR-AR-LBD": {
+          "n_labeled": 674,
+          "n_positive": 23,
+          "n_negative": 651,
+          "roc_auc": 0.8092566619915847,
+          "average_precision": 0.3399728563007998,
+          "accuracy_at_0": 0.9673590504451038,
+          "undefined_reason": null
+        },
+        "NR-AhR": {
+          "n_labeled": 651,
+          "n_positive": 44,
+          "n_negative": 607,
+          "roc_auc": 0.8797738505316758,
+          "average_precision": 0.36955701736550395,
+          "accuracy_at_0": 0.9216589861751152,
+          "undefined_reason": null
+        },
+        "NR-Aromatase": {
+          "n_labeled": 580,
+          "n_positive": 26,
+          "n_negative": 554,
+          "roc_auc": 0.781380172174396,
+          "average_precision": 0.2270816950874086,
+          "accuracy_at_0": 0.9431034482758621,
+          "undefined_reason": null
+        },
+        "NR-ER": {
+          "n_labeled": 606,
+          "n_positive": 59,
+          "n_negative": 547,
+          "roc_auc": 0.6449044092585134,
+          "average_precision": 0.1851340423784653,
+          "accuracy_at_0": 0.8877887788778878,
+          "undefined_reason": null
+        },
+        "NR-ER-LBD": {
+          "n_labeled": 677,
+          "n_positive": 19,
+          "n_negative": 658,
+          "roc_auc": 0.777075667893137,
+          "average_precision": 0.10074087365838891,
+          "accuracy_at_0": 0.9645494830132939,
+          "undefined_reason": null
+        },
+        "NR-PPAR-gamma": {
+          "n_labeled": 649,
+          "n_positive": 19,
+          "n_negative": 630,
+          "roc_auc": 0.8670843776106933,
+          "average_precision": 0.49637323928699806,
+          "accuracy_at_0": 0.975346687211094,
+          "undefined_reason": null
+        },
+        "SR-ARE": {
+          "n_labeled": 579,
+          "n_positive": 90,
+          "n_negative": 489,
+          "roc_auc": 0.7652578959327424,
+          "average_precision": 0.43979672832004935,
+          "accuracy_at_0": 0.8549222797927462,
+          "undefined_reason": null
+        },
+        "SR-ATAD5": {
+          "n_labeled": 700,
+          "n_positive": 32,
+          "n_negative": 668,
+          "roc_auc": 0.7300243263473053,
+          "average_precision": 0.1892983815447742,
+          "accuracy_at_0": 0.9557142857142857,
+          "undefined_reason": null
+        },
+        "SR-HSE": {
+          "n_labeled": 637,
+          "n_positive": 44,
+          "n_negative": 593,
+          "roc_auc": 0.7186877203740609,
+          "average_precision": 0.2855723311238664,
+          "accuracy_at_0": 0.9293563579277865,
+          "undefined_reason": null
+        },
+        "SR-MMP": {
+          "n_labeled": 554,
+          "n_positive": 58,
+          "n_negative": 496,
+          "roc_auc": 0.8564029477196885,
+          "average_precision": 0.5344392731113174,
+          "accuracy_at_0": 0.9205776173285198,
+          "undefined_reason": null
+        },
+        "SR-p53": {
+          "n_labeled": 672,
+          "n_positive": 45,
+          "n_negative": 627,
+          "roc_auc": 0.7705121389331916,
+          "average_precision": 0.23134157395583851,
+          "accuracy_at_0": 0.9285714285714286,
+          "undefined_reason": null
+        }
+      },
+      "macro": {
+        "roc_auc": 0.7687439702346194,
+        "average_precision": 0.2984106416031294,
+        "n_tasks_defined_roc_auc": 12,
+        "n_tasks_defined_ap": 12
+      }
+    }
+  },
+  "comparison": {
+    "same_validation_rows_graph_eligible": true,
+    "majority_macro_accuracy": 0.9361347664576408,
+    "frozen_gin_macro_roc_auc": 0.7687439702346194,
+    "frozen_gin_macro_ap": 0.2984106416031294
+  },
+  "reproducibility_check": {
+    "embedding_recompute_max_abs_diff": 0.0,
+    "encoder_remained_frozen": true,
+    "evaluate_script": "outputs/tox21/phase4f4_baselines/evaluate_tox21_baselines.py"
+  },
+  "no_encoder_checkpoint_modified": true,
+  "no_cli_changes": true,
+  "no_split_modifications": true,
+  "no_test_metrics": true
+}

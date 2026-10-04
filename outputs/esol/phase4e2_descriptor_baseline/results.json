@@ -1,0 +1,262 @@
+{
+  "experiment_id": "esol_phase4e2_descriptor_baseline",
+  "phase": "4E.2",
+  "created_utc": "2026-10-03T09:12:47+00:00",
+  "description": "RDKit 2D molecular descriptor regression baseline: StandardScaler + Ridge fitted on TRAIN only; evaluated on VALIDATION. Compared to Phase 4E.1 train-mean baseline.",
+  "target_column": "measured log solubility in mols per litre",
+  "forbidden_target_column": "ESOL predicted log solubility in mols per litre",
+  "software": {
+    "rdkit_version": "2025.09.3",
+    "sklearn_version": "1.8.0",
+    "numpy_version": "2.3.5",
+    "python": "3.13.9"
+  },
+  "split": {
+    "authoritative": true,
+    "assignments_csv": "data/moleculenet/esol/esol_split_assignments_v1.csv",
+    "assignments_csv_sha256": "3a7946d83f7db28341b1364d9ee72f3e8eddc939e63053dda9113afb05c0facc",
+    "mapping_fingerprint_sha256": "90f827da4c8622a85408b461b0e028a4cc882439c01c54d06d5bc08db92602ac",
+    "source_csv": "data/moleculenet/esol/delaney-processed.csv",
+    "source_sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
+    "n_train": 903,
+    "n_valid": 113,
+    "n_test": 112,
+    "test_labels_used": false,
+    "split_regenerated": false
+  },
+  "descriptors": {
+    "names": [
+      "MolWt",
+      "ExactMolWt",
+      "HeavyAtomCount",
+      "NumHDonors",
+      "NumHAcceptors",
+      "NumRotatableBonds",
+      "RingCount",
+      "NumAromaticRings",
+      "NumAliphaticRings",
+      "NumSaturatedRings",
+      "NumHeteroatoms",
+      "MolLogP",
+      "TPSA",
+      "LabuteASA",
+      "FractionCSP3",
+      "BertzCT",
+      "Chi0v",
+      "Chi1v",
+      "Chi0n",
+      "Chi1n",
+      "Kappa1",
+      "Kappa2",
+      "HallKierAlpha",
+      "NumValenceElectrons"
+    ],
+    "n_features": 24,
+    "source": "rdkit.Chem.Descriptors",
+    "nonfinite_policy": "fail loudly; no silent row drops",
+    "rows_with_nonfinite_descriptors": 0
+  },
+  "model": {
+    "algorithm": "sklearn.pipeline.Pipeline(StandardScaler, Ridge)",
+    "justification": "Ridge with standardized descriptors is a simple, largely deterministic linear baseline suitable for ~900 training molecules; avoids heavy hyperparameter search and the extra variance of deep random forests on a small scaffold-split set.",
+    "parameters": {
+      "StandardScaler": {
+        "with_mean": true,
+        "with_std": true
+      },
+      "Ridge": {
+        "alpha": 1.0,
+        "random_state": 42,
+        "fit_intercept": true
+      }
+    },
+    "random_seed": 42,
+    "hyperparameter_search": false,
+    "scaler_fitted_on": "train_only",
+    "model_fitted_on": "train_only",
+    "n_features": 24,
+    "intercept_in_scaled_space": -3.1296666666666617,
+    "coefficients_in_scaled_space": [
+      {
+        "descriptor": "MolWt",
+        "coefficient": -0.09750466309572949
+      },
+      {
+        "descriptor": "ExactMolWt",
+        "coefficient": -0.17821493315247292
+      },
+      {
+        "descriptor": "HeavyAtomCount",
+        "coefficient": 0.13936093209772532
+      },
+      {
+        "descriptor": "NumHDonors",
+        "coefficient": -0.13567098757654616
+      },
+      {
+        "descriptor": "NumHAcceptors",
+        "coefficient": 0.5741564301072716
+      },
+      {
+        "descriptor": "NumRotatableBonds",
+        "coefficient": -0.09003761124252312
+      },
+      {
+        "descriptor": "RingCount",
+        "coefficient": -0.01702290891324887
+      },
+      {
+        "descriptor": "NumAromaticRings",
+        "coefficient": -0.10031564458884046
+      },
+      {
+        "descriptor": "NumAliphaticRings",
+        "coefficient": 0.06864745444941407
+      },
+      {
+        "descriptor": "NumSaturatedRings",
+        "coefficient": 0.06177724140714297
+      },
+      {
+        "descriptor": "NumHeteroatoms",
+        "coefficient": -0.8398804481549819
+      },
+      {
+        "descriptor": "MolLogP",
+        "coefficient": -1.3849743913136023
+      },
+      {
+        "descriptor": "TPSA",
+        "coefficient": -0.27550118544205593
+      },
+      {
+        "descriptor": "LabuteASA",
+        "coefficient": -0.5116173814860684
+      },
+      {
+        "descriptor": "FractionCSP3",
+        "coefficient": -0.17861823788423267
+      },
+      {
+        "descriptor": "BertzCT",
+        "coefficient": -0.3197373496038715
+      },
+      {
+        "descriptor": "Chi0v",
+        "coefficient": -0.49869636921814764
+      },
+      {
+        "descriptor": "Chi1v",
+        "coefficient": -0.0923284760639417
+      },
+      {
+        "descriptor": "Chi0n",
+        "coefficient": 0.18641376308727486
+      },
+      {
+        "descriptor": "Chi1n",
+        "coefficient": -1.6822516898456394
+      },
+      {
+        "descriptor": "Kappa1",
+        "coefficient": 0.8682768345043241
+      },
+      {
+        "descriptor": "Kappa2",
+        "coefficient": -0.21511590556220125
+      },
+      {
+        "descriptor": "HallKierAlpha",
+        "coefficient": 0.08573131131654302
+      },
+      {
+        "descriptor": "NumValenceElectrons",
+        "coefficient": 2.017468063900317
+      }
+    ],
+    "scaler_mean_train": [
+      208.9461871539313,
+      208.44293951461142,
+      13.63344407530454,
+      0.7153931339977851,
+      2.161683277962348,
+      2.078626799557032,
+      1.451827242524917,
+      0.9988925802879292,
+      0.4529346622369878,
+      0.3133997785160576,
+      3.5094130675526025,
+      2.495654174972314,
+      36.220431893687646,
+      85.29365433931487,
+      0.3924307233898757,
+      333.4151632741844,
+      8.626953346279757,
+      4.953896399699003,
+      7.877357677843867,
+      4.4249368106757085,
+      10.129519559523983,
+      4.286251002912253,
+      -0.9907530454042061,
+      73.52159468438538
+    ],
+    "scaler_scale_train": [
+      99.64965116226553,
+      99.31325748132497,
+      6.598572783445973,
+      1.039558661060912,
+      2.1005705709657527,
+      2.487491965012915,
+      1.2134601711583497,
+      0.9216234007337011,
+      1.0458745211560607,
+      0.8394402123304936,
+      2.736422232085999,
+      1.7975155563112422,
+      34.63160624628528,
+      38.95971975576643,
+      0.3556210033822781,
+      253.74015446936127,
+      3.9295480396836995,
+      2.5307614907632017,
+      3.775105247957224,
+      2.348886959533712,
+      4.844761167396623,
+      2.3037934060679897,
+      0.9606167776478174,
+      35.0278694437309
+    ]
+  },
+  "evaluation": {
+    "partition": "valid",
+    "scale": "original measured log solubility in mols per litre",
+    "metrics": {
+      "mae": 0.9651574598081615,
+      "rmse": 1.2866343806975804,
+      "r2_supplementary": 0.6921038518239173
+    },
+    "test_metrics_reported": false
+  },
+  "comparison_to_phase4e1_mean_baseline": {
+    "phase4e1_results_path": "outputs/esol/phase4e1_mean_baseline/results.json",
+    "same_validation_rows": true,
+    "mean_baseline_mae": 1.8863687315634217,
+    "mean_baseline_rmse": 2.3202618187547905,
+    "mean_baseline_r2_supplementary": -0.0013085822353893217,
+    "descriptor_mae": 0.9651574598081615,
+    "descriptor_rmse": 1.2866343806975804,
+    "descriptor_r2_supplementary": 0.6921038518239173,
+    "mae_improvement_vs_mean": 0.9212112717552602,
+    "rmse_improvement_vs_mean": 1.0336274380572101,
+    "better_mae_than_mean_baseline": true,
+    "better_rmse_than_mean_baseline": true
+  },
+  "reproducibility_check": {
+    "refit_mae": 0.9651574598081615,
+    "refit_rmse": 1.2866343806975804,
+    "matches": true
+  },
+  "no_gin_model": true,
+  "no_cli_changes": true,
+  "no_split_modifications": true
+}

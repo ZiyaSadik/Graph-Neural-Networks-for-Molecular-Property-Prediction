@@ -1,0 +1,2566 @@
+{
+  "report_id": "bace_fixed_support_eval_v1",
+  "created_utc": "2026-09-30T17:46:03+00:00",
+  "protocol": "Fixed K=5-per-class support from official OGB scaffold train only (manifest bace_train_k5_v1, seed 42). Prototypes = mean GraphCL GIN embeddings per original label 0/1. Query prediction = argmin Euclidean distance to prototypes. Validation and test are scored separately; neither is used for support or prototype construction. Distances are not calibrated probabilities. This protocol is not interchangeable with the research paper's test-episode ProtoNet evaluation.",
+  "checkpoint_path": "outputs\\core_pipeline\\graphcl_checkpoint.pt",
+  "checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+  "support_manifest_id": "bace_train_k5_v1",
+  "support_manifest_path": "apps\\mol_cli\\support_manifests\\bace_train_k5_v1.json",
+  "support_manifest_sha256": "fd67a2fe9971e591f1a816ce0d139f28abf739b769d930217d83785750d7d9d5",
+  "support_seed": 42,
+  "support_dataset_indices": [
+    182,
+    897,
+    1033,
+    1064,
+    1437,
+    223,
+    260,
+    316,
+    621,
+    659
+  ],
+  "label_semantics": {
+    "0": "inactive",
+    "1": "active"
+  },
+  "prediction_rule": "argmin Euclidean distance to class prototypes; calibrated_probability=false",
+  "auroc_score_definition": "distance_to_class_0 - distance_to_class_1",
+  "not_interchangeable_with": "Research paper test-episode ProtoNet accuracy (episodes sampled from test pool only).",
+  "validation": {
+    "split": "valid",
+    "n_official": 151,
+    "n_evaluated": 151,
+    "class_counts_true": {
+      "0": 21,
+      "1": 130
+    },
+    "metrics": {
+      "n_evaluated": 151,
+      "n_true_class_0": 21,
+      "n_true_class_1": 130,
+      "accuracy": 0.4503311258278146,
+      "balanced_accuracy": 0.6408424908424908,
+      "sensitivity_class_1": 0.3769230769230769,
+      "specificity_class_0": 0.9047619047619048,
+      "auroc": 0.6384615384615384,
+      "auroc_undefined_reason": null,
+      "confusion_matrix": {
+        "class_order": [
+          0,
+          1
+        ],
+        "class_names": [
+          "inactive",
+          "active"
+        ],
+        "matrix": [
+          [
+            19,
+            2
+          ],
+          [
+            81,
+            49
+          ]
+        ],
+        "tn": 19,
+        "fp": 2,
+        "fn": 81,
+        "tp": 49
+      },
+      "metric_notes": {
+        "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+        "sensitivity": "TP/(TP+FN) for class 1 (active)",
+        "specificity": "TN/(TN+FP) for class 0 (inactive)",
+        "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+        "calibrated_probability": false
+      }
+    },
+    "predictions": [
+      {
+        "dataset_index": 241,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.33818054199219,
+        "distance_to_class_1": 47.141597747802734,
+        "score_class_1_d0_minus_d1": -10.803417205810547
+      },
+      {
+        "dataset_index": 244,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 28.223949432373047,
+        "distance_to_class_1": 43.66885757446289,
+        "score_class_1_d0_minus_d1": -15.444908142089844
+      },
+      {
+        "dataset_index": 254,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 70.2435302734375,
+        "distance_to_class_1": 78.59747314453125,
+        "score_class_1_d0_minus_d1": -8.35394287109375
+      },
+      {
+        "dataset_index": 255,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 34.82793426513672,
+        "distance_to_class_1": 31.491737365722656,
+        "score_class_1_d0_minus_d1": 3.3361968994140625
+      },
+      {
+        "dataset_index": 256,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 34.68914031982422,
+        "distance_to_class_1": 31.373106002807617,
+        "score_class_1_d0_minus_d1": 3.3160343170166016
+      },
+      {
+        "dataset_index": 261,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 49.21254348754883,
+        "distance_to_class_1": 53.36598205566406,
+        "score_class_1_d0_minus_d1": -4.153438568115234
+      },
+      {
+        "dataset_index": 269,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 29.67530059814453,
+        "distance_to_class_1": 39.766231536865234,
+        "score_class_1_d0_minus_d1": -10.090930938720703
+      },
+      {
+        "dataset_index": 271,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 71.15962982177734,
+        "distance_to_class_1": 81.54383087158203,
+        "score_class_1_d0_minus_d1": -10.384201049804688
+      },
+      {
+        "dataset_index": 274,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 33.03803253173828,
+        "distance_to_class_1": 31.42868423461914,
+        "score_class_1_d0_minus_d1": 1.6093482971191406
+      },
+      {
+        "dataset_index": 275,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 32.78749084472656,
+        "distance_to_class_1": 31.809602737426758,
+        "score_class_1_d0_minus_d1": 0.9778881072998047
+      },
+      {
+        "dataset_index": 277,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 54.89418029785156,
+        "distance_to_class_1": 63.17561721801758,
+        "score_class_1_d0_minus_d1": -8.281436920166016
+      },
+      {
+        "dataset_index": 286,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 58.47821807861328,
+        "distance_to_class_1": 63.02857971191406,
+        "score_class_1_d0_minus_d1": -4.550361633300781
+      },
+      {
+        "dataset_index": 295,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 47.117244720458984,
+        "distance_to_class_1": 41.29055404663086,
+        "score_class_1_d0_minus_d1": 5.826690673828125
+      },
+      {
+        "dataset_index": 302,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.61368179321289,
+        "distance_to_class_1": 37.95230484008789,
+        "score_class_1_d0_minus_d1": -3.338623046875
+      },
+      {
+        "dataset_index": 304,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 40.72924041748047,
+        "distance_to_class_1": 46.20391082763672,
+        "score_class_1_d0_minus_d1": -5.47467041015625
+      },
+      {
+        "dataset_index": 308,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 35.53926467895508,
+        "distance_to_class_1": 34.836822509765625,
+        "score_class_1_d0_minus_d1": 0.7024421691894531
+      },
+      {
+        "dataset_index": 314,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 32.78266143798828,
+        "distance_to_class_1": 31.547565460205078,
+        "score_class_1_d0_minus_d1": 1.2350959777832031
+      },
+      {
+        "dataset_index": 315,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.462921142578125,
+        "distance_to_class_1": 69.24061584472656,
+        "score_class_1_d0_minus_d1": -9.777694702148438
+      },
+      {
+        "dataset_index": 318,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 45.00120544433594,
+        "distance_to_class_1": 38.6575813293457,
+        "score_class_1_d0_minus_d1": 6.343624114990234
+      },
+      {
+        "dataset_index": 321,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 97.45494079589844,
+        "distance_to_class_1": 97.38227081298828,
+        "score_class_1_d0_minus_d1": 0.07266998291015625
+      },
+      {
+        "dataset_index": 323,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 61.38860321044922,
+        "distance_to_class_1": 72.69488525390625,
+        "score_class_1_d0_minus_d1": -11.306282043457031
+      },
+      {
+        "dataset_index": 326,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.72947311401367,
+        "distance_to_class_1": 47.57157516479492,
+        "score_class_1_d0_minus_d1": -5.84210205078125
+      },
+      {
+        "dataset_index": 330,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 35.61193084716797,
+        "distance_to_class_1": 34.8841438293457,
+        "score_class_1_d0_minus_d1": 0.7277870178222656
+      },
+      {
+        "dataset_index": 333,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 36.41212463378906,
+        "distance_to_class_1": 30.58236312866211,
+        "score_class_1_d0_minus_d1": 5.829761505126953
+      },
+      {
+        "dataset_index": 334,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 93.0405502319336,
+        "distance_to_class_1": 90.2293930053711,
+        "score_class_1_d0_minus_d1": 2.8111572265625
+      },
+      {
+        "dataset_index": 338,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 53.654319763183594,
+        "distance_to_class_1": 58.41355514526367,
+        "score_class_1_d0_minus_d1": -4.759235382080078
+      },
+      {
+        "dataset_index": 339,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.31471252441406,
+        "distance_to_class_1": 46.199668884277344,
+        "score_class_1_d0_minus_d1": 3.1150436401367188
+      },
+      {
+        "dataset_index": 341,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 31.256214141845703,
+        "distance_to_class_1": 30.65896224975586,
+        "score_class_1_d0_minus_d1": 0.5972518920898438
+      },
+      {
+        "dataset_index": 351,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 24.947553634643555,
+        "distance_to_class_1": 24.5596981048584,
+        "score_class_1_d0_minus_d1": 0.38785552978515625
+      },
+      {
+        "dataset_index": 352,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 42.375816345214844,
+        "distance_to_class_1": 28.542478561401367,
+        "score_class_1_d0_minus_d1": 13.833337783813477
+      },
+      {
+        "dataset_index": 354,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.19894790649414,
+        "distance_to_class_1": 41.6712532043457,
+        "score_class_1_d0_minus_d1": -5.4723052978515625
+      },
+      {
+        "dataset_index": 357,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 45.13823699951172,
+        "distance_to_class_1": 51.100852966308594,
+        "score_class_1_d0_minus_d1": -5.962615966796875
+      },
+      {
+        "dataset_index": 358,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 34.680335998535156,
+        "distance_to_class_1": 33.32959747314453,
+        "score_class_1_d0_minus_d1": 1.350738525390625
+      },
+      {
+        "dataset_index": 360,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 35.370819091796875,
+        "distance_to_class_1": 34.375579833984375,
+        "score_class_1_d0_minus_d1": 0.9952392578125
+      },
+      {
+        "dataset_index": 361,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 56.81131362915039,
+        "distance_to_class_1": 65.34965515136719,
+        "score_class_1_d0_minus_d1": -8.538341522216797
+      },
+      {
+        "dataset_index": 369,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.73401641845703,
+        "distance_to_class_1": 52.05604553222656,
+        "score_class_1_d0_minus_d1": -9.322029113769531
+      },
+      {
+        "dataset_index": 381,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.030160903930664,
+        "distance_to_class_1": 39.1920166015625,
+        "score_class_1_d0_minus_d1": -12.161855697631836
+      },
+      {
+        "dataset_index": 396,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 28.826560974121094,
+        "distance_to_class_1": 27.947040557861328,
+        "score_class_1_d0_minus_d1": 0.8795204162597656
+      },
+      {
+        "dataset_index": 397,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 39.49640655517578,
+        "distance_to_class_1": 46.94872283935547,
+        "score_class_1_d0_minus_d1": -7.4523162841796875
+      },
+      {
+        "dataset_index": 400,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 45.594093322753906,
+        "distance_to_class_1": 32.52544021606445,
+        "score_class_1_d0_minus_d1": 13.068653106689453
+      },
+      {
+        "dataset_index": 404,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 24.906801223754883,
+        "distance_to_class_1": 42.32222366333008,
+        "score_class_1_d0_minus_d1": -17.415422439575195
+      },
+      {
+        "dataset_index": 408,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 37.98822784423828,
+        "distance_to_class_1": 47.69106674194336,
+        "score_class_1_d0_minus_d1": -9.702838897705078
+      },
+      {
+        "dataset_index": 409,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 52.63908767700195,
+        "distance_to_class_1": 43.132415771484375,
+        "score_class_1_d0_minus_d1": 9.506671905517578
+      },
+      {
+        "dataset_index": 416,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.00832748413086,
+        "distance_to_class_1": 35.42055892944336,
+        "score_class_1_d0_minus_d1": -0.4122314453125
+      },
+      {
+        "dataset_index": 420,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 25.64125633239746,
+        "distance_to_class_1": 43.53756332397461,
+        "score_class_1_d0_minus_d1": -17.89630699157715
+      },
+      {
+        "dataset_index": 423,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.4832763671875,
+        "distance_to_class_1": 40.58772277832031,
+        "score_class_1_d0_minus_d1": 8.895553588867188
+      },
+      {
+        "dataset_index": 428,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.41956329345703,
+        "distance_to_class_1": 49.736183166503906,
+        "score_class_1_d0_minus_d1": -15.316619873046875
+      },
+      {
+        "dataset_index": 443,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.81391906738281,
+        "distance_to_class_1": 43.425167083740234,
+        "score_class_1_d0_minus_d1": -4.611248016357422
+      },
+      {
+        "dataset_index": 444,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 24.098026275634766,
+        "distance_to_class_1": 23.162128448486328,
+        "score_class_1_d0_minus_d1": 0.9358978271484375
+      },
+      {
+        "dataset_index": 446,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.902259826660156,
+        "distance_to_class_1": 48.35886001586914,
+        "score_class_1_d0_minus_d1": -6.456600189208984
+      },
+      {
+        "dataset_index": 450,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 40.267887115478516,
+        "distance_to_class_1": 37.84319305419922,
+        "score_class_1_d0_minus_d1": 2.424694061279297
+      },
+      {
+        "dataset_index": 451,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 46.757476806640625,
+        "distance_to_class_1": 43.91471862792969,
+        "score_class_1_d0_minus_d1": 2.8427581787109375
+      },
+      {
+        "dataset_index": 453,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 63.67750930786133,
+        "distance_to_class_1": 71.52129364013672,
+        "score_class_1_d0_minus_d1": -7.843784332275391
+      },
+      {
+        "dataset_index": 457,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 51.9601936340332,
+        "distance_to_class_1": 48.012664794921875,
+        "score_class_1_d0_minus_d1": 3.947528839111328
+      },
+      {
+        "dataset_index": 463,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 60.150753021240234,
+        "distance_to_class_1": 67.49374389648438,
+        "score_class_1_d0_minus_d1": -7.342990875244141
+      },
+      {
+        "dataset_index": 466,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 36.55366516113281,
+        "distance_to_class_1": 30.18494987487793,
+        "score_class_1_d0_minus_d1": 6.368715286254883
+      },
+      {
+        "dataset_index": 468,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 50.45791244506836,
+        "distance_to_class_1": 59.86946105957031,
+        "score_class_1_d0_minus_d1": -9.411548614501953
+      },
+      {
+        "dataset_index": 477,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 44.95349884033203,
+        "distance_to_class_1": 54.81813049316406,
+        "score_class_1_d0_minus_d1": -9.864631652832031
+      },
+      {
+        "dataset_index": 481,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 30.603336334228516,
+        "distance_to_class_1": 36.31993865966797,
+        "score_class_1_d0_minus_d1": -5.716602325439453
+      },
+      {
+        "dataset_index": 484,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 40.605533599853516,
+        "distance_to_class_1": 55.951026916503906,
+        "score_class_1_d0_minus_d1": -15.34549331665039
+      },
+      {
+        "dataset_index": 488,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.76820373535156,
+        "distance_to_class_1": 54.12735366821289,
+        "score_class_1_d0_minus_d1": -15.359149932861328
+      },
+      {
+        "dataset_index": 489,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 70.2872314453125,
+        "distance_to_class_1": 75.30786895751953,
+        "score_class_1_d0_minus_d1": -5.020637512207031
+      },
+      {
+        "dataset_index": 490,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.651161193847656,
+        "distance_to_class_1": 40.68891143798828,
+        "score_class_1_d0_minus_d1": 8.962249755859375
+      },
+      {
+        "dataset_index": 492,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 51.60151672363281,
+        "distance_to_class_1": 47.678321838378906,
+        "score_class_1_d0_minus_d1": 3.9231948852539062
+      },
+      {
+        "dataset_index": 496,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 40.18588638305664,
+        "distance_to_class_1": 55.61427688598633,
+        "score_class_1_d0_minus_d1": -15.428390502929688
+      },
+      {
+        "dataset_index": 497,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.70674133300781,
+        "distance_to_class_1": 57.614498138427734,
+        "score_class_1_d0_minus_d1": -14.907756805419922
+      },
+      {
+        "dataset_index": 498,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 65.75906372070312,
+        "distance_to_class_1": 69.15170288085938,
+        "score_class_1_d0_minus_d1": -3.39263916015625
+      },
+      {
+        "dataset_index": 508,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 22.7503662109375,
+        "distance_to_class_1": 41.83878707885742,
+        "score_class_1_d0_minus_d1": -19.088420867919922
+      },
+      {
+        "dataset_index": 512,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 74.28651428222656,
+        "distance_to_class_1": 87.43351745605469,
+        "score_class_1_d0_minus_d1": -13.147003173828125
+      },
+      {
+        "dataset_index": 516,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.264041900634766,
+        "distance_to_class_1": 37.59892654418945,
+        "score_class_1_d0_minus_d1": -4.3348846435546875
+      },
+      {
+        "dataset_index": 517,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.65489959716797,
+        "distance_to_class_1": 40.66282653808594,
+        "score_class_1_d0_minus_d1": 8.992073059082031
+      },
+      {
+        "dataset_index": 519,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 37.382991790771484,
+        "distance_to_class_1": 44.74770736694336,
+        "score_class_1_d0_minus_d1": -7.364715576171875
+      },
+      {
+        "dataset_index": 522,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 60.08682632446289,
+        "distance_to_class_1": 63.56178665161133,
+        "score_class_1_d0_minus_d1": -3.4749603271484375
+      },
+      {
+        "dataset_index": 523,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 45.7979621887207,
+        "distance_to_class_1": 43.1336555480957,
+        "score_class_1_d0_minus_d1": 2.664306640625
+      },
+      {
+        "dataset_index": 532,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 37.642250061035156,
+        "distance_to_class_1": 46.26054763793945,
+        "score_class_1_d0_minus_d1": -8.618297576904297
+      },
+      {
+        "dataset_index": 535,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 25.125913619995117,
+        "distance_to_class_1": 44.359344482421875,
+        "score_class_1_d0_minus_d1": -19.233430862426758
+      },
+      {
+        "dataset_index": 536,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 40.05726623535156,
+        "distance_to_class_1": 37.53199768066406,
+        "score_class_1_d0_minus_d1": 2.5252685546875
+      },
+      {
+        "dataset_index": 537,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.118480682373047,
+        "distance_to_class_1": 35.41874694824219,
+        "score_class_1_d0_minus_d1": -4.300266265869141
+      },
+      {
+        "dataset_index": 539,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.17612838745117,
+        "distance_to_class_1": 38.518592834472656,
+        "score_class_1_d0_minus_d1": -6.342464447021484
+      },
+      {
+        "dataset_index": 546,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 35.320350646972656,
+        "distance_to_class_1": 34.50314712524414,
+        "score_class_1_d0_minus_d1": 0.8172035217285156
+      },
+      {
+        "dataset_index": 547,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 58.97621154785156,
+        "distance_to_class_1": 65.92054748535156,
+        "score_class_1_d0_minus_d1": -6.9443359375
+      },
+      {
+        "dataset_index": 572,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 41.01512908935547,
+        "distance_to_class_1": 37.63230895996094,
+        "score_class_1_d0_minus_d1": 3.3828201293945312
+      },
+      {
+        "dataset_index": 573,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.60955047607422,
+        "distance_to_class_1": 38.020530700683594,
+        "score_class_1_d0_minus_d1": -6.410980224609375
+      },
+      {
+        "dataset_index": 576,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 24.806224822998047,
+        "distance_to_class_1": 43.96724319458008,
+        "score_class_1_d0_minus_d1": -19.16101837158203
+      },
+      {
+        "dataset_index": 578,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 41.719444274902344,
+        "distance_to_class_1": 27.49827766418457,
+        "score_class_1_d0_minus_d1": 14.221166610717773
+      },
+      {
+        "dataset_index": 583,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 23.61503028869629,
+        "distance_to_class_1": 42.76017379760742,
+        "score_class_1_d0_minus_d1": -19.145143508911133
+      },
+      {
+        "dataset_index": 586,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 34.85272216796875,
+        "distance_to_class_1": 33.47018051147461,
+        "score_class_1_d0_minus_d1": 1.3825416564941406
+      },
+      {
+        "dataset_index": 589,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 40.78258514404297,
+        "distance_to_class_1": 38.492332458496094,
+        "score_class_1_d0_minus_d1": 2.290252685546875
+      },
+      {
+        "dataset_index": 590,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 53.53963088989258,
+        "distance_to_class_1": 61.991188049316406,
+        "score_class_1_d0_minus_d1": -8.451557159423828
+      },
+      {
+        "dataset_index": 599,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 92.85601806640625,
+        "distance_to_class_1": 90.06788635253906,
+        "score_class_1_d0_minus_d1": 2.7881317138671875
+      },
+      {
+        "dataset_index": 611,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.52383041381836,
+        "distance_to_class_1": 64.75360107421875,
+        "score_class_1_d0_minus_d1": -5.229770660400391
+      },
+      {
+        "dataset_index": 636,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.36433219909668,
+        "distance_to_class_1": 31.76079750061035,
+        "score_class_1_d0_minus_d1": -4.396465301513672
+      },
+      {
+        "dataset_index": 643,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 26.196128845214844,
+        "distance_to_class_1": 24.680553436279297,
+        "score_class_1_d0_minus_d1": 1.5155754089355469
+      },
+      {
+        "dataset_index": 644,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 23.137041091918945,
+        "distance_to_class_1": 42.0198860168457,
+        "score_class_1_d0_minus_d1": -18.882844924926758
+      },
+      {
+        "dataset_index": 645,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 23.70085906982422,
+        "distance_to_class_1": 22.719043731689453,
+        "score_class_1_d0_minus_d1": 0.9818153381347656
+      },
+      {
+        "dataset_index": 650,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 25.228918075561523,
+        "distance_to_class_1": 25.215585708618164,
+        "score_class_1_d0_minus_d1": 0.013332366943359375
+      },
+      {
+        "dataset_index": 651,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.51791763305664,
+        "distance_to_class_1": 55.88238525390625,
+        "score_class_1_d0_minus_d1": -14.36446762084961
+      },
+      {
+        "dataset_index": 656,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 52.10814666748047,
+        "distance_to_class_1": 58.76560592651367,
+        "score_class_1_d0_minus_d1": -6.657459259033203
+      },
+      {
+        "dataset_index": 665,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 50.37077713012695,
+        "distance_to_class_1": 47.37056350708008,
+        "score_class_1_d0_minus_d1": 3.000213623046875
+      },
+      {
+        "dataset_index": 666,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.412715911865234,
+        "distance_to_class_1": 38.38113784790039,
+        "score_class_1_d0_minus_d1": -5.968421936035156
+      },
+      {
+        "dataset_index": 683,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.00770568847656,
+        "distance_to_class_1": 43.77611541748047,
+        "score_class_1_d0_minus_d1": -7.768409729003906
+      },
+      {
+        "dataset_index": 695,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 29.397924423217773,
+        "distance_to_class_1": 27.760826110839844,
+        "score_class_1_d0_minus_d1": 1.6370983123779297
+      },
+      {
+        "dataset_index": 699,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.33544158935547,
+        "distance_to_class_1": 41.62675476074219,
+        "score_class_1_d0_minus_d1": -14.291313171386719
+      },
+      {
+        "dataset_index": 702,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 35.85087966918945,
+        "distance_to_class_1": 34.913211822509766,
+        "score_class_1_d0_minus_d1": 0.9376678466796875
+      },
+      {
+        "dataset_index": 705,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 44.56401443481445,
+        "distance_to_class_1": 27.348039627075195,
+        "score_class_1_d0_minus_d1": 17.215974807739258
+      },
+      {
+        "dataset_index": 706,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 49.76903533935547,
+        "distance_to_class_1": 56.10780334472656,
+        "score_class_1_d0_minus_d1": -6.338768005371094
+      },
+      {
+        "dataset_index": 707,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.673030853271484,
+        "distance_to_class_1": 46.071102142333984,
+        "score_class_1_d0_minus_d1": -11.3980712890625
+      },
+      {
+        "dataset_index": 713,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.84004592895508,
+        "distance_to_class_1": 52.945213317871094,
+        "score_class_1_d0_minus_d1": -14.105167388916016
+      },
+      {
+        "dataset_index": 715,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 40.40031814575195,
+        "distance_to_class_1": 53.01994705200195,
+        "score_class_1_d0_minus_d1": -12.61962890625
+      },
+      {
+        "dataset_index": 721,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.16083526611328,
+        "distance_to_class_1": 56.85988998413086,
+        "score_class_1_d0_minus_d1": -15.699054718017578
+      },
+      {
+        "dataset_index": 723,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 53.89616775512695,
+        "distance_to_class_1": 67.55829620361328,
+        "score_class_1_d0_minus_d1": -13.662128448486328
+      },
+      {
+        "dataset_index": 727,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 29.588380813598633,
+        "distance_to_class_1": 27.336149215698242,
+        "score_class_1_d0_minus_d1": 2.2522315979003906
+      },
+      {
+        "dataset_index": 735,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 61.81985855102539,
+        "distance_to_class_1": 63.72101593017578,
+        "score_class_1_d0_minus_d1": -1.9011573791503906
+      },
+      {
+        "dataset_index": 738,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.39869689941406,
+        "distance_to_class_1": 42.91486358642578,
+        "score_class_1_d0_minus_d1": -10.516166687011719
+      },
+      {
+        "dataset_index": 740,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.679689407348633,
+        "distance_to_class_1": 37.62610626220703,
+        "score_class_1_d0_minus_d1": -5.946416854858398
+      },
+      {
+        "dataset_index": 743,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 57.75323486328125,
+        "distance_to_class_1": 64.36168670654297,
+        "score_class_1_d0_minus_d1": -6.608451843261719
+      },
+      {
+        "dataset_index": 744,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 57.020530700683594,
+        "distance_to_class_1": 64.67042541503906,
+        "score_class_1_d0_minus_d1": -7.649894714355469
+      },
+      {
+        "dataset_index": 753,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 32.848541259765625,
+        "distance_to_class_1": 21.259794235229492,
+        "score_class_1_d0_minus_d1": 11.588747024536133
+      },
+      {
+        "dataset_index": 755,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 30.62466812133789,
+        "distance_to_class_1": 29.22028160095215,
+        "score_class_1_d0_minus_d1": 1.4043865203857422
+      },
+      {
+        "dataset_index": 756,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 39.18927001953125,
+        "distance_to_class_1": 45.577327728271484,
+        "score_class_1_d0_minus_d1": -6.388057708740234
+      },
+      {
+        "dataset_index": 757,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.24227523803711,
+        "distance_to_class_1": 46.796905517578125,
+        "score_class_1_d0_minus_d1": -13.554630279541016
+      },
+      {
+        "dataset_index": 758,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 39.968055725097656,
+        "distance_to_class_1": 36.96953582763672,
+        "score_class_1_d0_minus_d1": 2.9985198974609375
+      },
+      {
+        "dataset_index": 761,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.27180862426758,
+        "distance_to_class_1": 43.48488998413086,
+        "score_class_1_d0_minus_d1": -7.213081359863281
+      },
+      {
+        "dataset_index": 762,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 30.95979881286621,
+        "distance_to_class_1": 36.9049186706543,
+        "score_class_1_d0_minus_d1": -5.945119857788086
+      },
+      {
+        "dataset_index": 767,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 57.70941925048828,
+        "distance_to_class_1": 68.78857421875,
+        "score_class_1_d0_minus_d1": -11.079154968261719
+      },
+      {
+        "dataset_index": 772,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 39.759239196777344,
+        "distance_to_class_1": 52.764774322509766,
+        "score_class_1_d0_minus_d1": -13.005535125732422
+      },
+      {
+        "dataset_index": 773,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.0625,
+        "distance_to_class_1": 48.895233154296875,
+        "score_class_1_d0_minus_d1": -7.832733154296875
+      },
+      {
+        "dataset_index": 779,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.420108795166016,
+        "distance_to_class_1": 46.0813102722168,
+        "score_class_1_d0_minus_d1": -7.661201477050781
+      },
+      {
+        "dataset_index": 781,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 25.83864974975586,
+        "distance_to_class_1": 43.79597473144531,
+        "score_class_1_d0_minus_d1": -17.957324981689453
+      },
+      {
+        "dataset_index": 785,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 44.02104187011719,
+        "distance_to_class_1": 57.62250518798828,
+        "score_class_1_d0_minus_d1": -13.601463317871094
+      },
+      {
+        "dataset_index": 797,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 45.380348205566406,
+        "distance_to_class_1": 56.75037384033203,
+        "score_class_1_d0_minus_d1": -11.370025634765625
+      },
+      {
+        "dataset_index": 801,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.543188095092773,
+        "distance_to_class_1": 32.21208190917969,
+        "score_class_1_d0_minus_d1": -4.668893814086914
+      },
+      {
+        "dataset_index": 802,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.346614837646484,
+        "distance_to_class_1": 34.771751403808594,
+        "score_class_1_d0_minus_d1": -2.4251365661621094
+      },
+      {
+        "dataset_index": 806,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.9992561340332,
+        "distance_to_class_1": 42.155433654785156,
+        "score_class_1_d0_minus_d1": -7.156177520751953
+      },
+      {
+        "dataset_index": 807,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 22.852933883666992,
+        "distance_to_class_1": 21.925613403320312,
+        "score_class_1_d0_minus_d1": 0.9273204803466797
+      },
+      {
+        "dataset_index": 808,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.85744094848633,
+        "distance_to_class_1": 53.63262176513672,
+        "score_class_1_d0_minus_d1": -14.77518081665039
+      },
+      {
+        "dataset_index": 809,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 45.94050216674805,
+        "distance_to_class_1": 58.60181427001953,
+        "score_class_1_d0_minus_d1": -12.661312103271484
+      },
+      {
+        "dataset_index": 811,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 26.059890747070312,
+        "distance_to_class_1": 30.41755485534668,
+        "score_class_1_d0_minus_d1": -4.357664108276367
+      },
+      {
+        "dataset_index": 817,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 28.469993591308594,
+        "distance_to_class_1": 42.253448486328125,
+        "score_class_1_d0_minus_d1": -13.783454895019531
+      },
+      {
+        "dataset_index": 822,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 81.5367660522461,
+        "distance_to_class_1": 92.74148559570312,
+        "score_class_1_d0_minus_d1": -11.204719543457031
+      },
+      {
+        "dataset_index": 824,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 61.109317779541016,
+        "distance_to_class_1": 69.3184585571289,
+        "score_class_1_d0_minus_d1": -8.20914077758789
+      },
+      {
+        "dataset_index": 847,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.319984436035156,
+        "distance_to_class_1": 41.10768508911133,
+        "score_class_1_d0_minus_d1": -6.787700653076172
+      },
+      {
+        "dataset_index": 852,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.678680419921875,
+        "distance_to_class_1": 37.695796966552734,
+        "score_class_1_d0_minus_d1": -6.017116546630859
+      },
+      {
+        "dataset_index": 854,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.739402770996094,
+        "distance_to_class_1": 55.95546340942383,
+        "score_class_1_d0_minus_d1": -14.216060638427734
+      },
+      {
+        "dataset_index": 856,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.546966552734375,
+        "distance_to_class_1": 71.1371078491211,
+        "score_class_1_d0_minus_d1": -11.590141296386719
+      },
+      {
+        "dataset_index": 865,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.89970779418945,
+        "distance_to_class_1": 50.87102508544922,
+        "score_class_1_d0_minus_d1": -11.971317291259766
+      },
+      {
+        "dataset_index": 866,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.17583656311035,
+        "distance_to_class_1": 40.54700469970703,
+        "score_class_1_d0_minus_d1": -13.37116813659668
+      },
+      {
+        "dataset_index": 870,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 33.59395217895508,
+        "distance_to_class_1": 30.182819366455078,
+        "score_class_1_d0_minus_d1": 3.4111328125
+      },
+      {
+        "dataset_index": 871,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.3712158203125,
+        "distance_to_class_1": 43.67826843261719,
+        "score_class_1_d0_minus_d1": -7.3070526123046875
+      },
+      {
+        "dataset_index": 874,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 53.91156768798828,
+        "distance_to_class_1": 59.43117904663086,
+        "score_class_1_d0_minus_d1": -5.519611358642578
+      },
+      {
+        "dataset_index": 875,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 39.15625762939453,
+        "distance_to_class_1": 46.87937545776367,
+        "score_class_1_d0_minus_d1": -7.723117828369141
+      }
+    ]
+  },
+  "test": {
+    "split": "test",
+    "n_official": 152,
+    "n_evaluated": 152,
+    "class_counts_true": {
+      "0": 71,
+      "1": 81
+    },
+    "metrics": {
+      "n_evaluated": 152,
+      "n_true_class_0": 71,
+      "n_true_class_1": 81,
+      "accuracy": 0.6447368421052632,
+      "balanced_accuracy": 0.6597113545470353,
+      "sensitivity_class_1": 0.43209876543209874,
+      "specificity_class_0": 0.8873239436619719,
+      "auroc": 0.7278734133194227,
+      "auroc_undefined_reason": null,
+      "confusion_matrix": {
+        "class_order": [
+          0,
+          1
+        ],
+        "class_names": [
+          "inactive",
+          "active"
+        ],
+        "matrix": [
+          [
+            63,
+            8
+          ],
+          [
+            46,
+            35
+          ]
+        ],
+        "tn": 63,
+        "fp": 8,
+        "fn": 46,
+        "tp": 35
+      },
+      "metric_notes": {
+        "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+        "sensitivity": "TP/(TP+FN) for class 1 (active)",
+        "specificity": "TN/(TN+FP) for class 0 (inactive)",
+        "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+        "calibrated_probability": false
+      }
+    },
+    "predictions": [
+      {
+        "dataset_index": 0,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.183406829833984,
+        "distance_to_class_1": 44.734649658203125,
+        "score_class_1_d0_minus_d1": -10.55124282836914
+      },
+      {
+        "dataset_index": 1,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 94.00697326660156,
+        "distance_to_class_1": 92.49562072753906,
+        "score_class_1_d0_minus_d1": 1.5113525390625
+      },
+      {
+        "dataset_index": 6,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 53.26456832885742,
+        "distance_to_class_1": 40.12007141113281,
+        "score_class_1_d0_minus_d1": 13.14449691772461
+      },
+      {
+        "dataset_index": 7,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 79.51129913330078,
+        "distance_to_class_1": 87.36491394042969,
+        "score_class_1_d0_minus_d1": -7.853614807128906
+      },
+      {
+        "dataset_index": 8,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 65.59707641601562,
+        "distance_to_class_1": 75.00808715820312,
+        "score_class_1_d0_minus_d1": -9.4110107421875
+      },
+      {
+        "dataset_index": 9,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 62.73406219482422,
+        "distance_to_class_1": 65.87728118896484,
+        "score_class_1_d0_minus_d1": -3.143218994140625
+      },
+      {
+        "dataset_index": 10,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 54.92048263549805,
+        "distance_to_class_1": 51.575828552246094,
+        "score_class_1_d0_minus_d1": 3.344654083251953
+      },
+      {
+        "dataset_index": 11,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 40.676124572753906,
+        "distance_to_class_1": 36.75422286987305,
+        "score_class_1_d0_minus_d1": 3.9219017028808594
+      },
+      {
+        "dataset_index": 16,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 57.5878791809082,
+        "distance_to_class_1": 53.06482696533203,
+        "score_class_1_d0_minus_d1": 4.523052215576172
+      },
+      {
+        "dataset_index": 18,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 40.50439453125,
+        "distance_to_class_1": 35.679649353027344,
+        "score_class_1_d0_minus_d1": 4.824745178222656
+      },
+      {
+        "dataset_index": 19,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 45.78620910644531,
+        "distance_to_class_1": 40.7729606628418,
+        "score_class_1_d0_minus_d1": 5.013248443603516
+      },
+      {
+        "dataset_index": 20,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.81016159057617,
+        "distance_to_class_1": 43.10423278808594,
+        "score_class_1_d0_minus_d1": -0.2940711975097656
+      },
+      {
+        "dataset_index": 21,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 68.00228118896484,
+        "distance_to_class_1": 63.97522735595703,
+        "score_class_1_d0_minus_d1": 4.0270538330078125
+      },
+      {
+        "dataset_index": 22,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 57.93501663208008,
+        "distance_to_class_1": 55.44819641113281,
+        "score_class_1_d0_minus_d1": 2.4868202209472656
+      },
+      {
+        "dataset_index": 23,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 74.67859649658203,
+        "distance_to_class_1": 60.28461837768555,
+        "score_class_1_d0_minus_d1": 14.393978118896484
+      },
+      {
+        "dataset_index": 26,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 43.410037994384766,
+        "distance_to_class_1": 54.342628479003906,
+        "score_class_1_d0_minus_d1": -10.93259048461914
+      },
+      {
+        "dataset_index": 27,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.66552734375,
+        "distance_to_class_1": 51.5489387512207,
+        "score_class_1_d0_minus_d1": -9.883411407470703
+      },
+      {
+        "dataset_index": 28,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 75.73455810546875,
+        "distance_to_class_1": 75.0857162475586,
+        "score_class_1_d0_minus_d1": 0.6488418579101562
+      },
+      {
+        "dataset_index": 29,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 44.27437210083008,
+        "distance_to_class_1": 43.76272964477539,
+        "score_class_1_d0_minus_d1": 0.5116424560546875
+      },
+      {
+        "dataset_index": 30,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 97.03800964355469,
+        "distance_to_class_1": 89.26156616210938,
+        "score_class_1_d0_minus_d1": 7.7764434814453125
+      },
+      {
+        "dataset_index": 31,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.55031204223633,
+        "distance_to_class_1": 47.46963882446289,
+        "score_class_1_d0_minus_d1": 2.0806732177734375
+      },
+      {
+        "dataset_index": 34,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 41.70440673828125,
+        "distance_to_class_1": 35.768089294433594,
+        "score_class_1_d0_minus_d1": 5.936317443847656
+      },
+      {
+        "dataset_index": 35,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.48325729370117,
+        "distance_to_class_1": 53.389713287353516,
+        "score_class_1_d0_minus_d1": -11.906455993652344
+      },
+      {
+        "dataset_index": 36,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.28152847290039,
+        "distance_to_class_1": 46.9719352722168,
+        "score_class_1_d0_minus_d1": 2.3095932006835938
+      },
+      {
+        "dataset_index": 42,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 42.460018157958984,
+        "distance_to_class_1": 36.41051483154297,
+        "score_class_1_d0_minus_d1": 6.049503326416016
+      },
+      {
+        "dataset_index": 44,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 77.57933807373047,
+        "distance_to_class_1": 77.32818603515625,
+        "score_class_1_d0_minus_d1": 0.25115203857421875
+      },
+      {
+        "dataset_index": 45,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 51.3218994140625,
+        "distance_to_class_1": 57.746986389160156,
+        "score_class_1_d0_minus_d1": -6.425086975097656
+      },
+      {
+        "dataset_index": 46,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 65.05580139160156,
+        "distance_to_class_1": 75.63917541503906,
+        "score_class_1_d0_minus_d1": -10.5833740234375
+      },
+      {
+        "dataset_index": 49,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.1491813659668,
+        "distance_to_class_1": 36.17757034301758,
+        "score_class_1_d0_minus_d1": -0.02838897705078125
+      },
+      {
+        "dataset_index": 50,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.40670394897461,
+        "distance_to_class_1": 64.78825378417969,
+        "score_class_1_d0_minus_d1": -5.381549835205078
+      },
+      {
+        "dataset_index": 51,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 44.254154205322266,
+        "distance_to_class_1": 54.25880432128906,
+        "score_class_1_d0_minus_d1": -10.004650115966797
+      },
+      {
+        "dataset_index": 52,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 47.503910064697266,
+        "distance_to_class_1": 54.04206085205078,
+        "score_class_1_d0_minus_d1": -6.538150787353516
+      },
+      {
+        "dataset_index": 55,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 39.828556060791016,
+        "distance_to_class_1": 41.79652786254883,
+        "score_class_1_d0_minus_d1": -1.9679718017578125
+      },
+      {
+        "dataset_index": 56,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 92.09510803222656,
+        "distance_to_class_1": 102.59028625488281,
+        "score_class_1_d0_minus_d1": -10.49517822265625
+      },
+      {
+        "dataset_index": 57,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 96.84127807617188,
+        "distance_to_class_1": 106.46385955810547,
+        "score_class_1_d0_minus_d1": -9.622581481933594
+      },
+      {
+        "dataset_index": 59,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 79.4582748413086,
+        "distance_to_class_1": 87.27469635009766,
+        "score_class_1_d0_minus_d1": -7.8164215087890625
+      },
+      {
+        "dataset_index": 62,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 36.46078872680664,
+        "distance_to_class_1": 28.240692138671875,
+        "score_class_1_d0_minus_d1": 8.220096588134766
+      },
+      {
+        "dataset_index": 63,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 67.90567779541016,
+        "distance_to_class_1": 78.53062438964844,
+        "score_class_1_d0_minus_d1": -10.624946594238281
+      },
+      {
+        "dataset_index": 64,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 81.71668243408203,
+        "distance_to_class_1": 70.94689178466797,
+        "score_class_1_d0_minus_d1": 10.769790649414062
+      },
+      {
+        "dataset_index": 65,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 110.6190414428711,
+        "distance_to_class_1": 105.52444458007812,
+        "score_class_1_d0_minus_d1": 5.094596862792969
+      },
+      {
+        "dataset_index": 66,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 43.61275100708008,
+        "distance_to_class_1": 40.31995391845703,
+        "score_class_1_d0_minus_d1": 3.292797088623047
+      },
+      {
+        "dataset_index": 69,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 49.58060836791992,
+        "distance_to_class_1": 58.656822204589844,
+        "score_class_1_d0_minus_d1": -9.076213836669922
+      },
+      {
+        "dataset_index": 70,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 44.027915954589844,
+        "distance_to_class_1": 43.8668212890625,
+        "score_class_1_d0_minus_d1": 0.16109466552734375
+      },
+      {
+        "dataset_index": 71,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 63.14362716674805,
+        "distance_to_class_1": 71.99288940429688,
+        "score_class_1_d0_minus_d1": -8.849262237548828
+      },
+      {
+        "dataset_index": 73,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 43.40475082397461,
+        "distance_to_class_1": 57.968814849853516,
+        "score_class_1_d0_minus_d1": -14.564064025878906
+      },
+      {
+        "dataset_index": 74,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 136.4598388671875,
+        "distance_to_class_1": 126.58108520507812,
+        "score_class_1_d0_minus_d1": 9.878753662109375
+      },
+      {
+        "dataset_index": 80,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 80.78580474853516,
+        "distance_to_class_1": 80.96663665771484,
+        "score_class_1_d0_minus_d1": -0.1808319091796875
+      },
+      {
+        "dataset_index": 81,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 49.684757232666016,
+        "distance_to_class_1": 52.00705337524414,
+        "score_class_1_d0_minus_d1": -2.322296142578125
+      },
+      {
+        "dataset_index": 82,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 109.20854949951172,
+        "distance_to_class_1": 100.04190826416016,
+        "score_class_1_d0_minus_d1": 9.166641235351562
+      },
+      {
+        "dataset_index": 83,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.22005844116211,
+        "distance_to_class_1": 34.399539947509766,
+        "score_class_1_d0_minus_d1": -3.1794815063476562
+      },
+      {
+        "dataset_index": 85,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.55158615112305,
+        "distance_to_class_1": 55.23969268798828,
+        "score_class_1_d0_minus_d1": -12.688106536865234
+      },
+      {
+        "dataset_index": 86,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 49.46893310546875,
+        "distance_to_class_1": 46.25535202026367,
+        "score_class_1_d0_minus_d1": 3.213581085205078
+      },
+      {
+        "dataset_index": 87,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 135.71542358398438,
+        "distance_to_class_1": 128.80911254882812,
+        "score_class_1_d0_minus_d1": 6.90631103515625
+      },
+      {
+        "dataset_index": 89,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 47.13003158569336,
+        "distance_to_class_1": 49.414493560791016,
+        "score_class_1_d0_minus_d1": -2.2844619750976562
+      },
+      {
+        "dataset_index": 92,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 70.8648910522461,
+        "distance_to_class_1": 76.37833404541016,
+        "score_class_1_d0_minus_d1": -5.5134429931640625
+      },
+      {
+        "dataset_index": 93,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 92.91031646728516,
+        "distance_to_class_1": 103.52731323242188,
+        "score_class_1_d0_minus_d1": -10.616996765136719
+      },
+      {
+        "dataset_index": 94,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.36542510986328,
+        "distance_to_class_1": 54.42964172363281,
+        "score_class_1_d0_minus_d1": -12.064216613769531
+      },
+      {
+        "dataset_index": 97,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 48.40750503540039,
+        "distance_to_class_1": 61.05442428588867,
+        "score_class_1_d0_minus_d1": -12.646919250488281
+      },
+      {
+        "dataset_index": 98,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 33.80208206176758,
+        "distance_to_class_1": 30.096887588500977,
+        "score_class_1_d0_minus_d1": 3.7051944732666016
+      },
+      {
+        "dataset_index": 101,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 56.31023406982422,
+        "distance_to_class_1": 43.11309051513672,
+        "score_class_1_d0_minus_d1": 13.1971435546875
+      },
+      {
+        "dataset_index": 102,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 57.127986907958984,
+        "distance_to_class_1": 54.383365631103516,
+        "score_class_1_d0_minus_d1": 2.7446212768554688
+      },
+      {
+        "dataset_index": 103,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 183.66085815429688,
+        "distance_to_class_1": 184.1898956298828,
+        "score_class_1_d0_minus_d1": -0.5290374755859375
+      },
+      {
+        "dataset_index": 104,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.39868927001953,
+        "distance_to_class_1": 64.88746643066406,
+        "score_class_1_d0_minus_d1": -5.488777160644531
+      },
+      {
+        "dataset_index": 105,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 94.88871765136719,
+        "distance_to_class_1": 104.5257339477539,
+        "score_class_1_d0_minus_d1": -9.637016296386719
+      },
+      {
+        "dataset_index": 106,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 62.49262237548828,
+        "distance_to_class_1": 68.00296020507812,
+        "score_class_1_d0_minus_d1": -5.510337829589844
+      },
+      {
+        "dataset_index": 107,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 106.98076629638672,
+        "distance_to_class_1": 108.51972198486328,
+        "score_class_1_d0_minus_d1": -1.5389556884765625
+      },
+      {
+        "dataset_index": 109,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 26.735055923461914,
+        "distance_to_class_1": 39.97130584716797,
+        "score_class_1_d0_minus_d1": -13.236249923706055
+      },
+      {
+        "dataset_index": 110,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.435758590698242,
+        "distance_to_class_1": 40.59751892089844,
+        "score_class_1_d0_minus_d1": -9.161760330200195
+      },
+      {
+        "dataset_index": 112,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 153.33323669433594,
+        "distance_to_class_1": 148.09681701660156,
+        "score_class_1_d0_minus_d1": 5.236419677734375
+      },
+      {
+        "dataset_index": 113,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 108.60536193847656,
+        "distance_to_class_1": 115.60852813720703,
+        "score_class_1_d0_minus_d1": -7.003166198730469
+      },
+      {
+        "dataset_index": 115,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 78.3695068359375,
+        "distance_to_class_1": 68.63723754882812,
+        "score_class_1_d0_minus_d1": 9.732269287109375
+      },
+      {
+        "dataset_index": 116,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 58.931785583496094,
+        "distance_to_class_1": 62.47173309326172,
+        "score_class_1_d0_minus_d1": -3.539947509765625
+      },
+      {
+        "dataset_index": 119,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 43.91136169433594,
+        "distance_to_class_1": 40.814876556396484,
+        "score_class_1_d0_minus_d1": 3.096485137939453
+      },
+      {
+        "dataset_index": 120,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 43.86330032348633,
+        "distance_to_class_1": 55.44375991821289,
+        "score_class_1_d0_minus_d1": -11.580459594726562
+      },
+      {
+        "dataset_index": 122,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.6998291015625,
+        "distance_to_class_1": 53.258392333984375,
+        "score_class_1_d0_minus_d1": -14.558563232421875
+      },
+      {
+        "dataset_index": 124,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 71.51831817626953,
+        "distance_to_class_1": 75.50993347167969,
+        "score_class_1_d0_minus_d1": -3.9916152954101562
+      },
+      {
+        "dataset_index": 127,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 28.796411514282227,
+        "distance_to_class_1": 41.74139404296875,
+        "score_class_1_d0_minus_d1": -12.944982528686523
+      },
+      {
+        "dataset_index": 128,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 60.603885650634766,
+        "distance_to_class_1": 70.72663116455078,
+        "score_class_1_d0_minus_d1": -10.122745513916016
+      },
+      {
+        "dataset_index": 131,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.92127227783203,
+        "distance_to_class_1": 43.087833404541016,
+        "score_class_1_d0_minus_d1": -9.166561126708984
+      },
+      {
+        "dataset_index": 132,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 81.38643646240234,
+        "distance_to_class_1": 88.39486694335938,
+        "score_class_1_d0_minus_d1": -7.008430480957031
+      },
+      {
+        "dataset_index": 133,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 38.14414596557617,
+        "distance_to_class_1": 46.42060089111328,
+        "score_class_1_d0_minus_d1": -8.27645492553711
+      },
+      {
+        "dataset_index": 135,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 59.213890075683594,
+        "distance_to_class_1": 74.24117279052734,
+        "score_class_1_d0_minus_d1": -15.02728271484375
+      },
+      {
+        "dataset_index": 137,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.28364562988281,
+        "distance_to_class_1": 45.031517028808594,
+        "score_class_1_d0_minus_d1": -12.747871398925781
+      },
+      {
+        "dataset_index": 138,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.768310546875,
+        "distance_to_class_1": 45.28313446044922,
+        "score_class_1_d0_minus_d1": -8.514823913574219
+      },
+      {
+        "dataset_index": 139,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 24.016109466552734,
+        "distance_to_class_1": 38.7138786315918,
+        "score_class_1_d0_minus_d1": -14.697769165039062
+      },
+      {
+        "dataset_index": 141,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 51.854164123535156,
+        "distance_to_class_1": 61.56772232055664,
+        "score_class_1_d0_minus_d1": -9.713558197021484
+      },
+      {
+        "dataset_index": 142,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.059471130371094,
+        "distance_to_class_1": 45.18516540527344,
+        "score_class_1_d0_minus_d1": -10.125694274902344
+      },
+      {
+        "dataset_index": 143,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 43.959617614746094,
+        "distance_to_class_1": 40.154964447021484,
+        "score_class_1_d0_minus_d1": 3.8046531677246094
+      },
+      {
+        "dataset_index": 145,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 36.1295166015625,
+        "distance_to_class_1": 27.18612289428711,
+        "score_class_1_d0_minus_d1": 8.94339370727539
+      },
+      {
+        "dataset_index": 147,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 61.58378982543945,
+        "distance_to_class_1": 71.22000122070312,
+        "score_class_1_d0_minus_d1": -9.636211395263672
+      },
+      {
+        "dataset_index": 148,
+        "true_label": 0,
+        "predicted_class": 1,
+        "distance_to_class_0": 45.82039260864258,
+        "distance_to_class_1": 41.579280853271484,
+        "score_class_1_d0_minus_d1": 4.241111755371094
+      },
+      {
+        "dataset_index": 150,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 46.041114807128906,
+        "distance_to_class_1": 61.124290466308594,
+        "score_class_1_d0_minus_d1": -15.083175659179688
+      },
+      {
+        "dataset_index": 151,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.20914077758789,
+        "distance_to_class_1": 45.387203216552734,
+        "score_class_1_d0_minus_d1": -13.178062438964844
+      },
+      {
+        "dataset_index": 152,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.83766555786133,
+        "distance_to_class_1": 48.069950103759766,
+        "score_class_1_d0_minus_d1": -11.232284545898438
+      },
+      {
+        "dataset_index": 153,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 52.183815002441406,
+        "distance_to_class_1": 54.4026985168457,
+        "score_class_1_d0_minus_d1": -2.218883514404297
+      },
+      {
+        "dataset_index": 155,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.07240295410156,
+        "distance_to_class_1": 46.328125,
+        "score_class_1_d0_minus_d1": -10.255722045898438
+      },
+      {
+        "dataset_index": 156,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 69.48602294921875,
+        "distance_to_class_1": 80.28180694580078,
+        "score_class_1_d0_minus_d1": -10.795783996582031
+      },
+      {
+        "dataset_index": 157,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.5402946472168,
+        "distance_to_class_1": 43.615577697753906,
+        "score_class_1_d0_minus_d1": -7.075283050537109
+      },
+      {
+        "dataset_index": 159,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.79023742675781,
+        "distance_to_class_1": 48.690670013427734,
+        "score_class_1_d0_minus_d1": -11.900432586669922
+      },
+      {
+        "dataset_index": 161,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 30.37135887145996,
+        "distance_to_class_1": 48.32502746582031,
+        "score_class_1_d0_minus_d1": -17.95366859436035
+      },
+      {
+        "dataset_index": 162,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 77.74431610107422,
+        "distance_to_class_1": 84.77145385742188,
+        "score_class_1_d0_minus_d1": -7.027137756347656
+      },
+      {
+        "dataset_index": 164,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.210445404052734,
+        "distance_to_class_1": 46.11874008178711,
+        "score_class_1_d0_minus_d1": -14.908294677734375
+      },
+      {
+        "dataset_index": 165,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 44.22591018676758,
+        "distance_to_class_1": 56.61451721191406,
+        "score_class_1_d0_minus_d1": -12.388607025146484
+      },
+      {
+        "dataset_index": 166,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 34.933982849121094,
+        "distance_to_class_1": 44.42421340942383,
+        "score_class_1_d0_minus_d1": -9.490230560302734
+      },
+      {
+        "dataset_index": 167,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.95338439941406,
+        "distance_to_class_1": 59.615638732910156,
+        "score_class_1_d0_minus_d1": -16.662254333496094
+      },
+      {
+        "dataset_index": 169,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.75386428833008,
+        "distance_to_class_1": 48.53274917602539,
+        "score_class_1_d0_minus_d1": -12.778884887695312
+      },
+      {
+        "dataset_index": 170,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 57.2056999206543,
+        "distance_to_class_1": 70.12604522705078,
+        "score_class_1_d0_minus_d1": -12.920345306396484
+      },
+      {
+        "dataset_index": 171,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 65.14045715332031,
+        "distance_to_class_1": 76.79227447509766,
+        "score_class_1_d0_minus_d1": -11.651817321777344
+      },
+      {
+        "dataset_index": 172,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 37.0748291015625,
+        "distance_to_class_1": 44.56352615356445,
+        "score_class_1_d0_minus_d1": -7.488697052001953
+      },
+      {
+        "dataset_index": 173,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.50178527832031,
+        "distance_to_class_1": 40.68107604980469,
+        "score_class_1_d0_minus_d1": -8.179290771484375
+      },
+      {
+        "dataset_index": 174,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 81.32954406738281,
+        "distance_to_class_1": 93.70025634765625,
+        "score_class_1_d0_minus_d1": -12.370712280273438
+      },
+      {
+        "dataset_index": 175,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 26.80721664428711,
+        "distance_to_class_1": 41.6707763671875,
+        "score_class_1_d0_minus_d1": -14.86355972290039
+      },
+      {
+        "dataset_index": 176,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 28.574291229248047,
+        "distance_to_class_1": 40.74020004272461,
+        "score_class_1_d0_minus_d1": -12.165908813476562
+      },
+      {
+        "dataset_index": 177,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 44.5422248840332,
+        "distance_to_class_1": 58.9374885559082,
+        "score_class_1_d0_minus_d1": -14.395263671875
+      },
+      {
+        "dataset_index": 180,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 30.22340965270996,
+        "distance_to_class_1": 47.28453826904297,
+        "score_class_1_d0_minus_d1": -17.061128616333008
+      },
+      {
+        "dataset_index": 184,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.47507095336914,
+        "distance_to_class_1": 43.469181060791016,
+        "score_class_1_d0_minus_d1": -9.994110107421875
+      },
+      {
+        "dataset_index": 185,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 46.02588653564453,
+        "distance_to_class_1": 61.00182342529297,
+        "score_class_1_d0_minus_d1": -14.975936889648438
+      },
+      {
+        "dataset_index": 186,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.088958740234375,
+        "distance_to_class_1": 54.170677185058594,
+        "score_class_1_d0_minus_d1": -13.081718444824219
+      },
+      {
+        "dataset_index": 188,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 51.79716873168945,
+        "distance_to_class_1": 66.5656967163086,
+        "score_class_1_d0_minus_d1": -14.76852798461914
+      },
+      {
+        "dataset_index": 189,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 36.9004020690918,
+        "distance_to_class_1": 46.513038635253906,
+        "score_class_1_d0_minus_d1": -9.61263656616211
+      },
+      {
+        "dataset_index": 191,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.407838821411133,
+        "distance_to_class_1": 35.82939910888672,
+        "score_class_1_d0_minus_d1": -4.421560287475586
+      },
+      {
+        "dataset_index": 192,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.574642181396484,
+        "distance_to_class_1": 44.190555572509766,
+        "score_class_1_d0_minus_d1": -10.615913391113281
+      },
+      {
+        "dataset_index": 194,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 31.00123405456543,
+        "distance_to_class_1": 46.002532958984375,
+        "score_class_1_d0_minus_d1": -15.001298904418945
+      },
+      {
+        "dataset_index": 195,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.62788391113281,
+        "distance_to_class_1": 49.37964630126953,
+        "score_class_1_d0_minus_d1": -13.751762390136719
+      },
+      {
+        "dataset_index": 198,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 33.976531982421875,
+        "distance_to_class_1": 48.9959602355957,
+        "score_class_1_d0_minus_d1": -15.019428253173828
+      },
+      {
+        "dataset_index": 199,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 32.26693344116211,
+        "distance_to_class_1": 43.70311737060547,
+        "score_class_1_d0_minus_d1": -11.43618392944336
+      },
+      {
+        "dataset_index": 200,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.34956741333008,
+        "distance_to_class_1": 46.75494384765625,
+        "score_class_1_d0_minus_d1": -11.405376434326172
+      },
+      {
+        "dataset_index": 201,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.2988166809082,
+        "distance_to_class_1": 46.68077087402344,
+        "score_class_1_d0_minus_d1": -11.381954193115234
+      },
+      {
+        "dataset_index": 202,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 29.304853439331055,
+        "distance_to_class_1": 40.548866271972656,
+        "score_class_1_d0_minus_d1": -11.244012832641602
+      },
+      {
+        "dataset_index": 203,
+        "true_label": 0,
+        "predicted_class": 0,
+        "distance_to_class_0": 35.18146896362305,
+        "distance_to_class_1": 45.27069091796875,
+        "score_class_1_d0_minus_d1": -10.089221954345703
+      },
+      {
+        "dataset_index": 204,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 140.72279357910156,
+        "distance_to_class_1": 127.36207580566406,
+        "score_class_1_d0_minus_d1": 13.3607177734375
+      },
+      {
+        "dataset_index": 205,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 65.5067138671875,
+        "distance_to_class_1": 52.72238540649414,
+        "score_class_1_d0_minus_d1": 12.78432846069336
+      },
+      {
+        "dataset_index": 207,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 37.09148025512695,
+        "distance_to_class_1": 40.37731170654297,
+        "score_class_1_d0_minus_d1": -3.2858314514160156
+      },
+      {
+        "dataset_index": 208,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 42.16873550415039,
+        "distance_to_class_1": 43.8973388671875,
+        "score_class_1_d0_minus_d1": -1.7286033630371094
+      },
+      {
+        "dataset_index": 212,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 68.59040832519531,
+        "distance_to_class_1": 55.48081588745117,
+        "score_class_1_d0_minus_d1": 13.10959243774414
+      },
+      {
+        "dataset_index": 213,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 86.80699920654297,
+        "distance_to_class_1": 97.65219116210938,
+        "score_class_1_d0_minus_d1": -10.845191955566406
+      },
+      {
+        "dataset_index": 214,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 39.0552978515625,
+        "distance_to_class_1": 26.177705764770508,
+        "score_class_1_d0_minus_d1": 12.877592086791992
+      },
+      {
+        "dataset_index": 215,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 72.21331787109375,
+        "distance_to_class_1": 83.62430572509766,
+        "score_class_1_d0_minus_d1": -11.410987854003906
+      },
+      {
+        "dataset_index": 220,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 27.677953720092773,
+        "distance_to_class_1": 43.67432403564453,
+        "score_class_1_d0_minus_d1": -15.996370315551758
+      },
+      {
+        "dataset_index": 224,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 74.72980499267578,
+        "distance_to_class_1": 75.65234375,
+        "score_class_1_d0_minus_d1": -0.9225387573242188
+      },
+      {
+        "dataset_index": 225,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 37.75442886352539,
+        "distance_to_class_1": 24.06974220275879,
+        "score_class_1_d0_minus_d1": 13.684686660766602
+      },
+      {
+        "dataset_index": 226,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 43.9111328125,
+        "distance_to_class_1": 50.31830596923828,
+        "score_class_1_d0_minus_d1": -6.407173156738281
+      },
+      {
+        "dataset_index": 228,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 71.09313201904297,
+        "distance_to_class_1": 82.24517059326172,
+        "score_class_1_d0_minus_d1": -11.15203857421875
+      },
+      {
+        "dataset_index": 230,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 72.00923919677734,
+        "distance_to_class_1": 82.93568420410156,
+        "score_class_1_d0_minus_d1": -10.926445007324219
+      },
+      {
+        "dataset_index": 231,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.22481155395508,
+        "distance_to_class_1": 52.94063186645508,
+        "score_class_1_d0_minus_d1": -11.7158203125
+      },
+      {
+        "dataset_index": 233,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 24.291688919067383,
+        "distance_to_class_1": 23.078519821166992,
+        "score_class_1_d0_minus_d1": 1.2131690979003906
+      },
+      {
+        "dataset_index": 234,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.7430305480957,
+        "distance_to_class_1": 54.45064163208008,
+        "score_class_1_d0_minus_d1": -12.707611083984375
+      },
+      {
+        "dataset_index": 235,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 45.80037307739258,
+        "distance_to_class_1": 59.0479621887207,
+        "score_class_1_d0_minus_d1": -13.247589111328125
+      },
+      {
+        "dataset_index": 236,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 41.2154541015625,
+        "distance_to_class_1": 54.53387451171875,
+        "score_class_1_d0_minus_d1": -13.31842041015625
+      },
+      {
+        "dataset_index": 237,
+        "true_label": 1,
+        "predicted_class": 1,
+        "distance_to_class_0": 31.260950088500977,
+        "distance_to_class_1": 29.678462982177734,
+        "score_class_1_d0_minus_d1": 1.5824871063232422
+      },
+      {
+        "dataset_index": 239,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 28.470205307006836,
+        "distance_to_class_1": 43.44422149658203,
+        "score_class_1_d0_minus_d1": -14.974016189575195
+      },
+      {
+        "dataset_index": 240,
+        "true_label": 1,
+        "predicted_class": 0,
+        "distance_to_class_0": 26.82023048400879,
+        "distance_to_class_1": 41.05060577392578,
+        "score_class_1_d0_minus_d1": -14.230375289916992
+      }
+    ]
+  },
+  "scope_limitations": [
+    "Fixed train support is not tuned on validation or test.",
+    "Metrics describe this protocol only; not clinical utility.",
+    "Distances and AUROC scores are not calibrated probabilities.",
+    "Scaffold split molecules may be distributionally related within BACE."
+  ]
+}

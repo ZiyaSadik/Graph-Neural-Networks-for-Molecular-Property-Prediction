@@ -1,0 +1,354 @@
+{
+  "experiment_id": "esol_phase4e_test_locked",
+  "phase": "4E-test-locked",
+  "created_utc": "2026-10-04T09:39:28+00:00",
+  "description": "One-shot locked TEST evaluation of ESOL validation-selected baselines (train-mean, Ridge descriptors, frozen GIN regression head). No retraining; no test-based model selection.",
+  "test_used_for_selection": false,
+  "preflight": {
+    "checks": [
+      {
+        "name": "esol_source_sha",
+        "ok": true,
+        "detail": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189"
+      },
+      {
+        "name": "esol_assign_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "esol_mapping_fp",
+        "ok": true,
+        "detail": "90f827da4c8622a85408b461b0e028a4cc882439c01c54d06d5bc08db92602ac"
+      },
+      {
+        "name": "esol_fp_record_map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_source_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_assign_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_mapping_fp",
+        "ok": true,
+        "detail": "bffa1dbba4729aadc8bd5e19c052f0982c8b81a64b58e129175fc0d85d463ebd"
+      },
+      {
+        "name": "tox_fp_record_map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "encoder_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "esol_head_exists",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_head_exists",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "e3_encoder_sha_match",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "f4_encoder_sha_match",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "e3_map_match",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "f4_map_match",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "reg_head_encoder_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "reg_head_best_epoch",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "cls_head_encoder_sha",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "cls_head_best_epoch",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "cls_tasks",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "desc_n24",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "ridge_alpha_1",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "esol_n1128",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "esol_counts",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "train_mean_match_e1",
+        "ok": true,
+        "detail": "-3.1296666666666666"
+      },
+      {
+        "name": "e1_valid_repro",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "e2_valid_repro",
+        "ok": true,
+        "detail": "0.9651574598081615"
+      },
+      {
+        "name": "norm_match_e3",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "e3_valid_repro",
+        "ok": true,
+        "detail": "0.8776800141207939"
+      },
+      {
+        "name": "tox_n7831",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_counts",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_test_inelig",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "tox_test_elig",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-AR",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-AR-LBD",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-AhR",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-Aromatase",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-ER",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-ER-LBD",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_NR-PPAR-gamma",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_SR-ARE",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_SR-ATAD5",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_SR-HSE",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_SR-MMP",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "maj_SR-p53",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "f4_valid_macro_repro",
+        "ok": true,
+        "detail": "0.7687439702346194"
+      }
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "torch": "2.9.1+cpu",
+    "torch_geometric": "2.7.0",
+    "rdkit": "2025.09.3",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  },
+  "split": {
+    "assignments_csv": "data/moleculenet/esol/esol_split_assignments_v1.csv",
+    "assignments_csv_sha256": "3a7946d83f7db28341b1364d9ee72f3e8eddc939e63053dda9113afb05c0facc",
+    "mapping_fingerprint_sha256": "90f827da4c8622a85408b461b0e028a4cc882439c01c54d06d5bc08db92602ac",
+    "source_csv": "data/moleculenet/esol/delaney-processed.csv",
+    "source_sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
+    "n_train": 903,
+    "n_valid": 113,
+    "n_test": 112,
+    "n_test_evaluated": 112,
+    "n_test_excluded": 0,
+    "split_regenerated": false
+  },
+  "target_column": "measured log solubility in mols per litre",
+  "forbidden_target_column": "ESOL predicted log solubility in mols per litre",
+  "fingerprints": {
+    "encoder_checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "regression_head_sha256": "368b49751ca56e14b87778af9203eaf4f487c2ea0f503bd994757ef3a7a2cdcb",
+    "regression_head_path": "outputs/esol/phase4e3_frozen_gin_regression/regression_head.pt",
+    "regression_head_best_epoch_validation_selected": 103
+  },
+  "validation_repro_checks_before_test": {
+    "phase4e1_valid_mae_matched": true,
+    "phase4e2_valid_mae_matched": true,
+    "phase4e3_valid_mae_matched": true,
+    "note": "Configs reproduced on validation before scoring test; validation metrics not used for selection here."
+  },
+  "models": {
+    "train_mean": {
+      "train_mean_measured_logS": -3.1296666666666666,
+      "test_metrics": {
+        "mae": 1.8381011904761906,
+        "rmse": 2.2290612689814107,
+        "r2_supplementary": -0.11529883860840417
+      },
+      "reference_valid_metrics": {
+        "mae": 1.8863687315634217,
+        "rmse": 2.3202618187547905,
+        "r2_supplementary": -0.0013085822353893217
+      }
+    },
+    "descriptor_ridge": {
+      "pipeline": "StandardScaler + Ridge(alpha=1.0, random_state=42)",
+      "n_features": 24,
+      "descriptor_names": [
+        "MolWt",
+        "ExactMolWt",
+        "HeavyAtomCount",
+        "NumHDonors",
+        "NumHAcceptors",
+        "NumRotatableBonds",
+        "RingCount",
+        "NumAromaticRings",
+        "NumAliphaticRings",
+        "NumSaturatedRings",
+        "NumHeteroatoms",
+        "MolLogP",
+        "TPSA",
+        "LabuteASA",
+        "FractionCSP3",
+        "BertzCT",
+        "Chi0v",
+        "Chi1v",
+        "Chi0n",
+        "Chi1n",
+        "Kappa1",
+        "Kappa2",
+        "HallKierAlpha",
+        "NumValenceElectrons"
+      ],
+      "fitted_on": "train_only",
+      "test_metrics": {
+        "mae": 0.7866723566574537,
+        "rmse": 1.023882794743901,
+        "r2_supplementary": 0.7646860203896509
+      },
+      "reference_valid_metrics": {
+        "mae": 0.9651574598081615,
+        "rmse": 1.2866343806975804,
+        "r2_supplementary": 0.6921038518239173
+      }
+    },
+    "frozen_gin_regression_head": {
+      "head_checkpoint": "outputs/esol/phase4e3_frozen_gin_regression/regression_head.pt",
+      "encoder_frozen": true,
+      "target_normalization_from_checkpoint": {
+        "train_mean": -3.129667043685913,
+        "train_std_population": 2.050183057785034
+      },
+      "test_metrics": {
+        "mae": 0.7245446664350376,
+        "rmse": 1.0634614891084184,
+        "r2_supplementary": 0.7461420472894384
+      },
+      "reference_valid_metrics": {
+        "mae": 0.8776800036430359,
+        "rmse": 1.2239347696304321,
+        "r2_supplementary": 0.7213811748580191
+      }
+    }
+  },
+  "comparison_test": {
+    "same_test_rows": true,
+    "best_mae_model": "frozen_gin_regression_head"
+  }
+}

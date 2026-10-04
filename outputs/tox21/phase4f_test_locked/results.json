@@ -1,0 +1,315 @@
+{
+  "experiment_id": "tox21_phase4f_test_locked",
+  "phase": "4F-test-locked",
+  "created_utc": "2026-10-04T09:39:28+00:00",
+  "description": "One-shot locked TEST evaluation of Tox21 validation-selected baselines (train majority-class and Phase 4F.4 frozen-GIN multi-task head). No retraining; no test-based model selection.",
+  "test_used_for_selection": false,
+  "software": {
+    "python": "3.13.9",
+    "torch": "2.9.1+cpu",
+    "torch_geometric": "2.7.0",
+    "rdkit": "2025.09.3",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  },
+  "split": {
+    "assignments_csv": "data/moleculenet/tox21/tox21_split_assignments_v1.csv",
+    "assignments_csv_sha256": "23bffcdbe629ef1a3b35961288917d8eea57f61904d508f472f5b5654c0629b9",
+    "mapping_fingerprint_sha256": "bffa1dbba4729aadc8bd5e19c052f0982c8b81a64b58e129175fc0d85d463ebd",
+    "source_csv": "data/moleculenet/tox21/tox21.csv",
+    "source_sha256": "7d7e7facd853a63e79ddce4e9c3fcb7a0d83a1c300b603031c0f2c64fbe77761",
+    "n_train": 6264,
+    "n_valid": 783,
+    "n_test": 784,
+    "split_regenerated": false
+  },
+  "graph_eligibility": {
+    "policy_id": "retain_all_rows_mark_graph_ineligible_v1",
+    "n_test_total": 784,
+    "n_test_graph_eligible_scored": 781,
+    "n_test_graph_ineligible_excluded_from_graph_scoring": 3,
+    "n_train_graph_eligible_for_majority_fit": 6259,
+    "ineligible_retained_in_split_census": true
+  },
+  "fingerprints": {
+    "encoder_checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "classification_head_sha256": "7a201bcd2bc50c44d79c6e3fe719354b002e5c16234921c0213a6623badff42d",
+    "classification_head_path": "outputs/tox21/phase4f4_baselines/classification_head.pt",
+    "classification_head_best_epoch_validation_selected": 74
+  },
+  "validation_repro_checks_before_test": {
+    "majority_classes_match_phase4f4": true,
+    "frozen_gin_valid_macro_roc_auc_matched": true,
+    "matched_macro_roc_auc": 0.7687439702346194
+  },
+  "majority_class_baseline": {
+    "fit_on": "train_graph_eligible_labeled_per_task",
+    "evaluate_on": "test_graph_eligible_labeled_per_task",
+    "per_task_majority_class": {
+      "NR-AR": 0,
+      "NR-AR-LBD": 0,
+      "NR-AhR": 0,
+      "NR-Aromatase": 0,
+      "NR-ER": 0,
+      "NR-ER-LBD": 0,
+      "NR-PPAR-gamma": 0,
+      "SR-ARE": 0,
+      "SR-ATAD5": 0,
+      "SR-HSE": 0,
+      "SR-MMP": 0,
+      "SR-p53": 0
+    },
+    "per_task_test": {
+      "NR-AR": {
+        "n_labeled": 724,
+        "n_positive": 16,
+        "n_negative": 708,
+        "positive_prevalence": 0.022099447513812154,
+        "accuracy": 0.9779005524861878,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-AR-LBD": {
+        "n_labeled": 656,
+        "n_positive": 11,
+        "n_negative": 645,
+        "positive_prevalence": 0.01676829268292683,
+        "accuracy": 0.9832317073170732,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-AhR": {
+        "n_labeled": 673,
+        "n_positive": 48,
+        "n_negative": 625,
+        "positive_prevalence": 0.0713224368499257,
+        "accuracy": 0.9286775631500743,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-Aromatase": {
+        "n_labeled": 596,
+        "n_positive": 21,
+        "n_negative": 575,
+        "positive_prevalence": 0.03523489932885906,
+        "accuracy": 0.964765100671141,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-ER": {
+        "n_labeled": 619,
+        "n_positive": 68,
+        "n_negative": 551,
+        "positive_prevalence": 0.1098546042003231,
+        "accuracy": 0.8901453957996769,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-ER-LBD": {
+        "n_labeled": 696,
+        "n_positive": 26,
+        "n_negative": 670,
+        "positive_prevalence": 0.03735632183908046,
+        "accuracy": 0.9626436781609196,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "NR-PPAR-gamma": {
+        "n_labeled": 631,
+        "n_positive": 22,
+        "n_negative": 609,
+        "positive_prevalence": 0.03486529318541997,
+        "accuracy": 0.96513470681458,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "SR-ARE": {
+        "n_labeled": 555,
+        "n_positive": 89,
+        "n_negative": 466,
+        "positive_prevalence": 0.16036036036036036,
+        "accuracy": 0.8396396396396396,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "SR-ATAD5": {
+        "n_labeled": 709,
+        "n_positive": 22,
+        "n_negative": 687,
+        "positive_prevalence": 0.031029619181946404,
+        "accuracy": 0.9689703808180536,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "SR-HSE": {
+        "n_labeled": 622,
+        "n_positive": 36,
+        "n_negative": 586,
+        "positive_prevalence": 0.05787781350482315,
+        "accuracy": 0.9421221864951769,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "SR-MMP": {
+        "n_labeled": 582,
+        "n_positive": 68,
+        "n_negative": 514,
+        "positive_prevalence": 0.11683848797250859,
+        "accuracy": 0.8831615120274914,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      },
+      "SR-p53": {
+        "n_labeled": 684,
+        "n_positive": 45,
+        "n_negative": 639,
+        "positive_prevalence": 0.06578947368421052,
+        "accuracy": 0.9342105263157895,
+        "roc_auc": null,
+        "average_precision": null,
+        "undefined_reason_roc_auc": "undefined_constant_score_or_hard_majority"
+      }
+    },
+    "macro_accuracy": 0.9367169124746502,
+    "note": "Constant-score ROC-AUC is null (undefined)."
+  },
+  "frozen_gin_multitask": {
+    "evaluate_on": "test_graph_eligible",
+    "missing_labels_masked": true,
+    "per_task": {
+      "NR-AR": {
+        "n_labeled": 724,
+        "n_positive": 16,
+        "n_negative": 708,
+        "roc_auc": 0.6799081920903955,
+        "average_precision": 0.25514548654423924,
+        "accuracy_at_0": 0.9751381215469613,
+        "undefined_reason": null
+      },
+      "NR-AR-LBD": {
+        "n_labeled": 656,
+        "n_positive": 11,
+        "n_negative": 645,
+        "roc_auc": 0.5658914728682172,
+        "average_precision": 0.16122559002614054,
+        "accuracy_at_0": 0.9786585365853658,
+        "undefined_reason": null
+      },
+      "NR-AhR": {
+        "n_labeled": 673,
+        "n_positive": 48,
+        "n_negative": 625,
+        "roc_auc": 0.8231666666666666,
+        "average_precision": 0.38174144272140964,
+        "accuracy_at_0": 0.9257057949479941,
+        "undefined_reason": null
+      },
+      "NR-Aromatase": {
+        "n_labeled": 596,
+        "n_positive": 21,
+        "n_negative": 575,
+        "roc_auc": 0.8198757763975155,
+        "average_precision": 0.33617135092193035,
+        "accuracy_at_0": 0.9681208053691275,
+        "undefined_reason": null
+      },
+      "NR-ER": {
+        "n_labeled": 619,
+        "n_positive": 68,
+        "n_negative": 551,
+        "roc_auc": 0.6308049535603716,
+        "average_precision": 0.2536268132936645,
+        "accuracy_at_0": 0.8852988691437803,
+        "undefined_reason": null
+      },
+      "NR-ER-LBD": {
+        "n_labeled": 696,
+        "n_positive": 26,
+        "n_negative": 670,
+        "roc_auc": 0.6605625717566016,
+        "average_precision": 0.2691365825349334,
+        "accuracy_at_0": 0.9626436781609196,
+        "undefined_reason": null
+      },
+      "NR-PPAR-gamma": {
+        "n_labeled": 631,
+        "n_positive": 22,
+        "n_negative": 609,
+        "roc_auc": 0.7012987012987013,
+        "average_precision": 0.1727791379572891,
+        "accuracy_at_0": 0.9635499207606973,
+        "undefined_reason": null
+      },
+      "SR-ARE": {
+        "n_labeled": 555,
+        "n_positive": 89,
+        "n_negative": 466,
+        "roc_auc": 0.7610310073781162,
+        "average_precision": 0.39768363767926507,
+        "accuracy_at_0": 0.8468468468468469,
+        "undefined_reason": null
+      },
+      "SR-ATAD5": {
+        "n_labeled": 709,
+        "n_positive": 22,
+        "n_negative": 687,
+        "roc_auc": 0.704049225883287,
+        "average_precision": 0.13037555019553762,
+        "accuracy_at_0": 0.9675599435825106,
+        "undefined_reason": null
+      },
+      "SR-HSE": {
+        "n_labeled": 622,
+        "n_positive": 36,
+        "n_negative": 586,
+        "roc_auc": 0.7126469472885856,
+        "average_precision": 0.22677572048313227,
+        "accuracy_at_0": 0.9453376205787781,
+        "undefined_reason": null
+      },
+      "SR-MMP": {
+        "n_labeled": 582,
+        "n_positive": 68,
+        "n_negative": 514,
+        "roc_auc": 0.8533703364614328,
+        "average_precision": 0.5068686990764953,
+        "accuracy_at_0": 0.8969072164948454,
+        "undefined_reason": null
+      },
+      "SR-p53": {
+        "n_labeled": 684,
+        "n_positive": 45,
+        "n_negative": 639,
+        "roc_auc": 0.8268127282211789,
+        "average_precision": 0.3216526878305391,
+        "accuracy_at_0": 0.9342105263157895,
+        "undefined_reason": null
+      }
+    },
+    "macro": {
+      "roc_auc": 0.7282848816559224,
+      "average_precision": 0.2844318916053813,
+      "n_tasks_defined_roc_auc": 12,
+      "n_tasks_defined_ap": 12,
+      "aggregation": "unweighted mean over tasks with defined metric (both classes present among labeled graph-eligible examples)"
+    },
+    "reference_valid_macro": {
+      "roc_auc": 0.7687439702346194,
+      "average_precision": 0.2984106416031294,
+      "n_tasks_defined_roc_auc": 12,
+      "n_tasks_defined_ap": 12
+    }
+  },
+  "metric_aggregation_rule": "Per-task ROC-AUC/AP require both classes among labeled graph-eligible examples; otherwise null. Macro = unweighted mean over tasks with defined values; n_tasks_defined recorded."
+}

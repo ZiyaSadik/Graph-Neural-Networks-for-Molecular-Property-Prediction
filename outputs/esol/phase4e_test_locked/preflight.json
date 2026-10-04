@@ -1,0 +1,234 @@
+{
+  "checks": [
+    {
+      "name": "esol_source_sha",
+      "ok": true,
+      "detail": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189"
+    },
+    {
+      "name": "esol_assign_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "esol_mapping_fp",
+      "ok": true,
+      "detail": "90f827da4c8622a85408b461b0e028a4cc882439c01c54d06d5bc08db92602ac"
+    },
+    {
+      "name": "esol_fp_record_map",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_source_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_assign_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_mapping_fp",
+      "ok": true,
+      "detail": "bffa1dbba4729aadc8bd5e19c052f0982c8b81a64b58e129175fc0d85d463ebd"
+    },
+    {
+      "name": "tox_fp_record_map",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "encoder_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "esol_head_exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_head_exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "e3_encoder_sha_match",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "f4_encoder_sha_match",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "e3_map_match",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "f4_map_match",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "reg_head_encoder_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "reg_head_best_epoch",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cls_head_encoder_sha",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cls_head_best_epoch",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cls_tasks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desc_n24",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ridge_alpha_1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "esol_n1128",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "esol_counts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "train_mean_match_e1",
+      "ok": true,
+      "detail": "-3.1296666666666666"
+    },
+    {
+      "name": "e1_valid_repro",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "e2_valid_repro",
+      "ok": true,
+      "detail": "0.9651574598081615"
+    },
+    {
+      "name": "norm_match_e3",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "e3_valid_repro",
+      "ok": true,
+      "detail": "0.8776800141207939"
+    },
+    {
+      "name": "tox_n7831",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_counts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_test_inelig",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tox_test_elig",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-AR",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-AR-LBD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-AhR",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-Aromatase",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-ER",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-ER-LBD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_NR-PPAR-gamma",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_SR-ARE",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_SR-ATAD5",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_SR-HSE",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_SR-MMP",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maj_SR-p53",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "f4_valid_macro_repro",
+      "ok": true,
+      "detail": "0.7687439702346194"
+    }
+  ]
+}

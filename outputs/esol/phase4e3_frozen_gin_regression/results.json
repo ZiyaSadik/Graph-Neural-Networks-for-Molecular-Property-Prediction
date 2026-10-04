@@ -1,0 +1,162 @@
+{
+  "experiment_id": "esol_phase4e3_frozen_gin_regression",
+  "phase": "4E.3",
+  "created_utc": "2026-10-03T09:17:29+00:00",
+  "description": "Frozen GraphCL-pretrained GIN encoder embeddings + newly initialized MLP regression head. Only the head is trained. Validation metrics compared to Phase 4E.1 mean and 4E.2 descriptor baselines.",
+  "target_column": "measured log solubility in mols per litre",
+  "forbidden_target_column": "ESOL predicted log solubility in mols per litre",
+  "software": {
+    "python": "3.13.9",
+    "torch": "2.9.1+cpu",
+    "torch_geometric": "2.7.0",
+    "rdkit": "2025.09.3",
+    "numpy": "2.3.5"
+  },
+  "split": {
+    "authoritative": true,
+    "assignments_csv": "data/moleculenet/esol/esol_split_assignments_v1.csv",
+    "assignments_csv_sha256": "3a7946d83f7db28341b1364d9ee72f3e8eddc939e63053dda9113afb05c0facc",
+    "mapping_fingerprint_sha256": "90f827da4c8622a85408b461b0e028a4cc882439c01c54d06d5bc08db92602ac",
+    "source_csv": "data/moleculenet/esol/delaney-processed.csv",
+    "source_sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
+    "n_train": 903,
+    "n_valid": 113,
+    "n_test": 112,
+    "test_labels_used": false,
+    "split_regenerated": false
+  },
+  "encoder": {
+    "checkpoint_path": "outputs/core_pipeline/graphcl_checkpoint.pt",
+    "checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "load_api": "apps.mol_cli.checkpoint_smoke.load_encoder_from_research_checkpoint (weights_only=True dict path)",
+    "architecture": {
+      "in_dim": 9,
+      "hidden_dim": 128,
+      "num_layers": 5,
+      "dropout": 0.1,
+      "pool_type": "sum"
+    },
+    "n_parameters": 184197,
+    "embedding_dim": 128,
+    "uses_graph_embedding_not_projection": true,
+    "frozen": true,
+    "requires_grad_any_true": false,
+    "eval_mode_during_embedding": true,
+    "fine_tuned": false,
+    "edge_attr_in_pyg_graphs": true,
+    "edge_attr_used_by_gin_forward": false,
+    "embedding_recompute_max_abs_diff": 0.0,
+    "limitation": "GINEncoder.forward uses node features x and edge_index only; bond edge_attr are present from OGB conversion but unused by the encoder."
+  },
+  "graph_conversion": {
+    "utility": "apps.mol_cli.ogb_graph.smiles_to_pyg_data",
+    "expected_node_feat_dim": 9,
+    "failures": 0
+  },
+  "regression_head": {
+    "architecture": "Linear(128,64) -> ReLU -> Linear(64,1)",
+    "trainable_parameters_only": true,
+    "checkpoint_path": "outputs/esol/phase4e3_frozen_gin_regression/regression_head.pt"
+  },
+  "training": {
+    "seed": 42,
+    "device": "cpu",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 64,
+    "max_epochs": 200,
+    "loss": "MSE on train-standardized targets",
+    "target_standardization": {
+      "train_mean": -3.129667043685913,
+      "train_std_population": 2.050183057785034,
+      "fitted_on": "train_only"
+    },
+    "early_stopping": {
+      "metric": "validation MAE on original measured logS scale",
+      "mode": "min",
+      "patience": 25,
+      "predeclared": true
+    },
+    "best_epoch": 103,
+    "epochs_ran": 128,
+    "stopped_early": true
+  },
+  "evaluation": {
+    "partition": "valid",
+    "scale": "original measured log solubility in mols per litre",
+    "metrics": {
+      "mae": 0.8776800036430359,
+      "rmse": 1.2239347696304321,
+      "r2_supplementary": 0.7213811748580191
+    },
+    "test_metrics_reported": false,
+    "history_tail": [
+      {
+        "epoch": 124,
+        "train_mse_z": 0.03208602083226045,
+        "valid_mae": 0.9435144066810608,
+        "valid_rmse": 1.3499168157577515,
+        "valid_r2": 0.6610716167196897
+      },
+      {
+        "epoch": 125,
+        "train_mse_z": 0.03190999751289685,
+        "valid_mae": 0.9252217411994934,
+        "valid_rmse": 1.3592091798782349,
+        "valid_r2": 0.6563894266877071
+      },
+      {
+        "epoch": 126,
+        "train_mse_z": 0.03201906519631545,
+        "valid_mae": 0.9554092288017273,
+        "valid_rmse": 1.339599847793579,
+        "valid_r2": 0.6662324510485871
+      },
+      {
+        "epoch": 127,
+        "train_mse_z": 0.03995376974344254,
+        "valid_mae": 0.9349135756492615,
+        "valid_rmse": 1.3537384271621704,
+        "valid_r2": 0.6591498817177468
+      },
+      {
+        "epoch": 128,
+        "train_mse_z": 0.0383350595831871,
+        "valid_mae": 0.9465175867080688,
+        "valid_rmse": 1.3331125974655151,
+        "valid_r2": 0.6694572849772498
+      }
+    ]
+  },
+  "comparison_to_baselines": {
+    "same_validation_rows": true,
+    "phase4e1_mean": {
+      "mae": 1.8863687315634217,
+      "rmse": 2.3202618187547905,
+      "r2_supplementary": -0.0013085822353893217
+    },
+    "phase4e2_descriptor": {
+      "mae": 0.9651574598081615,
+      "rmse": 1.2866343806975804,
+      "r2_supplementary": 0.6921038518239173
+    },
+    "frozen_gin": {
+      "mae": 0.8776800036430359,
+      "rmse": 1.2239347696304321,
+      "r2_supplementary": 0.7213811748580191
+    },
+    "better_mae_than_mean": true,
+    "better_rmse_than_mean": true,
+    "better_mae_than_descriptor": true,
+    "better_rmse_than_descriptor": true
+  },
+  "reproducibility_check": {
+    "embedding_recompute_max_abs_diff": 0.0,
+    "encoder_remained_frozen": true,
+    "note": "Use evaluate_frozen_gin_regression.py to reload head and recompute validation metrics."
+  },
+  "no_encoder_checkpoint_modified": true,
+  "no_cli_changes": true,
+  "no_split_modifications": true
+}

@@ -1,0 +1,96 @@
+{
+  "manifest_id": "bace_train_k5_v1",
+  "dataset": "ogbg-molbace",
+  "split": "train",
+  "split_name": "ogb_scaffold",
+  "k_shot": 5,
+  "n_way": 2,
+  "seed": 42,
+  "selection_rule": "stratified_random_sample_without_replacement_from_official_OGB_scaffold_train_split_only; fixed seed; K examples per binary class; validation and test indices are never eligible",
+  "label_semantics": {
+    "0": "inactive (non-inhibitor)",
+    "1": "active (BACE-1 inhibitor)"
+  },
+  "label_source": "dataset/ogbg_molbace/raw/graph-label.csv.gz and mapping/mol.csv.gz Class",
+  "created_utc": "2026-09-30T17:32:05+00:00",
+  "dataset_root_relative": "dataset/ogbg_molbace",
+  "n_train": 1210,
+  "n_valid": 151,
+  "n_test": 152,
+  "train_class_counts": {
+    "0": 730,
+    "1": 480
+  },
+  "support": [
+    {
+      "dataset_index": 182,
+      "label": 0,
+      "smiles_original": "O=C1N(Cc2ccc(cc2)CNC(=O)NCCCC)C(N[C@@]1(CC(C)C)C)=N",
+      "smiles_canonical": "CCCCNC(=O)NCc1ccc(CN2C(=N)N[C@](C)(CC(C)C)C2=O)cc1",
+      "mol_id": "BACE_184"
+    },
+    {
+      "dataset_index": 897,
+      "label": 0,
+      "smiles_original": "Clc1cc(cc(Cl)c1NC(=O)C)CNC(=[NH2+])NC(=O)Cn1c2cc(OC)ccc2cc1",
+      "smiles_canonical": "COc1ccc2ccn(CC(=O)NC(=[NH2+])NCc3cc(Cl)c(NC(C)=O)c(Cl)c3)c2c1",
+      "mol_id": "BACE_930"
+    },
+    {
+      "dataset_index": 1033,
+      "label": 0,
+      "smiles_original": "S1(=O)(=O)CC(Cc2cc(OCCC)ccc2)C(O)C([NH2+]Cc2cc(ccc2)C(C)(C)C)C1",
+      "smiles_canonical": "CCCOc1cccc(CC2CS(=O)(=O)CC([NH2+]Cc3cccc(C(C)(C)C)c3)C2O)c1",
+      "mol_id": "BACE_1066"
+    },
+    {
+      "dataset_index": 1064,
+      "label": 0,
+      "smiles_original": "Fc1cc(cc(F)c1)CC(NC(=O)C)C(O)C[NH2+]C1(CCCN(C1)C(OCc1ccccc1)=O)c1cc(ccc1)C(C)(C)C",
+      "smiles_canonical": "CC(=O)NC(Cc1cc(F)cc(F)c1)C(O)C[NH2+]C1(c2cccc(C(C)(C)C)c2)CCCN(C(=O)OCc2ccccc2)C1",
+      "mol_id": "BACE_1097"
+    },
+    {
+      "dataset_index": 1437,
+      "label": 0,
+      "smiles_original": "Clc1cc(cnc1)-c1cc(ccc1)C12N=C(OC1COCC2)N",
+      "smiles_canonical": "NC1=NC2(c3cccc(-c4cncc(Cl)c4)c3)CCOCC2O1",
+      "mol_id": "BACE_1471"
+    },
+    {
+      "dataset_index": 223,
+      "label": 1,
+      "smiles_original": "S(=O)(=O)(N(C)c1cc(cc(c1)C(=O)NC(Cc1ccccc1)C[NH2+]C(C(O)C)C(=O)NCC(C)C)C(=O)NC(C)c1ccccc1)C",
+      "smiles_canonical": "CC(C)CNC(=O)C([NH2+]CC(Cc1ccccc1)NC(=O)c1cc(C(=O)NC(C)c2ccccc2)cc(N(C)S(C)(=O)=O)c1)C(C)O",
+      "mol_id": "BACE_250"
+    },
+    {
+      "dataset_index": 260,
+      "label": 1,
+      "smiles_original": "Fc1cc(cc(F)c1)CC(NC(=O)c1cc(cc(c1)C(=O)N(CCC)CCC)C(O)C)C(O)C[NH2+]Cc1cc(OC)ccc1",
+      "smiles_canonical": "CCCN(CCC)C(=O)c1cc(C(=O)NC(Cc2cc(F)cc(F)c2)C(O)C[NH2+]Cc2cccc(OC)c2)cc(C(C)O)c1",
+      "mol_id": "BACE_288"
+    },
+    {
+      "dataset_index": 316,
+      "label": 1,
+      "smiles_original": "S(=O)(=O)(N(c1cc(cc(c1)/C(=N\\OCCC)/C)C(=O)NC([C@@H](O)C[NH2+]Cc1cc(OC)ccc1)Cc1cc(F)cc(F)c1)c1ccccc1)C",
+      "smiles_canonical": "CCCO/N=C(/C)c1cc(C(=O)NC(Cc2cc(F)cc(F)c2)[C@@H](O)C[NH2+]Cc2cccc(OC)c2)cc(N(c2ccccc2)S(C)(=O)=O)c1",
+      "mol_id": "BACE_344"
+    },
+    {
+      "dataset_index": 621,
+      "label": 1,
+      "smiles_original": "Fc1cc(cc(F)c1)CC(NC(=O)C(N1CCC(C(O)CCC)C1=O)C)C(O)C1[NH2+]CC(O)C1",
+      "smiles_canonical": "CCCC(O)C1CCN(C(C)C(=O)NC(Cc2cc(F)cc(F)c2)C(O)C2CC(O)C[NH2+]2)C1=O",
+      "mol_id": "BACE_652"
+    },
+    {
+      "dataset_index": 659,
+      "label": 1,
+      "smiles_original": "O(CCCC)c1cc(ccc1OC)C1(N=C(N)N(C)C1=O)c1cc(ccc1)-c1cccnc1",
+      "smiles_canonical": "CCCCOc1cc(C2(c3cccc(-c4cccnc4)c3)N=C(N)N(C)C2=O)ccc1OC",
+      "mol_id": "BACE_690"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "experiment_id": "tox21_phase4f6_explainability_smoke",
+  "phase": "4F.6",
+  "created_utc": "2026-10-04T09:30:45+00:00",
+  "status": "smoke_complete",
+  "software": {
+    "python": "3.13.9",
+    "torch": "2.9.1+cpu",
+    "torch_geometric": "2.7.0"
+  },
+  "split": {
+    "mapping_fingerprint_sha256": "bffa1dbba4729aadc8bd5e19c052f0982c8b81a64b58e129175fc0d85d463ebd",
+    "source_sha256": "7d7e7facd853a63e79ddce4e9c3fcb7a0d83a1c300b603031c0f2c64fbe77761",
+    "assignments_csv_sha256": "23bffcdbe629ef1a3b35961288917d8eea57f61904d508f472f5b5654c0629b9",
+    "partition_used": "valid_graph_eligible_only",
+    "test_split_accessed": false
+  },
+  "checkpoints": {
+    "encoder_path": "outputs/core_pipeline/graphcl_checkpoint.pt",
+    "encoder_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "encoder_load_api": "load_encoder_from_research_checkpoint (weights_only=True)",
+    "encoder_config": {
+      "in_dim": 9,
+      "hidden_dim": 128,
+      "num_layers": 5,
+      "dropout": 0.1,
+      "pool_type": "sum"
+    },
+    "head_path": "outputs/tox21/phase4f4_baselines/classification_head.pt",
+    "head_sha256": "7a201bcd2bc50c44d79c6e3fe719354b002e5c16234921c0213a6623badff42d",
+    "head_config": {
+      "in_dim": 128,
+      "hidden": 64,
+      "dropout": 0.1,
+      "n_tasks": 12,
+      "activation": "ReLU",
+      "architecture": "Linear(128,64) -> ReLU -> Dropout(0.1) -> Linear(64,12)"
+    },
+    "encoder_frozen": true,
+    "encoder_fine_tuned": false,
+    "edge_attr_used_by_gin_forward": false
+  },
+  "task": {
+    "name": "NR-AhR",
+    "index": 2,
+    "selection_reason": "Highest Phase 4F.4 validation ROC-AUC among tasks (~0.88); valid task index 2."
+  },
+  "logit_equivalence": {
+    "reference": "Phase 4F.4 evaluate path: Batch embeddings -> MultiTaskHead",
+    "adapter": "Tox21MultiTaskAdapter.forward(x, edge_index, batch) per molecule",
+    "n_molecules_compared": 783,
+    "max_abs_diff": 1.1444091796875e-05,
+    "rtol": 1e-05,
+    "atol": 1e-05,
+    "allclose": true,
+    "task_wrapper_column_match": true
+  },
+  "pyg_task_targeting": {
+    "torch_geometric_version": "2.7.0",
+    "ModelMode_available": [
+      "binary_classification",
+      "multiclass_classification",
+      "regression"
+    ],
+    "index_semantics_verified": "Explainer.__call__ docs: index selects indices in the first dimension of model output. GNNExplainer._train applies y_hat[index], y[index] on that first dimension. For graph-level batch size 1 with output [1, 12], index cannot select a Tox21 task.",
+    "task_targeting_method": "TaskLogitWrapper exposes adapter logits[:, 2] (NR-AhR) as shape [batch]; Explainer configured with mode='binary_classification', return_type='raw', explanation_type='model'. This explains the selected task logit, not argmax-across-tasks.",
+    "rejected_approach": "mode='multiclass_classification' on 12 task logits would treat tasks as mutually exclusive classes (argmax over tasks) and is chemically/statistically incorrect for Tox21 multi-task binary."
+  },
+  "gnnexplainer": {
+    "api": "torch_geometric.explain.Explainer + GNNExplainer",
+    "epochs": 40,
+    "lr": 0.01,
+    "explanation_type": "model",
+    "node_mask_type": "object",
+    "edge_mask_type": "object",
+    "model_config": {
+      "mode": "binary_classification",
+      "task_level": "graph",
+      "return_type": "raw"
+    },
+    "model_wrapper": "TaskLogitWrapper(Tox21MultiTaskAdapter, task_index)",
+    "n_requested": 2,
+    "n_succeeded": 2
+  },
+  "molecules": [
+    {
+      "row_index": 3254,
+      "mol_id": "TOX918",
+      "smiles": "c1ccc2cc(Nc3ccc(Nc4ccc5ccccc5c4)cc3)ccc2c1",
+      "n_nodes": 28,
+      "n_edges": 64,
+      "task_logit": 4.523190498352051,
+      "predicted_active_logit_gt_0": true,
+      "ground_truth_label": 1,
+      "explanation_succeeded": true,
+      "node_mask": {
+        "shape": [
+          28,
+          1
+        ],
+        "flat_len": 28,
+        "mean": 0.48371127247810364,
+        "std": 0.05197347328066826,
+        "min": 0.3786441683769226,
+        "max": 0.5804784893989563,
+        "sum": 13.543915748596191
+      },
+      "edge_mask": {
+        "shape": [
+          64
+        ],
+        "flat_len": 64,
+        "mean": 0.47704392671585083,
+        "std": 0.09607037901878357,
+        "min": 0.3076179623603821,
+        "max": 0.6901571750640869,
+        "sum": 30.530811309814453
+      },
+      "warnings": [
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15."
+      ],
+      "error": null
+    },
+    {
+      "row_index": 4051,
+      "mol_id": "TOX5065",
+      "smiles": "C[C@H]1[C@H]2[C@@H](O[C@]13CC[C@@H](C)CO3)[C@@H](O)[C@H]1[C@@H]3CC[C@H]4C[C@@H](O[C@@H]5O[C@H](CO)[C@H](O[C@@H]6O[C@H](CO)[C@@H](O)[C@H](O[C@@H]7OC[C@@H](O)[C@H](O)[C@H]7O)[C@H]6O[C@@H]6O[C@H](CO)[C@@H](O)[C@H](O[C@@H]7O[C@H](CO)[C@@H](O)[C@H](O)[C@H]7O)[C@H]6O)[C@H](O)[C@H]5O)[C@H](O)C[C@]4(C)[C@H]3CC[C@@]12C",
+      "n_nodes": 85,
+      "n_edges": 190,
+      "task_logit": -38.00776672363281,
+      "predicted_active_logit_gt_0": false,
+      "ground_truth_label": null,
+      "explanation_succeeded": true,
+      "node_mask": {
+        "shape": [
+          85,
+          1
+        ],
+        "flat_len": 85,
+        "mean": 0.4038282632827759,
+        "std": 0.02308753877878189,
+        "min": 0.34576162695884705,
+        "max": 0.458011656999588,
+        "sum": 34.325401306152344
+      },
+      "edge_mask": {
+        "shape": [
+          190
+        ],
+        "flat_len": 190,
+        "mean": 0.40128418803215027,
+        "std": 0.03608975186944008,
+        "min": 0.29550454020500183,
+        "max": 0.49026477336883545,
+        "sum": 76.2439956665039
+      },
+      "warnings": [
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15.",
+        "Failing to pass a value to the 'type_params' parameter of 'typing._eval_type' is deprecated, as it leads to incorrect behaviour when calling typing._eval_type on a stringified annotation that references a PEP 695 type parameter. It will be disallowed in Python 3.15."
+      ],
+      "error": null
+    }
+  ],
+  "limitations": [
+    "GNNExplainer masks indicate explainer attribution under the binary task-logit objective; not chemical causality.",
+    "GINEncoder ignores edge_attr; edge masks are over graph connectivity, not bond-feature attributions.",
+    "This is a smoke test on 1-2 validation molecules, not a full XAI study.",
+    "Missing task labels are not used for explanation; ground_truth_label may be null.",
+    "No test-split molecules were used."
+  ],
+  "phase4f4_results_macro_roc_auc_reference": 0.7687439702346194,
+  "no_training": true,
+  "no_src_modifications": true
+}
