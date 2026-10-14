@@ -1,0 +1,214 @@
+{
+  "report_id": "bace_calibration_assessment_v1",
+  "created_utc": "2026-10-11T09:04:34.927605+00:00",
+  "phase": "phase5_calibration",
+  "checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+  "fit_split": "train_minus_support",
+  "eval_split": "valid",
+  "n_fit": 1200,
+  "n_eval": 151,
+  "locked_test_used": false,
+  "score_definition": "d0 - d1 (higher => more class-1-like)",
+  "uncalibrated_diagnostic": {
+    "name": "sigmoid_of_raw_score_diagnostic",
+    "n": 151,
+    "class_counts": {
+      "0": 21,
+      "1": 130
+    },
+    "brier": 0.5494601441016571,
+    "log_loss": 5.1049645146301215,
+    "auroc": 0.6384615384615385,
+    "ece": 0.5643835608238409,
+    "ece_bins": [
+      {
+        "bin": 0,
+        "lo": 0.0,
+        "hi": 0.1,
+        "n": 98,
+        "conf": 0.0035475723226512674,
+        "acc": 0.8061224489795918
+      },
+      {
+        "bin": 1,
+        "lo": 0.1,
+        "hi": 0.2,
+        "n": 1,
+        "conf": 0.12997753795980316,
+        "acc": 1.0
+      },
+      {
+        "bin": 2,
+        "lo": 0.2,
+        "hi": 0.30000000000000004,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 3,
+        "lo": 0.30000000000000004,
+        "hi": 0.4,
+        "n": 1,
+        "conf": 0.3983771833149405,
+        "acc": 1.0
+      },
+      {
+        "bin": 4,
+        "lo": 0.4,
+        "hi": 0.5,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 5,
+        "lo": 0.5,
+        "hi": 0.6000000000000001,
+        "n": 3,
+        "conf": 0.5390863008490486,
+        "acc": 1.0
+      },
+      {
+        "bin": 6,
+        "lo": 0.6000000000000001,
+        "hi": 0.7000000000000001,
+        "n": 4,
+        "conf": 0.6704295513296241,
+        "acc": 1.0
+      },
+      {
+        "bin": 7,
+        "lo": 0.7000000000000001,
+        "hi": 0.8,
+        "n": 10,
+        "conf": 0.7412790057850727,
+        "acc": 0.9
+      },
+      {
+        "bin": 8,
+        "lo": 0.8,
+        "hi": 0.9,
+        "n": 4,
+        "conf": 0.8233064142969577,
+        "acc": 1.0
+      },
+      {
+        "bin": 9,
+        "lo": 0.9,
+        "hi": 1.0,
+        "n": 30,
+        "conf": 0.9700975772066254,
+        "acc": 0.9666666666666667
+      }
+    ]
+  },
+  "platt_calibration": {
+    "name": "platt_logistic_on_d0_minus_d1",
+    "n": 151,
+    "class_counts": {
+      "0": 21,
+      "1": 130
+    },
+    "brier": 0.3411747108455801,
+    "log_loss": 0.8854111564348548,
+    "auroc": 0.6384615384615385,
+    "ece": 0.47367155155493545,
+    "ece_bins": [
+      {
+        "bin": 0,
+        "lo": 0.0,
+        "hi": 0.1,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 1,
+        "lo": 0.1,
+        "hi": 0.2,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 2,
+        "lo": 0.2,
+        "hi": 0.30000000000000004,
+        "n": 25,
+        "conf": 0.2762756849745888,
+        "acc": 0.84
+      },
+      {
+        "bin": 3,
+        "lo": 0.30000000000000004,
+        "hi": 0.4,
+        "n": 69,
+        "conf": 0.35432767030750784,
+        "acc": 0.7971014492753623
+      },
+      {
+        "bin": 4,
+        "lo": 0.4,
+        "hi": 0.5,
+        "n": 44,
+        "conf": 0.45326262084439883,
+        "acc": 0.9318181818181818
+      },
+      {
+        "bin": 5,
+        "lo": 0.5,
+        "hi": 0.6000000000000001,
+        "n": 12,
+        "conf": 0.5454772127668539,
+        "acc": 1.0
+      },
+      {
+        "bin": 6,
+        "lo": 0.6000000000000001,
+        "hi": 0.7000000000000001,
+        "n": 1,
+        "conf": 0.6308124692661893,
+        "acc": 1.0
+      },
+      {
+        "bin": 7,
+        "lo": 0.7000000000000001,
+        "hi": 0.8,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 8,
+        "lo": 0.8,
+        "hi": 0.9,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "bin": 9,
+        "lo": 0.9,
+        "hi": 1.0,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      }
+    ]
+  },
+  "platt_coef": {
+    "coef": [
+      0.045396299864013355
+    ],
+    "intercept": [
+      -0.2458376608599561
+    ]
+  },
+  "claim_calibrated_probabilities": false,
+  "rationale": "Prototype distances are not generative logits. Prior gap analysis showed only modest discrimination (AUROC\u22480.589 on episodic gaps). Validation is severely imbalanced (\u224821 inactive / 130 active), so ECE/reliability bins are underpowered. Platt on (d0\u2212d1) is reported as a diagnostic comparison only; outputs are NOT claimed as calibrated probabilities.",
+  "figures": [
+    "reliability_uncalibrated_sigmoid.png",
+    "reliability_platt.png"
+  ]
+}

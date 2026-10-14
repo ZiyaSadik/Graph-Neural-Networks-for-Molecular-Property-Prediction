@@ -1,0 +1,359 @@
+{
+  "report_id": "gin_embedding_validation_v1",
+  "created_utc": "2026-10-11T08:56:19.475137+00:00",
+  "phase": "phase2_gin_embedding",
+  "interpretation_limits": {
+    "implementation_checks_only": true,
+    "nonzero_distance_is_not_chemical_proof": true,
+    "latent_dims_not_interpreted_as_chemical_properties": true,
+    "edge_attr_unused_in_gin_forward": true
+  },
+  "checkpoint": {
+    "path": "outputs/core_pipeline/graphcl_checkpoint.pt",
+    "sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "encoder_config": {
+      "in_dim": 9,
+      "hidden_dim": 128,
+      "num_layers": 5,
+      "dropout": 0.1,
+      "pool_type": "sum"
+    },
+    "n_parameters": 184197,
+    "expected_n_parameters": 184197,
+    "param_count_matches": true
+  },
+  "checks": {
+    "checkpoint_loads": true,
+    "architecture_compatible": true,
+    "node_emb_shape_matches_hidden": true,
+    "graph_emb_shape_single": true,
+    "graph_emb_shape_batch": true,
+    "all_finite": true,
+    "eval_repeatable": true,
+    "not_constant_across_molecules": true,
+    "not_numerically_degenerate": true
+  },
+  "failures": [],
+  "overall_pass": true,
+  "molecules": [
+    {
+      "id": "ethanol",
+      "smiles": "CCO",
+      "note": "small alcohol",
+      "n_atoms": 3,
+      "n_edges": 4,
+      "node_emb_shape": [
+        3,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 9.710214304244525,
+      "graph_emb_mean": 0.33974031754769385,
+      "graph_emb_std": 0.7881646796282428,
+      "node_emb_l2_norm_mean": 3.588031053543091,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    },
+    {
+      "id": "benzene",
+      "smiles": "c1ccccc1",
+      "note": "aromatic hydrocarbon",
+      "n_atoms": 6,
+      "n_edges": 12,
+      "node_emb_shape": [
+        6,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 9.28515959924244,
+      "graph_emb_mean": 0.2762997471727431,
+      "graph_emb_std": 0.7727915628308984,
+      "node_emb_l2_norm_mean": 1.547526478767395,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    },
+    {
+      "id": "acetic_acid",
+      "smiles": "CC(=O)O",
+      "note": "carboxylic acid",
+      "n_atoms": 4,
+      "n_edges": 6,
+      "node_emb_shape": [
+        4,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 10.520928765537471,
+      "graph_emb_mean": 0.4105487859342247,
+      "graph_emb_std": 0.8343949106641656,
+      "node_emb_l2_norm_mean": 3.209414482116699,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    },
+    {
+      "id": "aniline",
+      "smiles": "Nc1ccccc1",
+      "note": "aromatic amine",
+      "n_atoms": 7,
+      "n_edges": 14,
+      "node_emb_shape": [
+        7,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 9.676874633180514,
+      "graph_emb_mean": 0.4135851737810299,
+      "graph_emb_std": 0.7486819542428717,
+      "node_emb_l2_norm_mean": 1.9288455247879028,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    },
+    {
+      "id": "glucose_open",
+      "smiles": "OCC(O)C(O)C(O)C(O)C=O",
+      "note": "polyol aldehyde",
+      "n_atoms": 12,
+      "n_edges": 22,
+      "node_emb_shape": [
+        12,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 41.65585621505623,
+      "graph_emb_mean": 1.50006418407429,
+      "graph_emb_std": 3.3624601644917336,
+      "node_emb_l2_norm_mean": 4.334896564483643,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    },
+    {
+      "id": "caffeine",
+      "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+      "note": "heterocycle",
+      "n_atoms": 14,
+      "n_edges": 30,
+      "node_emb_shape": [
+        14,
+        128
+      ],
+      "graph_emb_shape": [
+        1,
+        128
+      ],
+      "projection_shape": [
+        1,
+        128
+      ],
+      "graph_emb_l2_norm": 37.66331876436109,
+      "graph_emb_mean": 1.1184195725945756,
+      "graph_emb_std": 3.1355013564164675,
+      "node_emb_l2_norm_mean": 3.2657978534698486,
+      "finite": true,
+      "eval_repeat_max_abs_delta_graph": 0.0,
+      "eval_repeat_max_abs_delta_node": 0.0
+    }
+  ],
+  "batch": {
+    "batch_size": 6,
+    "graph_emb_shape": [
+      6,
+      128
+    ],
+    "node_emb_shape": [
+      46,
+      128
+    ],
+    "projection_shape": [
+      6,
+      128
+    ],
+    "max_abs_delta_vs_single_forward": 1.9073486328125e-06
+  },
+  "cross_molecule": {
+    "ids": [
+      "ethanol",
+      "benzene",
+      "acetic_acid",
+      "aniline",
+      "glucose_open",
+      "caffeine"
+    ],
+    "pairwise_l2_distances": [
+      {
+        "a": "ethanol",
+        "b": "benzene",
+        "l2_distance": 13.283642012984723
+      },
+      {
+        "a": "ethanol",
+        "b": "acetic_acid",
+        "l2_distance": 12.541848207891883
+      },
+      {
+        "a": "ethanol",
+        "b": "aniline",
+        "l2_distance": 12.880007918211675
+      },
+      {
+        "a": "ethanol",
+        "b": "glucose_open",
+        "l2_distance": 32.78946175302599
+      },
+      {
+        "a": "ethanol",
+        "b": "caffeine",
+        "l2_distance": 38.12743942083087
+      },
+      {
+        "a": "benzene",
+        "b": "acetic_acid",
+        "l2_distance": 13.995952631096525
+      },
+      {
+        "a": "benzene",
+        "b": "aniline",
+        "l2_distance": 6.529520887689174
+      },
+      {
+        "a": "benzene",
+        "b": "glucose_open",
+        "l2_distance": 42.35482949371992
+      },
+      {
+        "a": "benzene",
+        "b": "caffeine",
+        "l2_distance": 38.034280544650684
+      },
+      {
+        "a": "acetic_acid",
+        "b": "aniline",
+        "l2_distance": 11.052565562505201
+      },
+      {
+        "a": "acetic_acid",
+        "b": "glucose_open",
+        "l2_distance": 40.25066425805638
+      },
+      {
+        "a": "acetic_acid",
+        "b": "caffeine",
+        "l2_distance": 37.84679912258726
+      },
+      {
+        "a": "aniline",
+        "b": "glucose_open",
+        "l2_distance": 41.47343564844089
+      },
+      {
+        "a": "aniline",
+        "b": "caffeine",
+        "l2_distance": 37.73607327574706
+      },
+      {
+        "a": "glucose_open",
+        "b": "caffeine",
+        "l2_distance": 54.80774976579966
+      }
+    ],
+    "distance_matrix": [
+      [
+        0.0,
+        13.283642012984723,
+        12.541848207891883,
+        12.880007918211675,
+        32.78946175302599,
+        38.12743942083087
+      ],
+      [
+        13.283642012984723,
+        0.0,
+        13.995952631096525,
+        6.529520887689174,
+        42.35482949371992,
+        38.034280544650684
+      ],
+      [
+        12.541848207891883,
+        13.995952631096525,
+        0.0,
+        11.052565562505201,
+        40.25066425805638,
+        37.84679912258726
+      ],
+      [
+        12.880007918211675,
+        6.529520887689174,
+        11.052565562505201,
+        0.0,
+        41.47343564844089,
+        37.73607327574706
+      ],
+      [
+        32.78946175302599,
+        42.35482949371992,
+        40.25066425805638,
+        41.47343564844089,
+        0.0,
+        54.80774976579966
+      ],
+      [
+        38.12743942083087,
+        38.034280544650684,
+        37.84679912258726,
+        37.73607327574706,
+        54.80774976579966,
+        0.0
+      ]
+    ],
+    "min_pairwise_l2": 6.529520887689174,
+    "max_pairwise_l2": 54.80774976579966,
+    "mean_pairwise_l2": 28.91361803354919,
+    "near_duplicates": [],
+    "near_dup_threshold": 0.0001,
+    "embedding_matrix_std": 2.037139720533054,
+    "per_dim_std_mean": 1.070398992152104,
+    "per_dim_std_min": 0.0,
+    "frac_dims_near_zero_std": 0.25,
+    "constant_std_threshold": 1e-08
+  }
+}

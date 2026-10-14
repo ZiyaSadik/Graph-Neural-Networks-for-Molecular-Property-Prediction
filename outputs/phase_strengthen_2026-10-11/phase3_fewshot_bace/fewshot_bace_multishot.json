@@ -1,0 +1,1598 @@
+{
+  "report_id": "fewshot_bace_multishot_v1",
+  "created_utc": "2026-10-11T09:01:05.902079+00:00",
+  "phase": "phase3_fewshot_bace",
+  "checkpoint_path": "outputs/core_pipeline/graphcl_checkpoint.pt",
+  "checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+  "n_train": 1210,
+  "n_valid_queries": 151,
+  "n_test_queries": 152,
+  "class_counts": {
+    "train": {
+      "0": 730,
+      "1": 480
+    },
+    "valid": {
+      "0": 21,
+      "1": 130
+    },
+    "test": {
+      "0": 71,
+      "1": 81
+    }
+  },
+  "canonical_reproduction": {
+    "protocol": "canonical_fixed_support_k5_seed42",
+    "k_shot": 5,
+    "seed": 42,
+    "reproduction_path": "apps.mol_cli.evaluate_bace_support.build_evaluation_report",
+    "original_report": "apps/mol_cli/evaluation_reports/bace_fixed_support_eval_v1.json",
+    "original_checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "current_checkpoint_sha256": "d6951b12412cbab90e7a6a0ef04004c99d6b44898b65d13424a4cb17fbe1247f",
+    "checkpoint_sha_match": true,
+    "validation": {
+      "metrics": {
+        "n_evaluated": 151,
+        "n_true_class_0": 21,
+        "n_true_class_1": 130,
+        "accuracy": 0.4503311258278146,
+        "balanced_accuracy": 0.6408424908424908,
+        "sensitivity_class_1": 0.3769230769230769,
+        "specificity_class_0": 0.9047619047619048,
+        "auroc": 0.6384615384615384,
+        "auroc_undefined_reason": null,
+        "confusion_matrix": {
+          "class_order": [
+            0,
+            1
+          ],
+          "class_names": [
+            "inactive",
+            "active"
+          ],
+          "matrix": [
+            [
+              19,
+              2
+            ],
+            [
+              81,
+              49
+            ]
+          ],
+          "tn": 19,
+          "fp": 2,
+          "fn": 81,
+          "tp": 49
+        },
+        "metric_notes": {
+          "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+          "sensitivity": "TP/(TP+FN) for class 1 (active)",
+          "specificity": "TN/(TN+FP) for class 0 (inactive)",
+          "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+          "calibrated_probability": false
+        }
+      },
+      "n_evaluated": 151,
+      "support_dataset_indices": [
+        182,
+        897,
+        1033,
+        1064,
+        1437,
+        223,
+        260,
+        316,
+        621,
+        659
+      ]
+    },
+    "test": {
+      "metrics": {
+        "n_evaluated": 152,
+        "n_true_class_0": 71,
+        "n_true_class_1": 81,
+        "accuracy": 0.6447368421052632,
+        "balanced_accuracy": 0.6597113545470353,
+        "sensitivity_class_1": 0.43209876543209874,
+        "specificity_class_0": 0.8873239436619719,
+        "auroc": 0.7278734133194227,
+        "auroc_undefined_reason": null,
+        "confusion_matrix": {
+          "class_order": [
+            0,
+            1
+          ],
+          "class_names": [
+            "inactive",
+            "active"
+          ],
+          "matrix": [
+            [
+              63,
+              8
+            ],
+            [
+              46,
+              35
+            ]
+          ],
+          "tn": 63,
+          "fp": 8,
+          "fn": 46,
+          "tp": 35
+        },
+        "metric_notes": {
+          "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+          "sensitivity": "TP/(TP+FN) for class 1 (active)",
+          "specificity": "TN/(TN+FP) for class 0 (inactive)",
+          "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+          "calibrated_probability": false
+        }
+      },
+      "n_evaluated": 152,
+      "support_dataset_indices": [
+        182,
+        897,
+        1033,
+        1064,
+        1437,
+        223,
+        260,
+        316,
+        621,
+        659
+      ]
+    },
+    "consistency": {
+      "validation": {
+        "metrics_match": true,
+        "support_indices_match": true,
+        "metric_diffs": {
+          "accuracy": {
+            "original": 0.4503311258278146,
+            "reproduced": 0.4503311258278146,
+            "abs_diff": 0.0
+          },
+          "balanced_accuracy": {
+            "original": 0.6408424908424908,
+            "reproduced": 0.6408424908424908,
+            "abs_diff": 0.0
+          },
+          "sensitivity_class_1": {
+            "original": 0.3769230769230769,
+            "reproduced": 0.3769230769230769,
+            "abs_diff": 0.0
+          },
+          "specificity_class_0": {
+            "original": 0.9047619047619048,
+            "reproduced": 0.9047619047619048,
+            "abs_diff": 0.0
+          },
+          "auroc": {
+            "original": 0.6384615384615384,
+            "reproduced": 0.6384615384615384,
+            "abs_diff": 0.0
+          }
+        }
+      },
+      "test": {
+        "metrics_match": true,
+        "support_indices_match": true,
+        "metric_diffs": {
+          "accuracy": {
+            "original": 0.6447368421052632,
+            "reproduced": 0.6447368421052632,
+            "abs_diff": 0.0
+          },
+          "balanced_accuracy": {
+            "original": 0.6597113545470353,
+            "reproduced": 0.6597113545470353,
+            "abs_diff": 0.0
+          },
+          "sensitivity_class_1": {
+            "original": 0.43209876543209874,
+            "reproduced": 0.43209876543209874,
+            "abs_diff": 0.0
+          },
+          "specificity_class_0": {
+            "original": 0.8873239436619719,
+            "reproduced": 0.8873239436619719,
+            "abs_diff": 0.0
+          },
+          "auroc": {
+            "original": 0.7278734133194227,
+            "reproduced": 0.7278734133194227,
+            "abs_diff": 0.0
+          }
+        }
+      }
+    },
+    "overall_consistent": true,
+    "note_on_multishot_path": "Multi-K episodes embed support via smiles_original from select_train_support; canonical reproduction uses the pinned manifest smiles_canonical path."
+  },
+  "multishot_validation": {
+    "query_split": "valid",
+    "k_shots": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "support_seeds": [
+      42,
+      7,
+      13,
+      21,
+      99
+    ],
+    "n_episodes_planned": 20,
+    "prototype_rule": "For each class c in {0,1}, prototype_c = mean(GIN graph_embedding of support examples with original label c). Query prediction = argmin_c ||emb(q) - prototype_c||_2. Score for AUROC = d0 - d1 (higher => more class-1-like). Scores are not calibrated probabilities.",
+    "episodes": [
+      {
+        "k_shot": 1,
+        "seed": 42,
+        "status": "ok",
+        "support_dataset_indices": [
+          1437,
+          242
+        ],
+        "n_support": 2,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.5033112582781457,
+          "balanced_accuracy": 0.6117216117216118,
+          "sensitivity_class_1": 0.46153846153846156,
+          "specificity_class_0": 0.7619047619047619,
+          "auroc": 0.5956043956043956,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                16,
+                5
+              ],
+              [
+                70,
+                60
+              ]
+            ],
+            "tn": 16,
+            "fp": 5,
+            "fn": 70,
+            "tp": 60
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 1,
+        "seed": 7,
+        "status": "ok",
+        "support_dataset_indices": [
+          1114,
+          267
+        ],
+        "n_support": 2,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.6291390728476821,
+          "balanced_accuracy": 0.584981684981685,
+          "sensitivity_class_1": 0.6461538461538462,
+          "specificity_class_0": 0.5238095238095238,
+          "auroc": 0.6355311355311355,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                11,
+                10
+              ],
+              [
+                46,
+                84
+              ]
+            ],
+            "tn": 11,
+            "fp": 10,
+            "fn": 46,
+            "tp": 84
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 1,
+        "seed": 13,
+        "status": "ok",
+        "support_dataset_indices": [
+          1048,
+          367
+        ],
+        "n_support": 2,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.15894039735099338,
+          "balanced_accuracy": 0.5115384615384615,
+          "sensitivity_class_1": 0.023076923076923078,
+          "specificity_class_0": 1.0,
+          "auroc": 0.5769230769230769,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                21,
+                0
+              ],
+              [
+                127,
+                3
+              ]
+            ],
+            "tn": 21,
+            "fp": 0,
+            "fn": 127,
+            "tp": 3
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 1,
+        "seed": 21,
+        "status": "ok",
+        "support_dataset_indices": [
+          951,
+          448
+        ],
+        "n_support": 2,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.4966887417218543,
+          "balanced_accuracy": 0.508058608058608,
+          "sensitivity_class_1": 0.49230769230769234,
+          "specificity_class_0": 0.5238095238095238,
+          "auroc": 0.6062271062271062,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                11,
+                10
+              ],
+              [
+                66,
+                64
+              ]
+            ],
+            "tn": 11,
+            "fp": 10,
+            "fn": 66,
+            "tp": 64
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 1,
+        "seed": 99,
+        "status": "ok",
+        "support_dataset_indices": [
+          1196,
+          424
+        ],
+        "n_support": 2,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.2913907284768212,
+          "balanced_accuracy": 0.5086080586080586,
+          "sensitivity_class_1": 0.2076923076923077,
+          "specificity_class_0": 0.8095238095238095,
+          "auroc": 0.4684981684981685,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                17,
+                4
+              ],
+              [
+                103,
+                27
+              ]
+            ],
+            "tn": 17,
+            "fp": 4,
+            "fn": 103,
+            "tp": 27
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 3,
+        "seed": 42,
+        "status": "ok",
+        "support_dataset_indices": [
+          182,
+          897,
+          1437,
+          332,
+          355,
+          661
+        ],
+        "n_support": 6,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.6225165562913907,
+          "balanced_accuracy": 0.5811355311355311,
+          "sensitivity_class_1": 0.6384615384615384,
+          "specificity_class_0": 0.5238095238095238,
+          "auroc": 0.5498168498168499,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                11,
+                10
+              ],
+              [
+                47,
+                83
+              ]
+            ],
+            "tn": 11,
+            "fp": 10,
+            "fn": 47,
+            "tp": 83
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 3,
+        "seed": 7,
+        "status": "ok",
+        "support_dataset_indices": [
+          937,
+          1114,
+          1187,
+          60,
+          91,
+          607
+        ],
+        "n_support": 6,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.18543046357615894,
+          "balanced_accuracy": 0.486996336996337,
+          "sensitivity_class_1": 0.06923076923076923,
+          "specificity_class_0": 0.9047619047619048,
+          "auroc": 0.48644688644688644,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                19,
+                2
+              ],
+              [
+                121,
+                9
+              ]
+            ],
+            "tn": 19,
+            "fp": 2,
+            "fn": 121,
+            "tp": 9
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 3,
+        "seed": 13,
+        "status": "ok",
+        "support_dataset_indices": [
+          1048,
+          1080,
+          1484,
+          625,
+          696,
+          776
+        ],
+        "n_support": 6,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.41721854304635764,
+          "balanced_accuracy": 0.46190476190476193,
+          "sensitivity_class_1": 0.4,
+          "specificity_class_0": 0.5238095238095238,
+          "auroc": 0.432967032967033,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                11,
+                10
+              ],
+              [
+                78,
+                52
+              ]
+            ],
+            "tn": 11,
+            "fp": 10,
+            "fn": 78,
+            "tp": 52
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 3,
+        "seed": 21,
+        "status": "ok",
+        "support_dataset_indices": [
+          951,
+          1211,
+          1489,
+          363,
+          448,
+          598
+        ],
+        "n_support": 6,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.4768211920529801,
+          "balanced_accuracy": 0.5364468864468864,
+          "sensitivity_class_1": 0.45384615384615384,
+          "specificity_class_0": 0.6190476190476191,
+          "auroc": 0.6098901098901099,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                13,
+                8
+              ],
+              [
+                71,
+                59
+              ]
+            ],
+            "tn": 13,
+            "fp": 8,
+            "fn": 71,
+            "tp": 59
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 3,
+        "seed": 99,
+        "status": "ok",
+        "support_dataset_indices": [
+          987,
+          1172,
+          1196,
+          287,
+          320,
+          571
+        ],
+        "n_support": 6,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.5231788079470199,
+          "balanced_accuracy": 0.6032967032967034,
+          "sensitivity_class_1": 0.49230769230769234,
+          "specificity_class_0": 0.7142857142857143,
+          "auroc": 0.6391941391941391,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                15,
+                6
+              ],
+              [
+                66,
+                64
+              ]
+            ],
+            "tn": 15,
+            "fp": 6,
+            "fn": 66,
+            "tp": 64
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 5,
+        "seed": 42,
+        "status": "ok",
+        "support_dataset_indices": [
+          182,
+          897,
+          1033,
+          1064,
+          1437,
+          223,
+          260,
+          316,
+          621,
+          659
+        ],
+        "n_support": 10,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.4503311258278146,
+          "balanced_accuracy": 0.6408424908424908,
+          "sensitivity_class_1": 0.3769230769230769,
+          "specificity_class_0": 0.9047619047619048,
+          "auroc": 0.6384615384615384,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                19,
+                2
+              ],
+              [
+                81,
+                49
+              ]
+            ],
+            "tn": 19,
+            "fp": 2,
+            "fn": 81,
+            "tp": 49
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 5,
+        "seed": 7,
+        "status": "ok",
+        "support_dataset_indices": [
+          820,
+          937,
+          1114,
+          1187,
+          1449,
+          91,
+          218,
+          414,
+          533,
+          711
+        ],
+        "n_support": 10,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.2251655629139073,
+          "balanced_accuracy": 0.45018315018315014,
+          "sensitivity_class_1": 0.13846153846153847,
+          "specificity_class_0": 0.7619047619047619,
+          "auroc": 0.5010989010989011,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                16,
+                5
+              ],
+              [
+                112,
+                18
+              ]
+            ],
+            "tn": 16,
+            "fp": 5,
+            "fn": 112,
+            "tp": 18
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 5,
+        "seed": 13,
+        "status": "ok",
+        "support_dataset_indices": [
+          973,
+          1048,
+          1080,
+          1483,
+          1484,
+          265,
+          322,
+          607,
+          616,
+          746
+        ],
+        "n_support": 10,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.3576158940397351,
+          "balanced_accuracy": 0.4472527472527472,
+          "sensitivity_class_1": 0.3230769230769231,
+          "specificity_class_0": 0.5714285714285714,
+          "auroc": 0.4926739926739927,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                12,
+                9
+              ],
+              [
+                88,
+                42
+              ]
+            ],
+            "tn": 12,
+            "fp": 9,
+            "fn": 88,
+            "tp": 42
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 5,
+        "seed": 21,
+        "status": "ok",
+        "support_dataset_indices": [
+          951,
+          1071,
+          1211,
+          1433,
+          1489,
+          310,
+          487,
+          493,
+          690,
+          726
+        ],
+        "n_support": 10,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.4900662251655629,
+          "balanced_accuracy": 0.48424908424908425,
+          "sensitivity_class_1": 0.49230769230769234,
+          "specificity_class_0": 0.47619047619047616,
+          "auroc": 0.6051282051282051,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                10,
+                11
+              ],
+              [
+                66,
+                64
+              ]
+            ],
+            "tn": 10,
+            "fp": 11,
+            "fn": 66,
+            "tp": 64
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 5,
+        "seed": 99,
+        "status": "ok",
+        "support_dataset_indices": [
+          966,
+          987,
+          1172,
+          1196,
+          1396,
+          210,
+          257,
+          320,
+          336,
+          673
+        ],
+        "n_support": 10,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.3841059602649007,
+          "balanced_accuracy": 0.6223443223443224,
+          "sensitivity_class_1": 0.2923076923076923,
+          "specificity_class_0": 0.9523809523809523,
+          "auroc": 0.6542124542124542,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                20,
+                1
+              ],
+              [
+                92,
+                38
+              ]
+            ],
+            "tn": 20,
+            "fp": 1,
+            "fn": 92,
+            "tp": 38
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 10,
+        "seed": 42,
+        "status": "ok",
+        "support_dataset_indices": [
+          182,
+          887,
+          897,
+          925,
+          1011,
+          1033,
+          1064,
+          1341,
+          1437,
+          1475,
+          39,
+          40,
+          210,
+          217,
+          311,
+          324,
+          452,
+          510,
+          567,
+          575
+        ],
+        "n_support": 20,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.4370860927152318,
+          "balanced_accuracy": 0.6131868131868132,
+          "sensitivity_class_1": 0.36923076923076925,
+          "specificity_class_0": 0.8571428571428571,
+          "auroc": 0.6267399267399267,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                18,
+                3
+              ],
+              [
+                82,
+                48
+              ]
+            ],
+            "tn": 18,
+            "fp": 3,
+            "fn": 82,
+            "tp": 48
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 10,
+        "seed": 7,
+        "status": "ok",
+        "support_dataset_indices": [
+          820,
+          848,
+          879,
+          937,
+          1114,
+          1157,
+          1187,
+          1331,
+          1379,
+          1449,
+          47,
+          75,
+          88,
+          210,
+          309,
+          329,
+          448,
+          460,
+          511,
+          776
+        ],
+        "n_support": 20,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.47019867549668876,
+          "balanced_accuracy": 0.5725274725274725,
+          "sensitivity_class_1": 0.4307692307692308,
+          "specificity_class_0": 0.7142857142857143,
+          "auroc": 0.6421245421245422,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                15,
+                6
+              ],
+              [
+                74,
+                56
+              ]
+            ],
+            "tn": 15,
+            "fp": 6,
+            "fn": 74,
+            "tp": 56
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 10,
+        "seed": 13,
+        "status": "ok",
+        "support_dataset_indices": [
+          933,
+          973,
+          1013,
+          1019,
+          1048,
+          1080,
+          1450,
+          1465,
+          1483,
+          1484,
+          90,
+          252,
+          291,
+          309,
+          370,
+          530,
+          602,
+          657,
+          663,
+          729
+        ],
+        "n_support": 20,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.46357615894039733,
+          "balanced_accuracy": 0.5686813186813187,
+          "sensitivity_class_1": 0.4230769230769231,
+          "specificity_class_0": 0.7142857142857143,
+          "auroc": 0.5641025641025641,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                15,
+                6
+              ],
+              [
+                75,
+                55
+              ]
+            ],
+            "tn": 15,
+            "fp": 6,
+            "fn": 75,
+            "tp": 55
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 10,
+        "seed": 21,
+        "status": "ok",
+        "support_dataset_indices": [
+          951,
+          970,
+          1004,
+          1071,
+          1211,
+          1269,
+          1273,
+          1307,
+          1433,
+          1489,
+          3,
+          15,
+          325,
+          417,
+          456,
+          510,
+          528,
+          564,
+          688,
+          791
+        ],
+        "n_support": 20,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.5298013245033113,
+          "balanced_accuracy": 0.5871794871794871,
+          "sensitivity_class_1": 0.5076923076923077,
+          "specificity_class_0": 0.6666666666666666,
+          "auroc": 0.6168498168498169,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                14,
+                7
+              ],
+              [
+                64,
+                66
+              ]
+            ],
+            "tn": 14,
+            "fp": 7,
+            "fn": 64,
+            "tp": 66
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      },
+      {
+        "k_shot": 10,
+        "seed": 99,
+        "status": "ok",
+        "support_dataset_indices": [
+          867,
+          919,
+          966,
+          987,
+          1018,
+          1037,
+          1040,
+          1172,
+          1196,
+          1396,
+          211,
+          299,
+          426,
+          501,
+          529,
+          534,
+          592,
+          625,
+          633,
+          654
+        ],
+        "n_support": 20,
+        "n_query": 151,
+        "n_query_failures": 0,
+        "metrics": {
+          "n_evaluated": 151,
+          "n_true_class_0": 21,
+          "n_true_class_1": 130,
+          "accuracy": 0.5827814569536424,
+          "balanced_accuracy": 0.578021978021978,
+          "sensitivity_class_1": 0.5846153846153846,
+          "specificity_class_0": 0.5714285714285714,
+          "auroc": 0.5901098901098901,
+          "auroc_undefined_reason": null,
+          "confusion_matrix": {
+            "class_order": [
+              0,
+              1
+            ],
+            "class_names": [
+              "inactive",
+              "active"
+            ],
+            "matrix": [
+              [
+                12,
+                9
+              ],
+              [
+                54,
+                76
+              ]
+            ],
+            "tn": 12,
+            "fp": 9,
+            "fn": 54,
+            "tp": 76
+          },
+          "metric_notes": {
+            "confusion_matrix_layout": "rows=true class [0,1], cols=predicted class [0,1]",
+            "sensitivity": "TP/(TP+FN) for class 1 (active)",
+            "specificity": "TN/(TN+FP) for class 0 (inactive)",
+            "score_for_auroc": "higher means more class-1-like (e.g. d0 - d1)",
+            "calibrated_probability": false
+          }
+        }
+      }
+    ],
+    "summary_by_k": {
+      "1": {
+        "n_episodes": 5,
+        "metrics": {
+          "accuracy": {
+            "n_valid": 5,
+            "mean": 0.4158940397350993,
+            "std": 0.18786248092877172
+          },
+          "balanced_accuracy": {
+            "n_valid": 5,
+            "mean": 0.544981684981685,
+            "std": 0.04964630228063264
+          },
+          "sensitivity_class_1": {
+            "n_valid": 5,
+            "mean": 0.36615384615384616,
+            "std": 0.24810524584891686
+          },
+          "specificity_class_0": {
+            "n_valid": 5,
+            "mean": 0.7238095238095237,
+            "std": 0.20314980007334799
+          },
+          "auroc": {
+            "n_valid": 5,
+            "mean": 0.5765567765567765,
+            "std": 0.06402716654297619
+          }
+        },
+        "n_auroc_undefined": 0
+      },
+      "3": {
+        "n_episodes": 5,
+        "metrics": {
+          "accuracy": {
+            "n_valid": 5,
+            "mean": 0.44503311258278144,
+            "std": 0.16338971061604773
+          },
+          "balanced_accuracy": {
+            "n_valid": 5,
+            "mean": 0.5339560439560439,
+            "std": 0.06007669404104619
+          },
+          "sensitivity_class_1": {
+            "n_valid": 5,
+            "mean": 0.4107692307692307,
+            "std": 0.21042363581327012
+          },
+          "specificity_class_0": {
+            "n_valid": 5,
+            "mean": 0.6571428571428573,
+            "std": 0.15936381457791912
+          },
+          "auroc": {
+            "n_valid": 5,
+            "mean": 0.5436630036630037,
+            "std": 0.0852604528418385
+          }
+        },
+        "n_auroc_undefined": 0
+      },
+      "5": {
+        "n_episodes": 5,
+        "metrics": {
+          "accuracy": {
+            "n_valid": 5,
+            "mean": 0.3814569536423841,
+            "std": 0.10190931953203361
+          },
+          "balanced_accuracy": {
+            "n_valid": 5,
+            "mean": 0.528974358974359,
+            "std": 0.09502533292730822
+          },
+          "sensitivity_class_1": {
+            "n_valid": 5,
+            "mean": 0.32461538461538464,
+            "std": 0.12899245425387437
+          },
+          "specificity_class_0": {
+            "n_valid": 5,
+            "mean": 0.7333333333333334,
+            "std": 0.2064712703683695
+          },
+          "auroc": {
+            "n_valid": 5,
+            "mean": 0.5783150183150183,
+            "std": 0.07647497250636962
+          }
+        },
+        "n_auroc_undefined": 0
+      },
+      "10": {
+        "n_episodes": 5,
+        "metrics": {
+          "accuracy": {
+            "n_valid": 5,
+            "mean": 0.4966887417218543,
+            "std": 0.0588622146842092
+          },
+          "balanced_accuracy": {
+            "n_valid": 5,
+            "mean": 0.5839194139194138,
+            "std": 0.0177761382396843
+          },
+          "sensitivity_class_1": {
+            "n_valid": 5,
+            "mean": 0.4630769230769231,
+            "std": 0.08398365577819188
+          },
+          "specificity_class_0": {
+            "n_valid": 5,
+            "mean": 0.7047619047619047,
+            "std": 0.10323563518418476
+          },
+          "auroc": {
+            "n_valid": 5,
+            "mean": 0.6079853479853481,
+            "std": 0.03098801512094963
+          }
+        },
+        "n_auroc_undefined": 0
+      }
+    }
+  },
+  "figure_paths": [
+    "outputs/phase_strengthen_2026-10-11/phase3_fewshot_bace/plot_valid_balanced_accuracy.png",
+    "outputs/phase_strengthen_2026-10-11/phase3_fewshot_bace/plot_valid_auroc.png",
+    "outputs/phase_strengthen_2026-10-11/phase3_fewshot_bace/plot_valid_sensitivity_class_1.png",
+    "outputs/phase_strengthen_2026-10-11/phase3_fewshot_bace/plot_valid_specificity_class_0.png"
+  ],
+  "original_artifacts_untouched": true,
+  "no_graphcl_protocol_b_available": true
+}

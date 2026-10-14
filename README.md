@@ -160,15 +160,17 @@ From the repository root in PowerShell or the VS Code terminal:
    pip install torch-geometric==2.7.0 ogb==1.3.6 rdkit==2025.9.3
    pip install numpy==2.3.5 pandas==2.3.3 scikit-learn==1.8.0
    pip install matplotlib==3.10.8 seaborn==0.13.2 pillow==12.0.0 tqdm==4.67.1
+   pip install "streamlit>=1.28.0"
    ```
+   Alternatively, after PyTorch is installed: `pip install -r requirements.txt`
 4. Confirm imports:
    ```text
-   python -c "import torch, torch_geometric, ogb, rdkit, matplotlib; print(torch.__version__)"
+   python -c "import torch, torch_geometric, ogb, rdkit, matplotlib, streamlit; print(torch.__version__)"
    ```
 
 ### 2. Checkpoint distribution and placement (required for learned models)
 
-These three weight files are **excluded from a normal Git clone** (`.gitignore` matches `*.pt`). They are **intended to be distributed separately**, with a **GitHub Release** as the planned download location, **subject to confirming redistribution rights and actually publishing the files**. No release URL is provided here because a public Release may not exist yet.
+These three weight files are **excluded from a normal Git clone** (`.gitignore` matches `*.pt`). They are **intended to be distributed separately**, with a **GitHub Release** as the planned download location, **subject to confirming redistribution rights and actually publishing the files**. No release URL is provided here because a public Release may not exist yet. See also [CHECKPOINTS.md](CHECKPOINTS.md) for hashes and placement.
 
 After download, place each file at the **exact repository-relative path** below (create parent directories if needed):
 
@@ -258,6 +260,37 @@ python outputs/tox21/phase4f6_explainability/run_tox21_gnnexplainer_smoke.py
 Interactive CLIs (separate from the research episodic protocol): see **Windows setup for teammates** above and [apps/mol_cli/README.md](apps/mol_cli/README.md).
 
 Completed BACE follow-ons already recorded under `outputs/core_pipeline/`: `ablation_no_graphcl.py`, `ablation_multi_seed.py`, `prototype_explain.py`, `confidence_analysis.py`, GNNExplainer scripts.
+
+---
+
+## Chemist-facing local web app
+
+A Streamlit UI wraps the **same** GraphCL encoder and task adapters used by the CLI (no separate demo models).
+
+From the repository root, with the virtual environment activated and the three `.pt` checkpoints placed as in §2:
+
+```text
+pip install streamlit
+python -m streamlit run apps/chemist_app/app.py
+```
+
+(`python -m streamlit` is preferred on Windows when the `streamlit` script directory is not on `PATH`.)
+
+The app provides: molecule overview (canonical SMILES, 2D structure with atom indices, RDKit descriptors), Protocol B BACE prototype distances, ESOL logS estimate, Tox21 12-task scores, optional exploratory GNNExplainer, and a reliability panel.
+
+- Architecture notes: [outputs/chemist_app_2026-10-11/ARCHITECTURE_REPORT.md](outputs/chemist_app_2026-10-11/ARCHITECTURE_REPORT.md)
+- App report: [outputs/chemist_app_2026-10-11/CHEMIST_APP_REPORT.md](outputs/chemist_app_2026-10-11/CHEMIST_APP_REPORT.md)
+- Strengthened few-shot / XAI diagnostics: [outputs/phase_strengthen_2026-10-11/PHASE_STRENGTHEN_REPORT.md](outputs/phase_strengthen_2026-10-11/PHASE_STRENGTHEN_REPORT.md)
+
+**Existing CLI commands remain supported** (`predict`, `predict --bace`, `esol_infer`, `tox21_infer`).
+
+### Quick tests (after environment setup)
+
+```text
+python -m unittest discover -s apps/mol_cli/tests -v
+```
+
+Some tests skip if checkpoints or local OGB caches are absent; that is expected on a bare clone without weights/data.
 
 ---
 

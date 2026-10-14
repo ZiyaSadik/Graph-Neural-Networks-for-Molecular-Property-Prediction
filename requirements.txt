@@ -14,3 +14,5 @@ matplotlib==3.10.8
 seaborn==0.13.2
 pillow==12.0.0
 tqdm==4.67.1
+# Optional: chemist-facing local web UI (apps/chemist_app)
+streamlit>=1.28.0
